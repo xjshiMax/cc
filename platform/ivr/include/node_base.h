@@ -62,7 +62,7 @@ public:
      * @author chenyuzhen
      * @date 2011/09/06 15:55:47
      **/
-    bool NodeBase::valid_str(key_map_t& vars, const char* key, uint32_t& out);
+    bool valid_str(key_map_t& vars, const char* key, uint32_t& out);
 
     static bool get_sys_var(const map<string, variable_t>& vars, uint32_t type,
                             std::string& out) {

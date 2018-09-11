@@ -19,6 +19,7 @@
 #include <ims/ims_mgr.h>
 #include <ivr_instance_manager.h>
 #include <common.h>
+#include<memory>
 
 ims::CcResultT ImsEventImp::SendCallEvent(const ims::CallEventT& event,
         const std::map<std::string, std::string>& ctx) {

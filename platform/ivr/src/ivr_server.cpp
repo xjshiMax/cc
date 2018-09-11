@@ -29,7 +29,7 @@
 
 #include "ivr_timer.h"
 #include "ivrapi.h"
-
+#include<memory>
 #include <getopt.h>
 
 #ifndef SCMPF_MODULE_VERSION
@@ -97,7 +97,7 @@ void esl_log_ivr(const char* file, const char* func, int line, int level, const 
 
 //IVR呼入请求处理 回调函数
 void inbound_callback(esl_socket_t server_sock,
-                      esl_socket_t client_sock, struct sockaddr_in* addr) {
+                      esl_socket_t client_sock, struct sockaddr_in* addr ,void* user_data) {
     esl_handle_t handle;
     string callid;
 
@@ -162,7 +162,7 @@ void inbound_callback(esl_socket_t server_sock,
 
 // Event Socket 线程函数
 void* esl_listen_thread_func(void* arg) {
-    if (ESL_SUCCESS != esl_listen(g_server_ip.c_str(), g_server_port, inbound_callback)) {
+    if (ESL_SUCCESS != esl_listen(g_server_ip.c_str(), g_server_port, inbound_callback,NULL,NULL)) {
         IVR_FATAL("esl_listen return fail");
         //raise(SIGKILL);
         _exit(0);
@@ -293,6 +293,7 @@ int32_t main(int32_t argc, char* argv[]) {
         { "version", 0, NULL, 'v'},
         { "help", 0, NULL, 'h'},
     };
+printf("start ivr server........\n");
 
     // is version command
     char ch = 0;

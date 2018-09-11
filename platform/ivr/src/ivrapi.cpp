@@ -17,6 +17,7 @@
 #include <ivrapi.h>
 #include <conf_manager.h>
 #include <threadtools.h>
+#include<memory>
 #include "thread_pool.h"
 #include "autodial_chan_thread.h"
 #include "cpu_manager.h"

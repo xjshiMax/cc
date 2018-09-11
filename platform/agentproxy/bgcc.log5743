@@ -1,0 +1,104 @@
+2018-09-11 09:58:27.176 [warn ] 5743 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=6 , ERR:111
+2018-09-11 09:58:27.176 [warn ] 5743 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:27.196 [warn ] 5856 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:27.206 [warn ] 5856 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:27.377 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:27.377 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:27.577 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:27.577 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:27.778 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:27.778 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:27.978 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:27.978 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:28.179 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:28.179 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:28.379 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:28.379 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:28.579 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:28.580 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:28.780 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:28.780 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:28.981 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:28.981 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:29.181 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:29.181 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:29.382 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:29.382 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:29.582 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:29.582 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:29.783 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:29.783 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:29.983 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:29.983 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:30.184 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:30.184 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:30.217 [warn ] 5856 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:30.228 [warn ] 5856 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:30.384 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:30.384 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:30.585 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:30.585 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:30.785 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:30.785 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:30.986 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:30.986 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:31.186 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:31.186 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:31.387 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:31.387 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:31.587 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:31.588 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:31.788 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:31.788 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:31.988 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:31.989 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:32.189 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:32.189 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:32.390 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:32.390 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:32.590 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:32.590 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:32.791 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:32.791 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:32.991 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:32.991 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:33.192 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:33.192 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:33.238 [warn ] 5856 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:33.249 [warn ] 5856 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:33.249 [warn ] 5856 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=11 , ERR:111
+2018-09-11 09:58:33.249 [warn ] 5856 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:33.260 [warn ] 5856 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=11 , ERR:111
+2018-09-11 09:58:33.270 [warn ] 5856 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=11 , ERR:111
+2018-09-11 09:58:33.392 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=11 , ERR:111
+2018-09-11 09:58:33.392 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:33.450 [warn ] 5867 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=11 , ERR:111
+2018-09-11 09:58:33.450 [warn ] 5867 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:33.450 [warn ] 5856 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=11 , ERR:111
+2018-09-11 09:58:33.450 [warn ] 5856 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:33.461 [warn ] 5856 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=11 , ERR:111
+2018-09-11 09:58:33.471 [warn ] 5856 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=11 , ERR:111
+2018-09-11 09:58:33.593 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=11 , ERR:111
+2018-09-11 09:58:33.593 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:33.651 [warn ] 5868 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=11 , ERR:111
+2018-09-11 09:58:33.651 [warn ] 5868 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:33.651 [warn ] 5856 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=11 , ERR:111
+2018-09-11 09:58:33.651 [warn ] 5856 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:33.662 [warn ] 5856 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=11 , ERR:111
+2018-09-11 09:58:33.672 [warn ] 5856 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=11 , ERR:111
+2018-09-11 09:58:33.793 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=11 , ERR:111
+2018-09-11 09:58:33.793 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:33.852 [warn ] 5869 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=11 , ERR:111
+2018-09-11 09:58:33.852 [warn ] 5869 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:33.993 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:33.993 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:34.193 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:34.193 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:34.394 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:34.394 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:34.594 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:34.594 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:34.795 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:34.795 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed
+2018-09-11 09:58:34.995 [warn ] 5744 {client_socket.cpp(39)} Client Connect To 127.0.0.1:8801 Failed , fd=10 , ERR:111
+2018-09-11 09:58:34.995 [warn ] 5744 {callback_task.cpp(125)} CallBackTask Connect Failed

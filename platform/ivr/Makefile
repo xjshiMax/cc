@@ -31,11 +31,11 @@ OUTPUT_PATH = ./output
 
 VERSION=${shell echo $$SCMPF_MODULE_VERSION}
 
-LDFLAGS = -lesl -lpthread -luuid  -lmysqlclient -lmysqlclient_r -lmystrings -lmysys -lcrypto -lidn -lssl -lldap -lcurl -lrt -lz -ljson -lims -livr -lbgcc  -lboost_system 
+LDFLAGS = -lesl -lpthread -luuid  -lmysqlclient -lmysqlclient_r -lmystrings -lmysys -lcrypto -lidn -lssl -lcurl -lrt -lz -ljson -lims -livr -lbgcc  -lboost_system 
 CXX_FLAGS = -DSCMPF_MODULE_VERSION=\"$(VERSION)\" -Wall -pipe -Wno-unused-parameter -Wno-reorder -Wwrite-strings -Wswitch -Wconversion -g \
                    -fPIC -Winline -Wreturn-type -Wtrigraphs -Wformat -Wparentheses -Wpointer-arith \
 				   -fthreadsafe-statics \
-				   -Werror
+				   
 
 OBJ_DIR = ./obj
 SRC_DIR = ./src

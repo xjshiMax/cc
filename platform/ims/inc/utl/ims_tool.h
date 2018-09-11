@@ -265,7 +265,7 @@ public:
     static uint32_t str_to_uint32(const char* src);
 
     static bool ip_mask_parse(const char* src , uint32_t& ip, uint32_t& mask, uint32_t& bit);
-    static std::string ims_tool_t::num2str(uint64_t num);
+    static std::string num2str(uint64_t num);
 
     static void prepare_call_event(ims::CallEventT& call_event,
                                    const uint64_t time,

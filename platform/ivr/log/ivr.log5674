@@ -1,0 +1,4 @@
+2018-09-11 09:47:08.915 [=ver=] 5674 {log_device.cpp(128)} BGCC Version:
+2018-09-11 09:47:08.916 [trace] 5674 {src/ivr_server.cpp(273)} bgcc::log_open success!
+2018-09-11 09:47:08.916 [debug] 5674 {src/ini_file.cpp(31)} load ini file(conf/inbound.conf)
+2018-09-11 09:47:08.916 [fatal] 5674 {src/conf_manager.cpp(67)} load_conf_file inbound_conf fail

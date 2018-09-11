@@ -149,7 +149,7 @@ public:
         return 0 == ret;
     }
 private:
-    mutable sem_t& _sem;
+    sem_t& _sem;
 };
 
 #endif

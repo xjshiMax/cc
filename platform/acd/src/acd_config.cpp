@@ -117,7 +117,7 @@ bool acd_config::LoadSkills() {
         if (!mysql_query(conn, "SELECT * FROM SkillIdTbl")) {
             result = mysql_store_result(conn);
 
-            while (row = (mysql_fetch_row(result)) {
+            while ((row = (mysql_fetch_row(result)))) {
                 m_setSkills.Insert(row[1]);
             }
 
@@ -152,7 +152,7 @@ bool acd_config::LoadRestReason() {
         if (!mysql_query(conn, "SELECT * FROM RestReasonTbl")) {
             result = mysql_store_result(conn);
 
-            while (row = (mysql_fetch_row(result)) {
+            while ((row = mysql_fetch_row(result))){
                 m_setRestReason.Insert(row[1]);
             }
 

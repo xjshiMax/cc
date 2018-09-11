@@ -1,0 +1,9 @@
+2018-09-11 03:34:25.432 [=ver=] 4148 {log_device.cpp(128)} BGCC Version:
+2018-09-11 03:34:25.433 [trace] 4148 {ims_service.cpp(92)} bgcc::log_open success!
+2018-09-11 03:34:25.433 [trace] 4148 {ims_service.cpp(95)} load configure file ok
+2018-09-11 03:34:25.433 [trace] 4148 {ims_service.cpp(106)} starting freeswitch manager...
+2018-09-11 03:34:25.433 [debug] 4148 {src/fs/fs_info.cpp(24)} connect to fs[0] start 
+2018-09-11 03:34:25.433 [debug] 4148 {src/fs/fs_info.cpp(32)} fs[0] create fs_opr start 
+2018-09-11 03:34:25.436 [warn ] 4148 {src/fs/fs_opr.cpp(54)} connect to FreeSWITCH [127.0.0.1:8022] failed(Socket Connection Error)
+2018-09-11 03:34:25.436 [warn ] 4148 {src/fs/fs_info.cpp(39)} add opr [0] failed, cannot connect to fs [2130706433 : 8022]
+2018-09-11 03:34:25.436 [fatal] 4148 {ims_service.cpp(118)} load freeswitch(id=0,ip=2130706433,port=8022,user=,pswd=ClueCon) failed

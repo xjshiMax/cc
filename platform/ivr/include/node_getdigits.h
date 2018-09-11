@@ -64,7 +64,7 @@ private:
      * @author chenyuzhen
      * @date 2011/09/06 15:48:23
     **/
-    std::string NodeGetDigits::enter(const map<string, variable_t>& vars)const;
+    std::string enter(const map<string, variable_t>& vars)const;
 
 };
 

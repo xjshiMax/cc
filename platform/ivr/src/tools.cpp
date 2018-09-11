@@ -16,6 +16,8 @@
 
 #include <errno.h>
 #include "tools.h"
+#include<stdexcept>
+#include<limits>
 #include "db_pool.h"
 
 int32_t ivr_tools_t::get_abs_timespec(struct timespec* ts, int32_t milliSeconds) {

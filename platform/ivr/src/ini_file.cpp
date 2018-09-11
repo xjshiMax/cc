@@ -17,7 +17,7 @@
 #include "tools.h"
 #include "ini_file.h"
 #include <fstream>
-
+#include <memory>
 INIFile::~INIFile() {
     _file_map.clear();
 }

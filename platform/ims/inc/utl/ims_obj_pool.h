@@ -35,7 +35,7 @@
  */
 template< typename T >
 class ims_obj_pool {
-    typedef void CALLBACK(T*);
+typedef void CALLBACK(T*);
 public:
     ~ims_obj_pool() {
         uninit();
@@ -201,7 +201,7 @@ private:
      * @brief 获取对象之后，或释放对象之前执行的回调函数
      *
      */
-    // typedef void CALLBACK(T*);
+//    typedef void CALLBACK(T*);
 
 };
 

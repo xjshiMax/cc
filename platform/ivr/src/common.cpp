@@ -18,6 +18,7 @@
 #include "tools.h"
 #include "flow_manager.h"
 #include "conf_manager.h"
+#include <memory>
 
 int32_t g_stopped = 0;
 sem_t g_stop_sem;

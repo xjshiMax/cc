@@ -48,8 +48,9 @@ void sig_handler(int signum) {
 
 int main(int argc, char** argv) {
 
+printf("start.........\n");
     signal(SIGPIPE, SIG_IGN);
-
+printf("end.........\n");
     char const* const short_options = "vh";
     struct option long_options[] = {
         { "version", 0, NULL, 'v'},
@@ -62,7 +63,7 @@ int main(int argc, char** argv) {
     while ((ch = getopt_long(argc, argv, short_options, long_options, NULL)) != -1) {
         switch (ch) {
         case 'v':
-            std::cout << VERSION << std::endl;
+            std::cout << "VERSION" << std::endl;
             return 0;
 
         case 'h':
@@ -84,7 +85,7 @@ int main(int argc, char** argv) {
         return -1;
     }
 
-    NOTICE_LOG("ims server starting(version : %s , build time : %s" , VERSION , BUILD_DATE);
+    NOTICE_LOG("ims server starting(version : %s , build time : %s" , "VERSION" , BUILD_DATE);
 
     //open bgcc log
     std::string bgcclog = "bgcc.cfg";
@@ -109,7 +110,7 @@ int main(int argc, char** argv) {
     ims_conf_gw_node_t* gw_node;
 
     for (std::list<ims_conf_gw_node_t*>::iterator it = gws.begin(); it != gws.end(); ++it) {
-        if (gw_node = *it) {
+        if ((gw_node = *it)) {
             fs_info_t info(gw_node->id, gw_node->ip, gw_node->port, gw_node->max_conn,
                            gw_node->user, gw_node->pswd);
 

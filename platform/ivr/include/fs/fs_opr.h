@@ -134,7 +134,7 @@ public:
     int32_t stop_media(const char* uuid);
     int32_t play(const char* uuid, const char* file, uint32_t count = 1);
     int32_t record(const char* uuid, const char* file, bool isstart);
-    int32_t fs_opr_t::playnum(const char* uuid, const char* data, const char* basepath, bool isStr);
+    int32_t playnum(const char* uuid, const char* data, const char* basepath, bool isStr);
     int32_t send_dtmf(const char* uuid, const char* keys);
     int32_t collect(const char* callid, const char* playfile, uint32_t min, uint32_t max,
                     uint32_t timeout, const char* end);

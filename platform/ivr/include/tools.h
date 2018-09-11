@@ -301,7 +301,7 @@ public:
      * @author chenyuzhen
      * @date 2011/09/16 12:36:39
     **/
-    static void ivr_tools_t::safe_sleeps(uint32_t s);
+    static void safe_sleeps(uint32_t s);
 
     /**
      * @brief sleep ms
@@ -314,7 +314,7 @@ public:
      * @author chenyuzhen
      * @date 2011/10/20 12:09:59
     **/
-    static void ivr_tools_t::safe_sleepms(uint32_t ms);
+    static void safe_sleepms(uint32_t ms);
 
 
     // return "-h ip -p port"

@@ -166,8 +166,10 @@ uint32_t InboundChanThread::execute(void* taskparam) {
 
     //´´½¨ÊµÀý
     ivr_session_id_t ivr_s_id;
-    session_dynamic_resource_t* resource = (session_dynamic_resource_t*)taskparam;
-    IvrInstanceManager* mgr = IvrInstanceManager::get_instance();
+    session_dynamic_resource_t* resource;
+resource = (session_dynamic_resource_t*)taskparam;
+    IvrInstanceManager* mgr ;
+mgr= IvrInstanceManager::get_instance();
 
     if (IVR_SUCCESS != mgr->create_ivr_instance(script.type, script.fid, &ivr_s_id, *resource,
             script.callid.c_str())) {

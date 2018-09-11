@@ -27,10 +27,10 @@ VERSION="1.2.0.4"
 
 CXXFLAGS = -Wall -W -pipe -Wno-unused-parameter -Wreorder -Wwrite-strings -Wswitch -Wno-sign-compare\
 		   -g -D__XDEBUG__ -D__YDEBUG__ \
-		   -fPIC -finline-functions -Winline -Wreturn-type -Wtrigraphs -Wformat -Wparentheses -Wpointer-arith  \
+		   -fPIC -finline-functions -Winline -Wreturn-type -Wtrigraphs -Wformat -Wparentheses -Wpointer-arith 
 		   -DVERSION=\"$(VERSION)\"  -DCVSTAG=\"$(VERSION)\" -DPROJECT_NAME=\"$(BINNAME)\"
 
-LDFLAGS = -lboost_system -lboost_filesystem -lims -lbgcc -lssl -lesl -lxml2 -lpcre -lpthread -lcrypto -lrt -lm -lz -ldl -luuid
+LDFLAGS = -lboost_system -lboost_filesystem -lims -lbgcc -lssl -lesl -lxml2 -lpcre -lpthread  -lcrypto -lrt -lm -lz -ldl -luuid
 
 SOURCES = $(wildcard *.cpp) $(wildcard src/fs/*.cpp) $(wildcard src/utl/*.cpp) $(wildcard src/core/*.cpp) $(wildcard src/api/*.cpp)
 OBJS = $(patsubst %.cpp,%.o,$(SOURCES))
