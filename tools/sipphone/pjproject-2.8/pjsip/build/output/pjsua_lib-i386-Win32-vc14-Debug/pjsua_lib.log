@@ -1,0 +1,22 @@
+﻿  pjsua_acc.c
+D:\code\txCC\tools\sipphone\pjproject-2.8\pjmedia\include\pjmedia-codec/g7221.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  pjsua_aud.c
+D:\code\txCC\tools\sipphone\pjproject-2.8\pjmedia\include\pjmedia-codec/g7221.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  pjsua_call.c
+D:\code\txCC\tools\sipphone\pjproject-2.8\pjmedia\include\pjmedia-codec/g7221.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+..\src\pjsua-lib\pjsua_call.c(4071): warning C4102: “TODO___HANDLE_FORKED_DIALOG”: 未引用的标签
+  pjsua_core.c
+D:\code\txCC\tools\sipphone\pjproject-2.8\pjmedia\include\pjmedia-codec/g7221.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+..\src\pjsua-lib\pjsua_core.c(2826): warning C4102: “TODO___pjsua_transport_set_enable”: 未引用的标签
+  pjsua_dump.c
+D:\code\txCC\tools\sipphone\pjproject-2.8\pjmedia\include\pjmedia-codec/g7221.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  pjsua_im.c
+D:\code\txCC\tools\sipphone\pjproject-2.8\pjmedia\include\pjmedia-codec/g7221.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  pjsua_media.c
+D:\code\txCC\tools\sipphone\pjproject-2.8\pjmedia\include\pjmedia-codec/g7221.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  pjsua_pres.c
+D:\code\txCC\tools\sipphone\pjproject-2.8\pjmedia\include\pjmedia-codec/g7221.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  pjsua_vid.c
+D:\code\txCC\tools\sipphone\pjproject-2.8\pjmedia\include\pjmedia-codec/g7221.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  正在生成代码...
+  pjsua_lib.vcxproj -> D:\code\txCC\tools\sipphone\pjproject-2.8\pjsip\build\..\lib\pjsua-lib-i386-Win32-vc14-Debug.lib

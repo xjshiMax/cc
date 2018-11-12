@@ -22,6 +22,8 @@
 #include "acdcommon.h"
 #include "AgentProxy.h"
 
+
+
 using namespace acd;
 
 //服务信息，函数意义参考acd的bidl文件定义
@@ -29,6 +31,9 @@ class ApServer: public acdapi {
 public:
 
     bool InitApServer(std::string ApListenIp, int32_t ApListenPort, int32_t threadPoolNum);
+
+    bool InitApServerWs(std::string ApListenIp, int32_t ApListenPort, int32_t threadPoolNum);
+
 
     virtual AcdResultT SignIn(
         const std::string& agentId,
@@ -350,6 +355,9 @@ private:
     int32_t _ApListenPort;
     Server* _server;
     int32_t _threadPoolNum;
+    Queue<std::string> _wsMsgQueue;
+
+    
 public:
     /**
      * Default constructor

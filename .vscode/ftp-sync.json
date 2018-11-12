@@ -1,0 +1,18 @@
+{
+    "remotePath": "/root/CC",
+    "host": "192.168.2.101",
+    "username": "root",
+    "password": "123456",
+    "port": 22,
+    "secure": false,
+    "protocol": "sftp",
+    "uploadOnSave": true,
+    "passive": false,
+    "debug": false,
+    "privateKeyPath": null,
+    "ignore": [
+        "\\.vscode",
+        "\\.git",
+        "\\.DS_Store"
+    ]
+}

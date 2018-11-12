@@ -245,7 +245,7 @@ void Logger::Initialize(uint32_t logCount, uint32_t fileCount, const char* dirNa
     assert(fileName != NULL);
     assert(*fileName != '\0');
     assert(version != NULL);
-    assert(*version != '\0');
+    // assert(*version != '\0');
 
     SingleLocker s(&mLocker);
     mLogCount = logCount;

@@ -1,0 +1,27 @@
+﻿  anaFilter.c
+  constants.c
+  createCB.c
+  doCPLC.c
+  enhancer.c
+  filter.c
+  FrameClassify.c
+  gainquant.c
+  getCBvec.c
+  helpfun.c
+  hpInput.c
+  hpOutput.c
+  iCBConstruct.c
+  iCBSearch.c
+  iLBC_decode.c
+  iLBC_encode.c
+  LPCdecode.c
+  LPCencode.c
+  lsf.c
+  packing.c
+  正在生成代码...
+  正在编译...
+  StateConstructW.c
+  StateSearchW.c
+  syntFilter.c
+  正在生成代码...
+  libilbccodec.vcxproj -> D:\code\txCC\tools\sipphone\pjproject-2.8\third_party\build\ilbc\..\..\lib\libilbccodec-i386-Win32-vc14-Debug.lib

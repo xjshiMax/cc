@@ -1,0 +1,20 @@
+﻿  account.cpp
+D:\code\txCC\tools\sipphone\pjproject-2.8\pjmedia\include\pjmedia-codec/g7221.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  call.cpp
+D:\code\txCC\tools\sipphone\pjproject-2.8\pjmedia\include\pjmedia-codec/g7221.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  endpoint.cpp
+D:\code\txCC\tools\sipphone\pjproject-2.8\pjmedia\include\pjmedia-codec/g7221.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  json.cpp
+D:\code\txCC\tools\sipphone\pjproject-2.8\pjmedia\include\pjmedia-codec/g7221.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  media.cpp
+D:\code\txCC\tools\sipphone\pjproject-2.8\pjmedia\include\pjmedia-codec/g7221.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  persistent.cpp
+D:\code\txCC\tools\sipphone\pjproject-2.8\pjmedia\include\pjmedia-codec/g7221.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  presence.cpp
+D:\code\txCC\tools\sipphone\pjproject-2.8\pjmedia\include\pjmedia-codec/g7221.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  siptypes.cpp
+D:\code\txCC\tools\sipphone\pjproject-2.8\pjmedia\include\pjmedia-codec/g7221.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  types.cpp
+D:\code\txCC\tools\sipphone\pjproject-2.8\pjmedia\include\pjmedia-codec/g7221.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  正在生成代码...
+  pjsua2_lib.vcxproj -> D:\code\txCC\tools\sipphone\pjproject-2.8\pjsip\build\..\lib\pjsua2-lib-i386-Win32-vc14-Debug.lib

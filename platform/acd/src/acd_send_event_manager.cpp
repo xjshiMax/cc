@@ -101,7 +101,6 @@ void acd_send_event_manager::Initialize(uint32_t max_thread) {
         p_acd_send_event->Start();
         m_event_arrey.push_back(p_acd_send_event);
     }
-
     acd_tool::m_logger.WriteLog(LOG_LEVEL_DEBUG, __FILE__, __LINE__, __FUNCTION__,
                                 "start send_event_thread count:%d", max_thread);
 }

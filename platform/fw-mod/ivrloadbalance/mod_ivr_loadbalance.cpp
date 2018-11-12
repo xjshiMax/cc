@@ -34,6 +34,7 @@
 #include <map>
 #include <vector>
 #include <sstream>
+#include <algorithm>
 
 #define MAX_EMAIL_LEN 1024
 #define MAX_PHONE_LEN 1024
@@ -51,6 +52,8 @@
 #define CONF_KEY_CPU_THRESHOLD "CPU_THR"
 #define CONF_KEY_EMAIL         "EMAIL"
 #define CONF_KEY_PHONE         "PHONE"
+
+using namespace std;
 
 const char* g_config_path = "../conf/ivr_loadbalance/ivr_loadbalance.conf";
 
@@ -370,7 +373,7 @@ bool load_file(const char* file_path) {
         }
 
         std::string strSection = strLine.substr(firstPos + 1, lastPos - firstPos - 1);
-        transform(strSection.begin(), strSection.end(), strSection.begin(), ::tolower);
+        std::transform(strSection.begin(), strSection.end(), strSection.begin(), ::tolower);
 
         section_map sectionMap;
         fileMap[strSection] = sectionMap;
@@ -898,7 +901,8 @@ int32_t check_ivr_server(const char* ip_addr, uint32_t port, int32_t* cpu, int32
     //接收"Connect"消息
     bzero(&buffer, sizeof(buffer));
     getbytes = 9;
-    char* tmpbuf = buffer;
+    char* tmpbuf;
+tmpbuf = buffer;
 
     do {
         nbytes = recv(sockfd, tmpbuf, getbytes, 0);

@@ -180,7 +180,6 @@ bool INIFile::load_file(const char* file_name, bool casesensive) {
             _file_map[file_name] = sections;
         }
     }
-
     return _file_map.size();
 }
 

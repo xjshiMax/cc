@@ -1,0 +1,10 @@
+﻿  sip_100rel.c
+  sip_inv.c
+  sip_reg.c
+  sip_replaces.c
+..\src\pjsip-ua\sip_replaces.c(167): warning C4102: “TODO___provide_initialized_flag_for_each_endpoint”: 未引用的标签
+  sip_timer.c
+..\src\pjsip-ua\sip_timer.c(547): warning C4102: “TODO___provide_initialized_flag_for_each_endpoint”: 未引用的标签
+  sip_xfer.c
+  正在生成代码...
+  pjsip_ua.vcxproj -> D:\code\txCC\tools\sipphone\pjproject-2.8\pjsip\build\..\lib\pjsip-ua-i386-Win32-vc14-Debug.lib

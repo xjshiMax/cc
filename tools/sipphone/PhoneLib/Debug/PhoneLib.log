@@ -1,0 +1,9 @@
+﻿  phonelib.cpp
+d:\code\txcc\tools\sipphone\phonelib\phonelib.h(31): warning C4091: “typedef ”: 没有声明变量时忽略“PHONELIB_CALL_STATE”的左侧
+d:\code\txcc\tools\sipphone\phonelib\phonelib.h(45): warning C4091: “typedef ”: 没有声明变量时忽略“PHONELIB_REG_STATE”的左侧
+d:\code\txcc\tools\sipphone\phonelib\phonelib.h(52): warning C4091: “typedef ”: 没有声明变量时忽略“PHONELIB_NETWORK_STATE”的左侧
+d:\code\txcc\tools\sipphone\phonelib\phonelib.h(58): warning C4091: “typedef ”: 没有声明变量时忽略“PHONELIB_MEDIA_STATE”的左侧
+d:\code\txcc\tools\sipphone\phonelib\phonelib.h(67): warning C4091: “typedef ”: 没有声明变量时忽略“PHONELIB_DTMF_MODE”的左侧
+d:\code\txcc\tools\sipphone\pjproject-2.8\pjmedia\include\pjmedia-codec\g7221.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\code\txcc\tools\sipphone\phonelib\phonelib.cpp(930): error C3861: “pjsua_media_transports_attach”: 找不到标识符
+d:\code\txcc\tools\sipphone\phonelib\phonelib.cpp(2095): error C3861: “pjsua_media_transports_create”: 找不到标识符

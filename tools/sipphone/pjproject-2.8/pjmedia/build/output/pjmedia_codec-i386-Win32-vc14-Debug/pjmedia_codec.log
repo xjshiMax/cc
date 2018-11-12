@@ -1,0 +1,25 @@
+﻿  amr_sdp_match.c
+  audio_codecs.c
+D:\code\txCC\tools\sipphone\pjproject-2.8\pjmedia\include\pjmedia-codec/g7221.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  bcg729.c
+  ffmpeg_vid_codecs.c
+  g722.c
+  g7221.c
+D:\code\txCC\tools\sipphone\pjproject-2.8\pjmedia\include\pjmedia-codec/g7221.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  g7221_sdp_match.c
+  g722_dec.c
+  g722_enc.c
+  gsm.c
+  h263_packetizer.c
+  h264_packetizer.c
+  ilbc.c
+  ipp_codecs.c
+  l16.c
+  opencore_amr.c
+  opus.c
+  passthrough.c
+  silk.c
+  speex_codec.c
+  正在生成代码...
+  openh264.cpp
+  pjmedia_codec.vcxproj -> D:\code\txCC\tools\sipphone\pjproject-2.8\pjmedia\build\..\lib\pjmedia-codec-i386-Win32-vc14-Debug.lib

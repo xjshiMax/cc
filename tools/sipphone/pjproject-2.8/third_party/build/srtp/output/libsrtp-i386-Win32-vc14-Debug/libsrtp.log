@@ -1,0 +1,20 @@
+﻿  aes.c
+  aes_icm.c
+  cipher.c
+  null_cipher.c
+  auth.c
+  hmac.c
+  null_auth.c
+  sha1.c
+  alloc.c
+  crypto_kernel.c
+  key.c
+  datatypes.c
+  stat.c
+  rdb.c
+  rdbx.c
+  srtp_err.c
+  srtp.c
+  ekt.c
+  正在生成代码...
+  libsrtp.vcxproj -> D:\code\txCC\tools\sipphone\pjproject-2.8\third_party\build\srtp\..\..\lib\libsrtp-i386-Win32-vc14-Debug.lib

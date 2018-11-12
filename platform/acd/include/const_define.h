@@ -91,6 +91,7 @@ const char LOG_DIR[] = "log/";
 const char EVNET_LOG_DIR[] = "log/eventlog/";
 const char CALL_LOG_DIR[] = "log/calllog/";
 const char BGCC_LOG_CONFIG_FILE[] = "conf/bgcc.conf";
+
 #endif
 const char CONFIG_FILE[] = "acd.conf";
 const char LOG_FILE[] = "acdlog";

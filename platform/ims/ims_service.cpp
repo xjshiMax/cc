@@ -48,9 +48,7 @@ void sig_handler(int signum) {
 
 int main(int argc, char** argv) {
 
-printf("start.........\n");
     signal(SIGPIPE, SIG_IGN);
-printf("end.........\n");
     char const* const short_options = "vh";
     struct option long_options[] = {
         { "version", 0, NULL, 'v'},
@@ -86,6 +84,7 @@ printf("end.........\n");
     }
 
     NOTICE_LOG("ims server starting(version : %s , build time : %s" , "VERSION" , BUILD_DATE);
+printf("start.........\n");
 
     //open bgcc log
     std::string bgcclog = "bgcc.cfg";

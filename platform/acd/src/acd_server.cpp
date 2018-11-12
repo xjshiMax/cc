@@ -31,7 +31,7 @@ void acd_main_server::start_server(uint32_t port, uint32_t thread_num) {
                                    bgcc::SharedPointer<acd::acdapi>(new acd_server()))));
     threadpool.init(thread_num);
     bgcc::Server server(&servicemanager, &threadpool, port);
-
+printf("adfsssssssss......\n");
     if (0 != server.serve()) {
         acd_tool::m_logger.WriteLog(LOG_LEVEL_CRITICAL, __FILE__, __LINE__, __FUNCTION__,
                                     "acd main server listen exit");

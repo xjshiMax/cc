@@ -1,0 +1,16 @@
+﻿  main.c
+d:\code\txcc\tools\sipphone\pjproject-2.8\pjsip-apps\src\pjsua\pjsua_app.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\code\txCC\tools\sipphone\pjproject-2.8\pjmedia\include\pjmedia-codec/g7221.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  pjsua_app.c
+d:\code\txcc\tools\sipphone\pjproject-2.8\pjsip-apps\src\pjsua\pjsua_app.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\code\txCC\tools\sipphone\pjproject-2.8\pjmedia\include\pjmedia-codec/g7221.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  pjsua_app_cli.c
+D:\code\txCC\tools\sipphone\pjproject-2.8\pjmedia\include\pjmedia-codec/g7221.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  pjsua_app_common.c
+D:\code\txCC\tools\sipphone\pjproject-2.8\pjmedia\include\pjmedia-codec/g7221.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  pjsua_app_config.c
+D:\code\txCC\tools\sipphone\pjproject-2.8\pjmedia\include\pjmedia-codec/g7221.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  pjsua_app_legacy.c
+D:\code\txCC\tools\sipphone\pjproject-2.8\pjmedia\include\pjmedia-codec/g7221.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  正在生成代码...
+  pjsua.vcxproj -> D:\code\txCC\tools\sipphone\pjproject-2.8\pjsip-apps\build\..\bin\pjsua-i386-Win32-vc14-Debug.exe

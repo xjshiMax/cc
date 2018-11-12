@@ -31,8 +31,7 @@
 class ims_session_manager_t {
 private:
     pthread_rwlock_t session_table_lock;
-    std::map<ims::SessionIdT, ims_session_t*>
-    session_table;      /**< 这个session启动直接new出来，用的时候获取       */
+    std::map<ims::SessionIdT, ims_session_t*>session_table;      /**< 这个session启动直接new出来，用的时候获取       */
     pthread_rwlock_t channel_table_lock;
     /**< all channel,session增加、删除channel直接修改       */
     typedef boost::unordered_map<const char*, ims::SessionIdT, hashfunctor, ims_equal> map_str2int_t;

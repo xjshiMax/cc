@@ -1,0 +1,107 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(1189,5): warning MSB8012: TargetPath(D:\code\txCC\tools\sipphone\SIPPhoneTest\Release\SIPPhone.exe) does not match the Linker's OutputFile property value (D:\code\txCC\tools\sipphone\output\bin\SIPPhone.exe). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+PhoneLib.lib(phonelib.obj) : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/OPT:ICF”规范)
+LINK : warning LNK4098: 默认库“LIBCMTD”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pj_get_version，该符号在函数 "int __cdecl default_mod_on_rx_request(struct pjsip_rx_data *)" (?default_mod_on_rx_request@@YAHPAUpjsip_rx_data@@@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pj_ntohs，该符号在函数 "int __cdecl phonelib_init(int,char const *,int,bool)" (?phonelib_init@@YAHHPBDH_N@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pj_sockaddr_init，该符号在函数 "int __cdecl create_ipv6_media_transports(void)" (?create_ipv6_media_transports@@YAHXZ) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pj_sockaddr_get_len，该符号在函数 "int __cdecl create_ipv6_media_transports(void)" (?create_ipv6_media_transports@@YAHXZ) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pj_sock_socket，该符号在函数 "int __cdecl create_ipv6_media_transports(void)" (?create_ipv6_media_transports@@YAHXZ) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pj_sock_close，该符号在函数 "int __cdecl create_ipv6_media_transports(void)" (?create_ipv6_media_transports@@YAHXZ) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pj_sock_bind，该符号在函数 "int __cdecl create_ipv6_media_transports(void)" (?create_ipv6_media_transports@@YAHXZ) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pj_perror_1，该符号在函数 "void __cdecl on_ice_transport_error_f(int,enum pj_ice_strans_op,int,void *)" (?on_ice_transport_error_f@@YAXHW4pj_ice_strans_op@@HPAX@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pj_log_set_level，该符号在函数 "int __cdecl phonelib_init(int,char const *,int,bool)" (?phonelib_init@@YAHHPBDH_N@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pj_log_get_level，该符号在函数 "void __cdecl call_on_dtmf_callback_f(int,int)" (?call_on_dtmf_callback_f@@YAXHH@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pj_log_1，该符号在函数 "void __cdecl call_timeout_callback_f(struct pj_timer_heap_t *,struct pj_timer_entry *)" (?call_timeout_callback_f@@YAXPAUpj_timer_heap_t@@PAUpj_timer_entry@@@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pj_log_3，该符号在函数 "void __cdecl call_on_dtmf_callback_f(int,int)" (?call_on_dtmf_callback_f@@YAXHH@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pj_log_4，该符号在函数 "void __cdecl on_buddy_evsub_state_f(int,struct pjsip_evsub *,struct pjsip_event *)" (?on_buddy_evsub_state_f@@YAXHPAUpjsip_evsub@@PAUpjsip_event@@@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pj_list_insert_before，该符号在函数 _pj_list_push_back 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pj_str，该符号在函数 "void __cdecl call_timeout_callback_f(struct pj_timer_heap_t *,struct pj_timer_entry *)" (?call_timeout_callback_f@@YAXPAUpj_timer_heap_t@@PAUpj_timer_entry@@@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pj_strdup2_with_null，该符号在函数 "int __cdecl default_mod_on_rx_request(struct pjsip_rx_data *)" (?default_mod_on_rx_request@@YAHPAUpjsip_rx_data@@@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pj_pool_release，该符号在函数 "int __cdecl app_destroy(void)" (?app_destroy@@YAHXZ) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pj_timer_entry_init，该符号在函数 "int __cdecl phonelib_init(int,char const *,int,bool)" (?phonelib_init@@YAHHPBDH_N@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsip_method_cmp，该符号在函数 "int __cdecl default_mod_on_rx_request(struct pjsip_rx_data *)" (?default_mod_on_rx_request@@YAHPAUpjsip_rx_data@@@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsip_hdr_clone，该符号在函数 "int __cdecl default_mod_on_rx_request(struct pjsip_rx_data *)" (?default_mod_on_rx_request@@YAHPAUpjsip_rx_data@@@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsip_generic_string_hdr_create，该符号在函数 "int __cdecl default_mod_on_rx_request(struct pjsip_rx_data *)" (?default_mod_on_rx_request@@YAHPAUpjsip_rx_data@@@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsip_generic_string_hdr_init2，该符号在函数 "void __cdecl call_timeout_callback_f(struct pj_timer_heap_t *,struct pj_timer_entry *)" (?call_timeout_callback_f@@YAXPAUpj_timer_heap_t@@PAUpj_timer_entry@@@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsip_parse_uri，该符号在函数 "int __cdecl phonelib_make_call_to(int,char const *,int *,char const *)" (?phonelib_make_call_to@@YAHHPBDPAH0@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsip_event_str，该符号在函数 "void __cdecl on_buddy_evsub_state_f(int,struct pjsip_evsub *,struct pjsip_event *)" (?on_buddy_evsub_state_f@@YAXHPAUpjsip_evsub@@PAUpjsip_event@@@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsip_rx_data_get_info，该符号在函数 "void __cdecl on_buddy_evsub_state_f(int,struct pjsip_evsub *,struct pjsip_event *)" (?on_buddy_evsub_state_f@@YAXHPAUpjsip_evsub@@PAUpjsip_event@@@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsip_endpt_schedule_timer，该符号在函数 "int __cdecl on_playfile_done(struct pjmedia_port *,void *)" (?on_playfile_done@@YAHPAUpjmedia_port@@PAX@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsip_endpt_register_module，该符号在函数 "int __cdecl phonelib_init(int,char const *,int,bool)" (?phonelib_init@@YAHHPBDH_N@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsip_endpt_get_capability，该符号在函数 "int __cdecl default_mod_on_rx_request(struct pjsip_rx_data *)" (?default_mod_on_rx_request@@YAHPAUpjsip_rx_data@@@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsip_endpt_create_response，该符号在函数 "int __cdecl default_mod_on_rx_request(struct pjsip_rx_data *)" (?default_mod_on_rx_request@@YAHPAUpjsip_rx_data@@@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsip_endpt_send_response2，该符号在函数 "int __cdecl default_mod_on_rx_request(struct pjsip_rx_data *)" (?default_mod_on_rx_request@@YAHPAUpjsip_rx_data@@@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsip_tsx_send_msg，该符号在函数 "void __cdecl on_call_tsx_state_f(int,struct pjsip_transaction *,struct pjsip_event *)" (?on_call_tsx_state_f@@YAXHPAUpjsip_transaction@@PAUpjsip_event@@@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsip_evsub_get_state_name，该符号在函数 "void __cdecl on_buddy_evsub_state_f(int,struct pjsip_evsub *,struct pjsip_event *)" (?on_buddy_evsub_state_f@@YAXHPAUpjsip_evsub@@PAUpjsip_event@@@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjmedia_port_destroy，该符号在函数 "int __cdecl app_destroy(void)" (?app_destroy@@YAHXZ) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjmedia_aud_dev_get_info，该符号在函数 "int __cdecl phonelib_get_active_audio_device(struct phonelib_aud_dev_info *,struct phonelib_aud_dev_info *)" (?phonelib_get_active_audio_device@@YAHPAUphonelib_aud_dev_info@@0@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjmedia_aud_dev_lookup，该符号在函数 "int __cdecl phonelib_set_audio_device(char const *,char const *,char const *,char const *)" (?phonelib_set_audio_device@@YAHPBD000@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjmedia_tonegen_create2，该符号在函数 "int __cdecl phonelib_init(int,char const *,int,bool)" (?phonelib_init@@YAHHPBDH_N@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjmedia_tonegen_rewind，该符号在函数 "void __cdecl ring_stop(int)" (?ring_stop@@YAXH@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjmedia_tonegen_play，该符号在函数 "int __cdecl phonelib_init(int,char const *,int,bool)" (?phonelib_init@@YAHHPBDH_N@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjmedia_transport_udp_attach，该符号在函数 "int __cdecl create_ipv6_media_transports(void)" (?create_ipv6_media_transports@@YAHXZ) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjmedia_wav_player_set_eof_cb，该符号在函数 "int __cdecl phonelib_init(int,char const *,int,bool)" (?phonelib_init@@YAHHPBDH_N@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_logging_config_default，该符号在函数 "void __cdecl default_config(struct app_config *)" (?default_config@@YAXPAUapp_config@@@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_config_default，该符号在函数 "void __cdecl default_config(struct app_config *)" (?default_config@@YAXPAUapp_config@@@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_msg_data_init，该符号在函数 "void __cdecl call_timeout_callback_f(struct pj_timer_heap_t *,struct pj_timer_entry *)" (?call_timeout_callback_f@@YAXPAUpj_timer_heap_t@@PAUpj_timer_entry@@@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_create，该符号在函数 "int __cdecl phonelib_init(int,char const *,int,bool)" (?phonelib_init@@YAHHPBDH_N@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_init，该符号在函数 "int __cdecl phonelib_init(int,char const *,int,bool)" (?phonelib_init@@YAHHPBDH_N@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_start，该符号在函数 "int __cdecl phonelib_init(int,char const *,int,bool)" (?phonelib_init@@YAHHPBDH_N@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_destroy，该符号在函数 "int __cdecl app_destroy(void)" (?app_destroy@@YAHXZ) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_pool_create，该符号在函数 "int __cdecl phonelib_init(int,char const *,int,bool)" (?phonelib_init@@YAHHPBDH_N@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_get_pjsip_endpt，该符号在函数 "int __cdecl default_mod_on_rx_request(struct pjsip_rx_data *)" (?default_mod_on_rx_request@@YAHPAUpjsip_rx_data@@@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_get_pjmedia_endpt，该符号在函数 "int __cdecl create_ipv6_media_transports(void)" (?create_ipv6_media_transports@@YAHXZ) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_perror，该符号在函数 "int __cdecl default_mod_on_rx_request(struct pjsip_rx_data *)" (?default_mod_on_rx_request@@YAHPAUpjsip_rx_data@@@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_transport_config_default，该符号在函数 "void __cdecl default_config(struct app_config *)" (?default_config@@YAXPAUapp_config@@@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_transport_create，该符号在函数 "int __cdecl phonelib_init(int,char const *,int,bool)" (?phonelib_init@@YAHHPBDH_N@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_transport_get_info，该符号在函数 "int __cdecl phonelib_init(int,char const *,int,bool)" (?phonelib_init@@YAHHPBDH_N@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_acc_config_default，该符号在函数 "void __cdecl default_config(struct app_config *)" (?default_config@@YAXPAUapp_config@@@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_acc_is_valid，该符号在函数 "int __cdecl phonelib_remove_account(int)" (?phonelib_remove_account@@YAHH@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_acc_get_default，该符号在函数 "int __cdecl phonelib_init(int,char const *,int,bool)" (?phonelib_init@@YAHHPBDH_N@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_acc_add，该符号在函数 "int __cdecl phonelib_add_account(char const *,int,char const *,char const *,int,int *)" (?phonelib_add_account@@YAHPBDH00HPAH@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_acc_add_local，该符号在函数 "int __cdecl phonelib_init(int,char const *,int,bool)" (?phonelib_init@@YAHHPBDH_N@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_acc_del，该符号在函数 "int __cdecl phonelib_remove_account(int)" (?phonelib_remove_account@@YAHH@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_acc_set_online_status，该符号在函数 "int __cdecl phonelib_init(int,char const *,int,bool)" (?phonelib_init@@YAHHPBDH_N@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_acc_get_info，该符号在函数 "void __cdecl on_reg_state_f(int)" (?on_reg_state_f@@YAXH@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_call_get_count，该符号在函数 "int __cdecl on_playfile_done(struct pjmedia_port *,void *)" (?on_playfile_done@@YAHPAUpjmedia_port@@PAX@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_enum_calls，该符号在函数 "void __cdecl on_call_media_state_f(int)" (?on_call_media_state_f@@YAXH@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_call_make_call，该符号在函数 "int __cdecl phonelib_make_call_to(int,char const *,int *,char const *)" (?phonelib_make_call_to@@YAHHPBDPAH0@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_call_has_media，该符号在函数 "void __cdecl on_call_media_state_f(int)" (?on_call_media_state_f@@YAXH@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_call_get_conf_port，该符号在函数 "void __cdecl on_call_media_state_f(int)" (?on_call_media_state_f@@YAXH@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_call_get_info，该符号在函数 "void __cdecl on_call_media_state_f(int)" (?on_call_media_state_f@@YAXH@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_call_answer，该符号在函数 "void __cdecl on_incoming_call_f(int,int,struct pjsip_rx_data *)" (?on_incoming_call_f@@YAXHHPAUpjsip_rx_data@@@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_call_hangup，该符号在函数 "void __cdecl call_timeout_callback_f(struct pj_timer_heap_t *,struct pj_timer_entry *)" (?call_timeout_callback_f@@YAXPAUpj_timer_heap_t@@PAUpj_timer_entry@@@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_call_set_hold，该符号在函数 "int __cdecl phonelib_hold_call(int)" (?phonelib_hold_call@@YAHH@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_call_reinvite，该符号在函数 "int __cdecl phonelib_unhold_call(int)" (?phonelib_unhold_call@@YAHH@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_call_dial_dtmf，该符号在函数 "int __cdecl phonelib_send_dtmf(int,char)" (?phonelib_send_dtmf@@YAHHD@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_call_hangup_all，该符号在函数 "void __cdecl hangup_timeout_callback(struct pj_timer_heap_t *,struct pj_timer_entry *)" (?hangup_timeout_callback@@YAXPAUpj_timer_heap_t@@PAUpj_timer_entry@@@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_buddy_config_default，该符号在函数 "void __cdecl default_config(struct app_config *)" (?default_config@@YAXPAUapp_config@@@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_buddy_get_info，该符号在函数 "void __cdecl on_buddy_state_f(int)" (?on_buddy_state_f@@YAXH@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_buddy_add，该符号在函数 "int __cdecl phonelib_init(int,char const *,int,bool)" (?phonelib_init@@YAHHPBDH_N@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_media_config_default，该符号在函数 "void __cdecl default_config(struct app_config *)" (?default_config@@YAXPAUapp_config@@@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_conf_add_port，该符号在函数 "int __cdecl phonelib_init(int,char const *,int,bool)" (?phonelib_init@@YAHHPBDH_N@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_conf_remove_port，该符号在函数 "int __cdecl app_destroy(void)" (?app_destroy@@YAHXZ) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_conf_connect，该符号在函数 "void __cdecl on_call_media_state_f(int)" (?on_call_media_state_f@@YAXH@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_conf_disconnect，该符号在函数 "void __cdecl ring_stop(int)" (?ring_stop@@YAXH@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_conf_adjust_tx_level，该符号在函数 "int __cdecl phonelib_adjust_tx_level(float)" (?phonelib_adjust_tx_level@@YAHM@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_conf_adjust_rx_level，该符号在函数 "int __cdecl phonelib_adjust_rx_level(float)" (?phonelib_adjust_rx_level@@YAHM@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_conf_get_signal_level，该符号在函数 "int __cdecl phonelib_get_last_rx_tx_level(unsigned int *,unsigned int *)" (?phonelib_get_last_rx_tx_level@@YAHPAI0@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_player_create，该符号在函数 "int __cdecl phonelib_init(int,char const *,int,bool)" (?phonelib_init@@YAHHPBDH_N@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_player_get_conf_port，该符号在函数 "int __cdecl phonelib_init(int,char const *,int,bool)" (?phonelib_init@@YAHHPBDH_N@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_player_get_port，该符号在函数 "int __cdecl phonelib_init(int,char const *,int,bool)" (?phonelib_init@@YAHHPBDH_N@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_player_set_pos，该符号在函数 "int __cdecl on_playfile_done(struct pjmedia_port *,void *)" (?on_playfile_done@@YAHPAUpjmedia_port@@PAX@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_recorder_create，该符号在函数 "int __cdecl phonelib_init(int,char const *,int,bool)" (?phonelib_init@@YAHHPBDH_N@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_recorder_get_conf_port，该符号在函数 "int __cdecl phonelib_init(int,char const *,int,bool)" (?phonelib_init@@YAHHPBDH_N@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_enum_aud_devs，该符号在函数 "int __cdecl phonelib_get_audio_device_list(struct phonelib_aud_dev_info * const,unsigned int *)" (?phonelib_get_audio_device_list@@YAHQAUphonelib_aud_dev_info@@PAI@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_get_snd_dev，该符号在函数 "int __cdecl phonelib_get_active_audio_device(struct phonelib_aud_dev_info *,struct phonelib_aud_dev_info *)" (?phonelib_get_active_audio_device@@YAHPAUphonelib_aud_dev_info@@0@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_set_snd_dev，该符号在函数 "int __cdecl phonelib_init(int,char const *,int,bool)" (?phonelib_init@@YAHHPBDH_N@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_set_null_snd_dev，该符号在函数 "int __cdecl phonelib_init(int,char const *,int,bool)" (?phonelib_init@@YAHHPBDH_N@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_enum_codecs，该符号在函数 "int __cdecl phonelib_set_codecs(char const *)" (?phonelib_set_codecs@@YAHPBD@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_codec_set_priority，该符号在函数 "int __cdecl phonelib_init(int,char const *,int,bool)" (?phonelib_init@@YAHHPBDH_N@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_media_transports_create，该符号在函数 "int __cdecl phonelib_init(int,char const *,int,bool)" (?phonelib_init@@YAHHPBDH_N@Z) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2019: 无法解析的外部符号 _pjsua_media_transports_attach，该符号在函数 "int __cdecl create_ipv6_media_transports(void)" (?create_ipv6_media_transports@@YAHXZ) 中被引用
+PhoneLib.lib(phonelib.obj) : error LNK2001: 无法解析的外部符号 _PJ_AF_INET6
+PhoneLib.lib(phonelib.obj) : error LNK2001: 无法解析的外部符号 _PJ_SOCK_DGRAM
+PhoneLib.lib(phonelib.obj) : error LNK2001: 无法解析的外部符号 _pjsip_ack_method
+PhoneLib.lib(phonelib.obj) : error LNK2001: 无法解析的外部符号 _pjsip_notify_method
+../output/bin/SIPPhone.exe : fatal error LNK1120: 103 个无法解析的外部命令

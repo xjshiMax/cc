@@ -293,7 +293,6 @@ int32_t main(int32_t argc, char* argv[]) {
         { "version", 0, NULL, 'v'},
         { "help", 0, NULL, 'h'},
     };
-printf("start ivr server........\n");
 
     // is version command
     char ch = 0;
@@ -352,6 +351,8 @@ printf("start ivr server........\n");
 
     //¼ÓÔØÅäÖÃÎÄ¼þ
     if (g_conf_manager->load_conf() != SUCCESS) {
+printf("start ivr server FAILURE........\n");
+
         return FAILURE;
     }
 

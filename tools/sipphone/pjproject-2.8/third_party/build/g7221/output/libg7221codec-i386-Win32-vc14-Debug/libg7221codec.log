@@ -1,0 +1,42 @@
+﻿  basic_op.c
+  common.c
+..\..\g7221\common\common.c : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\code\txcc\tools\sipphone\pjproject-2.8\third_party\g7221\common\defs.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\code\txcc\tools\sipphone\pjproject-2.8\third_party\g7221\common\huff_def.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\code\txcc\tools\sipphone\pjproject-2.8\third_party\g7221\common\huff_tab.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\code\txcc\tools\sipphone\pjproject-2.8\third_party\g7221\common\tables.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  huff_tab.c
+..\..\g7221\common\huff_tab.c : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\code\txcc\tools\sipphone\pjproject-2.8\third_party\g7221\common\defs.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\code\txcc\tools\sipphone\pjproject-2.8\third_party\g7221\common\huff_def.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  tables.c
+..\..\g7221\common\tables.c : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\code\txcc\tools\sipphone\pjproject-2.8\third_party\g7221\common\defs.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  coef2sam.c
+..\..\g7221\decode\coef2sam.c : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\code\txCC\tools\sipphone\pjproject-2.8\third_party\g7221\common\defs.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\code\txCC\tools\sipphone\pjproject-2.8\third_party\g7221\common\tables.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  dct4_s.c
+..\..\g7221\decode\dct4_s.c : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\code\txCC\tools\sipphone\pjproject-2.8\third_party\g7221\common\defs.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\code\txcc\tools\sipphone\pjproject-2.8\third_party\g7221\decode\dct4_s.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  decoder.c
+..\..\g7221\decode\decoder.c : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\code\txCC\tools\sipphone\pjproject-2.8\third_party\g7221\common\defs.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\code\txCC\tools\sipphone\pjproject-2.8\third_party\g7221\common\tables.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\code\txCC\tools\sipphone\pjproject-2.8\third_party\g7221\common\huff_def.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  dct4_a.c
+..\..\g7221\encode\dct4_a.c : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\code\txCC\tools\sipphone\pjproject-2.8\third_party\g7221\common\defs.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\code\txcc\tools\sipphone\pjproject-2.8\third_party\g7221\encode\dct4_a.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  encoder.c
+..\..\g7221\encode\encoder.c : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\code\txCC\tools\sipphone\pjproject-2.8\third_party\g7221\common\defs.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\code\txCC\tools\sipphone\pjproject-2.8\third_party\g7221\common\huff_def.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\code\txCC\tools\sipphone\pjproject-2.8\third_party\g7221\common\tables.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  sam2coef.c
+..\..\g7221\encode\sam2coef.c : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\code\txCC\tools\sipphone\pjproject-2.8\third_party\g7221\common\defs.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\code\txCC\tools\sipphone\pjproject-2.8\third_party\g7221\common\tables.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  正在生成代码...
+  libg7221codec.vcxproj -> D:\code\txCC\tools\sipphone\pjproject-2.8\third_party\build\g7221\..\..\lib\libg7221codec-i386-Win32-vc14-Debug.lib

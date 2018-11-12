@@ -1,0 +1,13 @@
+﻿  errno.c
+  evsub.c
+  evsub_msg.c
+  iscomposing.c
+  mwi.c
+  pidf.c
+  presence.c
+  presence_body.c
+  publishc.c
+  rpid.c
+  xpidf.c
+  正在生成代码...
+  pjsip_simple.vcxproj -> D:\code\txCC\tools\sipphone\pjproject-2.8\pjsip\build\..\lib\pjsip-simple-i386-Win32-vc14-Debug.lib

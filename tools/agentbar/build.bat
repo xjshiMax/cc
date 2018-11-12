@@ -2,8 +2,8 @@
 if exist output rd /q /s output
 if not exist output mkdir output
 
-set LIBINIT="C:\Program Files\Microsoft Visual Studio .NET 2003\Common7\Tools\vsvars32.bat"
-set CMD_VC2003="C:\Program Files\Microsoft Visual Studio .NET 2003\Common7\IDE\Devenv"
+set LIBINIT="C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\vsvars32.bat"
+set CMD_VC2003="C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Devenv"
 
 rem "build image plugin "
 %CMD_VC2003% "ccl_imgex\ccl_imgex.vcproj" /rebuild Release /project ccl_imgex

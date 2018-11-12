@@ -362,6 +362,7 @@ bool AgentProxy::Init() {
     _apClientHandle = 0;
     _ACDPort = 0;
     _ctiService = AP_CONNACD_MASTER;
+
 #ifndef _WIN32
     _mapAgentIdData.resize(8000);
 #endif
@@ -400,7 +401,6 @@ bool AgentProxy::Init() {
         _ApEventQ[i]._qEventRoute.clear();
         i++;
     }
-
     //创建连接acd的客户端对象，如果主acd连不上，则创建连接备acd的客户端对象
     if (!CreateClient(_strMainACDIP, _AcdMainPort, _apClientConnNum)) {
         if (!CreateClient(_strBackACDIP, _AcdBackupPort, _apClientConnNum)) {
@@ -435,10 +435,10 @@ bool AgentProxy::Init() {
     //创建监听客户端的Server
     _pApServer = new ApServer();
 
-    if (!_pApServer->InitApServer(_apHost, _apListenPort, _apServerThreadPoolNum)) {
-        BGCC_WARN("ap", "Fail to Init ApServer!");
-        return false;
-    }
+    // if (!_pApServer->InitApServer(_apHost, _apListenPort, _apServerThreadPoolNum)) {
+    //     BGCC_WARN("ap", "Fail to Init ApServer!");
+    //     return false;
+    // }
 
     return true;
 }

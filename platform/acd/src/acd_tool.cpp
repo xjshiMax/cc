@@ -51,6 +51,8 @@ acd_ims* acd_tool::p_m_acd_ims = NULL;
 acd_main_server acd_tool::m_main_server;
 
 void acd_tool::init_log() {
+    printf("init_log\n");
+
     m_logger.Initialize(m_config.m_log_count, m_config.m_log_filecount, LOG_DIR, LOG_FILE, ACD_VERSION,
                         true, m_config.m_log_level);
     m_eventlogger.Initialize(m_config.m_eventlog_count, m_config.m_eventlog_filecount, EVNET_LOG_DIR,

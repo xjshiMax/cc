@@ -97,8 +97,7 @@ private:
     ims::SessionIdT id;
     uint64_t create_time;         /**< 创建时间       */
     uint32_t fs_no;               /**< 所属Freeswitch编号      */
-    boost::object_pool<ims_channel_t>*
-    pims_channel_pool;         /**<用于创建session内自己都对象,字符串、通道etc. */
+    boost::object_pool<ims_channel_t>* pims_channel_pool;         /**<用于创建session内自己都对象,字符串、通道etc. */
     boost::object_pool<ims_call_t>* pims_call_pool;
     boost::object_pool<std::string>* pstring_pool;
     ims::ReqIdT reqid;            /**< 所属客户端       */

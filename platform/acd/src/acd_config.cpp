@@ -45,7 +45,7 @@ bool acd_config::LoadConf() {
         m_dbusername = conf["mysql"]["dbusername"].to_cstr();
         m_dbpasswd = conf["mysql"]["dbpasswd"].to_cstr();
         m_dbname = conf["mysql"]["dbname"].to_cstr();
-
+printf("%s,%d,%s\n",m_dbhost.c_str(),m_dbport,m_dbusername.c_str());
         // log para
         m_log_count = conf["log"]["log_count"].to_int32();
         m_log_filecount = conf["log"]["log_filecount"].to_int32();
@@ -129,6 +129,8 @@ bool acd_config::LoadSkills() {
             ret = false;
         }
     } else {
+        int status=mysql_errno(conn);
+        printf("%d,%s\n",status,mysql_error(conn));
         cout << "read config, load skills, open mysql error!" << endl;
         ret = false;
     }

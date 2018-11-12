@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5A7A29A0-C1AF-4BF9-9B7C-941ABF6E2942}</ProjectGuid>
+    <Keyword>MFCActiveXProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.25431.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\bin\</OutDir>
+    <IntDir>Debug\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\bin\</OutDir>
+    <IntDir>Release\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.;..\..\..\interface\output\acd\include;..\..\..\interface\output\bgcc\include;..\..\..\interface\output\third\json-cpp\include;..\..\sipphone\output\sdk\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>version.lib;acdd.lib;bgccd.lib;json-cppd_0.5.0.lib;PhoneLib-Debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)CCAgentBard.ocx</OutputFile>
+      <AdditionalLibraryDirectories>..\..\..\interface\output\acd\lib\win32;..\..\..\interface\output\bgcc\lib;..\..\..\interface\output\third\json-cpp\lib\win32;..\..\sipphone\output\sdk\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>.\CCAgentBar.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <ImportLibrary>$(OutDir)CCAgentBar.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <TypeLibraryName>$(IntDir)$(ProjectName).tlb</TypeLibraryName>
+      <HeaderFileName>$(ProjectName)idl.h</HeaderFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>执行注册</Message>
+      <Command>regsvr32 /s /c "$(TargetPath)"</Command>
+    </PostBuildEvent>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;..\..\..\interface\output;..\..\..\interface\output\acd\include;..\..\..\interface\output\bgcc\include;..\..\..\interface\output\third\json-cpp\include;..\..\sipphone\output\sdk\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>version.lib;acd.lib;bgcc.lib;json-cpp_0.5.0.lib;PhoneLib-Release.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)CCAgentBar.ocx</OutputFile>
+      <AdditionalLibraryDirectories>..\..\..\interface\output\acd\lib\win32;..\..\..\interface\output\bgcc\lib;..\..\..\interface\output\third\json-cpp\lib\win32;..\..\sipphone\output\sdk\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>.\CCAgentBar.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <ImportLibrary>$(OutDir)CCAgentBar.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <TypeLibraryName>$(IntDir)$(ProjectName).tlb</TypeLibraryName>
+      <HeaderFileName>$(ProjectName)idl.h</HeaderFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>执行注册</Message>
+      <Command>regsvr32 /s /c "$(TargetPath)"</Command>
+    </PostBuildEvent>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AcdClient.cpp" />
+    <ClCompile Include="ButtonEx.cpp" />
+    <ClCompile Include="ButtonIcon.cpp" />
+    <ClCompile Include="ButtonXP.cpp" />
+    <ClCompile Include="CallOut.cpp" />
+    <ClCompile Include="CCAgentBar.cpp" />
+    <ClCompile Include="CCAgentBarCtrl.cpp" />
+    <ClCompile Include="CCAgentBarPropPage.cpp" />
+    <ClCompile Include="CCBar.cpp" />
+    <ClCompile Include="EditEx.cpp" />
+    <ClCompile Include="ImgMgr.cpp" />
+    <ClCompile Include="Info.cpp" />
+    <ClCompile Include="Logger.cpp" />
+    <ClCompile Include="SipphoneClient.cpp" />
+    <ClCompile Include="StaticEx.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Tool.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\interface\acd\bidl\acd.bidl" />
+    <None Include="..\..\..\interface\acd\bidl\acdcallback.bidl" />
+    <None Include="..\..\..\interface\acd\bidl\acdcommon.bidl" />
+    <None Include="CCAgentBar.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="CCAgentBar.idl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AcdClient.h" />
+    <ClInclude Include="ButtonEx.h" />
+    <ClInclude Include="ButtonIcon.h" />
+    <ClInclude Include="ButtonXP.h" />
+    <ClInclude Include="CallOut.h" />
+    <ClInclude Include="CCAgentBar.h" />
+    <ClInclude Include="CCAgentBarCtrl.h" />
+    <ClInclude Include="CCAgentBarPropPage.h" />
+    <ClInclude Include="CCBar.h" />
+    <ClInclude Include="ConstDef.h" />
+    <ClInclude Include="EditEx.h" />
+    <ClInclude Include="ImgMgr.h" />
+    <ClInclude Include="Info.h" />
+    <ClInclude Include="Logger.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="SipphoneClient.h" />
+    <ClInclude Include="StaticEx.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Tool.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="CCAgentBar.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\CCAgentBarCtrl.bmp" />
+    <Image Include="res\分隔符.bmp" />
+    <Image Include="res\提示_信息.ico" />
+    <Image Include="res\提示_警告.ico" />
+    <Image Include="res\提示_错误.ico" />
+    <Image Include="res\无效_休息.bmp" />
+    <Image Include="res\无效_保持.bmp" />
+    <Image Include="res\无效_保持接回.bmp" />
+    <Image Include="res\无效_呼出.bmp" />
+    <Image Include="res\无效_呼出就绪.bmp" />
+    <Image Include="res\无效_咨询.bmp" />
+    <Image Include="res\无效_咨询会议.bmp" />
+    <Image Include="res\无效_咨询接回.bmp" />
+    <Image Include="res\无效_咨询转移.bmp" />
+    <Image Include="res\无效_技能切换.bmp" />
+    <Image Include="res\无效_拨打分机.bmp" />
+    <Image Include="res\无效_挂断.bmp" />
+    <Image Include="res\无效_接听.bmp" />
+    <Image Include="res\无效_接听就绪.bmp" />
+    <Image Include="res\无效_签入.bmp" />
+    <Image Include="res\无效_签出.bmp" />
+    <Image Include="res\无效_通话转移.bmp" />
+    <Image Include="res\有效_休息.bmp" />
+    <Image Include="res\有效_保持.bmp" />
+    <Image Include="res\有效_保持接回.bmp" />
+    <Image Include="res\有效_呼出.bmp" />
+    <Image Include="res\有效_呼出就绪.bmp" />
+    <Image Include="res\有效_咨询.bmp" />
+    <Image Include="res\有效_咨询会议.bmp" />
+    <Image Include="res\有效_咨询接回.bmp" />
+    <Image Include="res\有效_咨询转移.bmp" />
+    <Image Include="res\有效_技能切换.bmp" />
+    <Image Include="res\有效_拨打分机.bmp" />
+    <Image Include="res\有效_挂断.bmp" />
+    <Image Include="res\有效_接听.bmp" />
+    <Image Include="res\有效_接听就绪.bmp" />
+    <Image Include="res\有效_签入.bmp" />
+    <Image Include="res\有效_签出.bmp" />
+    <Image Include="res\有效_通话转移.bmp" />
+    <Image Include="res\鼠标经过_休息.bmp" />
+    <Image Include="res\鼠标经过_保持.bmp" />
+    <Image Include="res\鼠标经过_保持接回.bmp" />
+    <Image Include="res\鼠标经过_呼出.bmp" />
+    <Image Include="res\鼠标经过_呼出就绪.bmp" />
+    <Image Include="res\鼠标经过_咨询.bmp" />
+    <Image Include="res\鼠标经过_咨询会议.bmp" />
+    <Image Include="res\鼠标经过_咨询接回.bmp" />
+    <Image Include="res\鼠标经过_咨询转移.bmp" />
+    <Image Include="res\鼠标经过_技能切换.bmp" />
+    <Image Include="res\鼠标经过_拨打分机.bmp" />
+    <Image Include="res\鼠标经过_挂断.bmp" />
+    <Image Include="res\鼠标经过_接听.bmp" />
+    <Image Include="res\鼠标经过_接听就绪.bmp" />
+    <Image Include="res\鼠标经过_签入.bmp" />
+    <Image Include="res\鼠标经过_签出.bmp" />
+    <Image Include="res\鼠标经过_通话转移.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="CCAgentBar.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

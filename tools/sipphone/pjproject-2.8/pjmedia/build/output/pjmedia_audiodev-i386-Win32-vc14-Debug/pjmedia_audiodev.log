@@ -1,0 +1,10 @@
+﻿  audiodev.c
+  audiotest.c
+  bdimad_dev.c
+  errno.c
+  legacy_dev.c
+  null_dev.c
+  pa_dev.c
+  wmme_dev.c
+  正在生成代码...
+  pjmedia_audiodev.vcxproj -> D:\code\txCC\tools\sipphone\pjproject-2.8\pjmedia\build\..\lib\pjmedia-audiodev-i386-Win32-vc14-Debug.lib

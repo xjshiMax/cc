@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+    <Filter Include="资源文件\img">
+      <UniqueIdentifier>{41f54dec-66f9-4415-a4c8-1630d1786812}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ccl_imgex.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="img\BACKGROUND.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\分隔条.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\无效_休息.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\无效_保持.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\无效_保持接回.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\无效_呼出.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\无效_呼出就绪.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\无效_咨询.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\无效_咨询会议.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\无效_咨询接回.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\无效_咨询转移.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\无效_技能切换.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\无效_拨打分机.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\无效_挂断.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\无效_接听.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\无效_接听就绪.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\无效_签入.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\无效_签出.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\无效_通话转移.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\有效_休息.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\有效_保持.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\有效_保持接回.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\有效_呼出.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\有效_呼出就绪.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\有效_咨询.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\有效_咨询会议.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\有效_咨询接回.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\有效_咨询转移.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\有效_技能切换.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\有效_拨打分机.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\有效_挂断.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\有效_接听.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\有效_接听就绪.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\有效_签入.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\有效_签出.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\有效_通话转移.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\鼠标经过_休息.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\鼠标经过_保持.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\鼠标经过_保持接回.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\鼠标经过_呼出.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\鼠标经过_呼出就绪.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\鼠标经过_咨询.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\鼠标经过_咨询会议.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\鼠标经过_咨询接回.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\鼠标经过_咨询转移.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\鼠标经过_技能切换.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\鼠标经过_拨打分机.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\鼠标经过_挂断.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\鼠标经过_接听.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\鼠标经过_接听就绪.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\鼠标经过_签入.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\鼠标经过_签出.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+    <Image Include="img\鼠标经过_通话转移.bmp">
+      <Filter>资源文件\img</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

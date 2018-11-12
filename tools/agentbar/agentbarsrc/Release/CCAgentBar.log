@@ -1,0 +1,36 @@
+﻿  AcdClient.cpp
+C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\atlmfc\include\afx.h(38): warning C4996: 'MBCS_Support_Deprecated_In_MFC': MBCS support in MFC is deprecated and may be removed in a future version of MFC.
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\atlmfc\include\afx.h(33): note: 参见“MBCS_Support_Deprecated_In_MFC”的声明
+D:\code\txCC\tools\sipphone\output\sdk\inc\phonelib.h(31): warning C4091: “typedef ”: 没有声明变量时忽略“PHONELIB_CALL_STATE”的左侧
+D:\code\txCC\tools\sipphone\output\sdk\inc\phonelib.h(45): warning C4091: “typedef ”: 没有声明变量时忽略“PHONELIB_REG_STATE”的左侧
+D:\code\txCC\tools\sipphone\output\sdk\inc\phonelib.h(52): warning C4091: “typedef ”: 没有声明变量时忽略“PHONELIB_NETWORK_STATE”的左侧
+D:\code\txCC\tools\sipphone\output\sdk\inc\phonelib.h(58): warning C4091: “typedef ”: 没有声明变量时忽略“PHONELIB_MEDIA_STATE”的左侧
+D:\code\txCC\tools\sipphone\output\sdk\inc\phonelib.h(67): warning C4091: “typedef ”: 没有声明变量时忽略“PHONELIB_DTMF_MODE”的左侧
+  CCAgentBarCtrl.cpp
+C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\atlmfc\include\afx.h(38): warning C4996: 'MBCS_Support_Deprecated_In_MFC': MBCS support in MFC is deprecated and may be removed in a future version of MFC.
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\atlmfc\include\afx.h(33): note: 参见“MBCS_Support_Deprecated_In_MFC”的声明
+D:\code\txCC\tools\sipphone\output\sdk\inc\phonelib.h(31): warning C4091: “typedef ”: 没有声明变量时忽略“PHONELIB_CALL_STATE”的左侧
+D:\code\txCC\tools\sipphone\output\sdk\inc\phonelib.h(45): warning C4091: “typedef ”: 没有声明变量时忽略“PHONELIB_REG_STATE”的左侧
+D:\code\txCC\tools\sipphone\output\sdk\inc\phonelib.h(52): warning C4091: “typedef ”: 没有声明变量时忽略“PHONELIB_NETWORK_STATE”的左侧
+D:\code\txCC\tools\sipphone\output\sdk\inc\phonelib.h(58): warning C4091: “typedef ”: 没有声明变量时忽略“PHONELIB_MEDIA_STATE”的左侧
+D:\code\txCC\tools\sipphone\output\sdk\inc\phonelib.h(67): warning C4091: “typedef ”: 没有声明变量时忽略“PHONELIB_DTMF_MODE”的左侧
+  CCBar.cpp
+C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\atlmfc\include\afx.h(38): warning C4996: 'MBCS_Support_Deprecated_In_MFC': MBCS support in MFC is deprecated and may be removed in a future version of MFC.
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\atlmfc\include\afx.h(33): note: 参见“MBCS_Support_Deprecated_In_MFC”的声明
+D:\code\txCC\tools\sipphone\output\sdk\inc\phonelib.h(31): warning C4091: “typedef ”: 没有声明变量时忽略“PHONELIB_CALL_STATE”的左侧
+D:\code\txCC\tools\sipphone\output\sdk\inc\phonelib.h(45): warning C4091: “typedef ”: 没有声明变量时忽略“PHONELIB_REG_STATE”的左侧
+D:\code\txCC\tools\sipphone\output\sdk\inc\phonelib.h(52): warning C4091: “typedef ”: 没有声明变量时忽略“PHONELIB_NETWORK_STATE”的左侧
+D:\code\txCC\tools\sipphone\output\sdk\inc\phonelib.h(58): warning C4091: “typedef ”: 没有声明变量时忽略“PHONELIB_MEDIA_STATE”的左侧
+D:\code\txCC\tools\sipphone\output\sdk\inc\phonelib.h(67): warning C4091: “typedef ”: 没有声明变量时忽略“PHONELIB_DTMF_MODE”的左侧
+  SipphoneClient.cpp
+C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\atlmfc\include\afx.h(38): warning C4996: 'MBCS_Support_Deprecated_In_MFC': MBCS support in MFC is deprecated and may be removed in a future version of MFC.
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\atlmfc\include\afx.h(33): note: 参见“MBCS_Support_Deprecated_In_MFC”的声明
+D:\code\txCC\tools\sipphone\output\sdk\inc\phonelib.h(31): warning C4091: “typedef ”: 没有声明变量时忽略“PHONELIB_CALL_STATE”的左侧
+D:\code\txCC\tools\sipphone\output\sdk\inc\phonelib.h(45): warning C4091: “typedef ”: 没有声明变量时忽略“PHONELIB_REG_STATE”的左侧
+D:\code\txCC\tools\sipphone\output\sdk\inc\phonelib.h(52): warning C4091: “typedef ”: 没有声明变量时忽略“PHONELIB_NETWORK_STATE”的左侧
+D:\code\txCC\tools\sipphone\output\sdk\inc\phonelib.h(58): warning C4091: “typedef ”: 没有声明变量时忽略“PHONELIB_MEDIA_STATE”的左侧
+D:\code\txCC\tools\sipphone\output\sdk\inc\phonelib.h(67): warning C4091: “typedef ”: 没有声明变量时忽略“PHONELIB_DTMF_MODE”的左侧
+  正在生成代码...
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(1189,5): warning MSB8012: TargetPath(D:\code\txCC\tools\agentbar\agentbarsrc\..\bin\CCAgentBar.dll) does not match the Linker's OutputFile property value (D:\code\txCC\tools\agentbar\bin\CCAgentBar.ocx). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(1190,5): warning MSB8012: TargetExt(.dll) does not match the Linker's OutputFile property value (.ocx). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+LINK : fatal error LNK1181: 无法打开输入文件“acd.lib”

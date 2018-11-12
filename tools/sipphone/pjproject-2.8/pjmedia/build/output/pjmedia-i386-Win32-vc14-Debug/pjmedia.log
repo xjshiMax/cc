@@ -1,0 +1,83 @@
+﻿  alaw_ulaw.c
+  alaw_ulaw_table.c
+  audiodev.c
+  avi_player.c
+  bidirectional.c
+  clock_thread.c
+  codec.c
+  conference.c
+  conf_switch.c
+  converter.c
+  converter_libswscale.c
+  converter_libyuv.c
+  delaybuf.c
+  echo_common.c
+  echo_port.c
+  echo_speex.c
+  echo_suppress.c
+  echo_webrtc.c
+  endpoint.c
+  errno.c
+  正在生成代码...
+  正在编译...
+  event.c
+  ffmpeg_util.c
+  format.c
+  g711.c
+  jbuf.c
+  master_port.c
+  mem_capture.c
+  mem_player.c
+  null_port.c
+  plc_common.c
+  port.c
+  resample_libsamplerate.c
+  resample_port.c
+  resample_resample.c
+  resample_speex.c
+  rtcp.c
+  rtcp_fb.c
+  rtcp_xr.c
+  rtp.c
+  sdp.c
+..\src\pjmedia\sdp.c(509): warning C4457: “attr”的声明隐藏了函数参数
+  ..\src\pjmedia\sdp.c(478): note: 参见“attr”的声明
+..\src\pjmedia\sdp.c(1100): warning C4102: “TODO___PARSE_SDP_CONN_ADDRESS_SUBFIELDS”: 未引用的标签
+  正在生成代码...
+  正在编译...
+  sdp_cmp.c
+  sdp_neg.c
+..\src\pjmedia\sdp_neg.c(747): warning C4102: “TODO___CHECK_SDP_NEGOTIATION_WHEN_ASYMETRIC_MEDIA_IS_ALLOWED”: 未引用的标签
+  silencedet.c
+  sound_legacy.c
+  sound_port.c
+  splitcomb.c
+  stereo_port.c
+  stream.c
+  stream_common.c
+  stream_info.c
+  tonegen.c
+  transport_adapter_sample.c
+  transport_ice.c
+..\src\pjmedia\transport_ice.c(769): warning C4456: “attr”的声明隐藏了上一个本地声明
+  ..\src\pjmedia\transport_ice.c(519): note: 参见“attr”的声明
+  transport_loop.c
+  transport_srtp.c
+  transport_udp.c
+  types.c
+  videodev.c
+  vid_codec.c
+  vid_codec_util.c
+  正在生成代码...
+  正在编译...
+  vid_port.c
+  vid_stream.c
+  vid_stream_info.c
+  vid_tee.c
+  wave.c
+  wav_player.c
+  wav_playlist.c
+  wav_writer.c
+  wsola.c
+  正在生成代码...
+  pjmedia.vcxproj -> D:\code\txCC\tools\sipphone\pjproject-2.8\pjmedia\build\..\lib\pjmedia-i386-Win32-vc14-Debug.lib

@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+    <Filter Include="资源文件\picture">
+      <UniqueIdentifier>{1bdda491-a569-4d2b-bc94-59a1438e7b7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Control">
+      <UniqueIdentifier>{2169ecfd-56f8-4354-88b0-26b445504684}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{f66ba3ac-355f-489a-9908-7d0197b58919}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bgcc">
+      <UniqueIdentifier>{d0448ab1-ef17-42de-8eb4-2c44ac938ea9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AcdClient.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CallOut.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CCAgentBar.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CCAgentBarCtrl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CCAgentBarPropPage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CCBar.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ImgMgr.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Info.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SipphoneClient.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Tool.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ButtonEx.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="ButtonIcon.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="ButtonXP.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="EditEx.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticEx.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CCAgentBar.def">
+      <Filter>源文件</Filter>
+    </None>
+    <None Include="..\..\..\interface\acd\bidl\acd.bidl">
+      <Filter>bgcc</Filter>
+    </None>
+    <None Include="..\..\..\interface\acd\bidl\acdcallback.bidl">
+      <Filter>bgcc</Filter>
+    </None>
+    <None Include="..\..\..\interface\acd\bidl\acdcommon.bidl">
+      <Filter>bgcc</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="CCAgentBar.idl">
+      <Filter>源文件</Filter>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AcdClient.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CallOut.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CCAgentBar.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CCAgentBarCtrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CCAgentBarPropPage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CCBar.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ImgMgr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Info.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SipphoneClient.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Tool.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ButtonEx.h">
+      <Filter>Control</Filter>
+    </ClInclude>
+    <ClInclude Include="ButtonIcon.h">
+      <Filter>Control</Filter>
+    </ClInclude>
+    <ClInclude Include="ButtonXP.h">
+      <Filter>Control</Filter>
+    </ClInclude>
+    <ClInclude Include="EditEx.h">
+      <Filter>Control</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticEx.h">
+      <Filter>Control</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstDef.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="CCAgentBar.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\CCAgentBarCtrl.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\分隔符.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\提示_信息.ico">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\提示_警告.ico">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\提示_错误.ico">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\无效_休息.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\无效_保持.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\无效_保持接回.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\无效_呼出.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\无效_呼出就绪.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\无效_咨询.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\无效_咨询会议.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\无效_咨询接回.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\无效_咨询转移.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\无效_技能切换.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\无效_拨打分机.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\无效_挂断.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\无效_接听.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\无效_接听就绪.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\无效_签入.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\无效_签出.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\无效_通话转移.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\有效_休息.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\有效_保持.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\有效_保持接回.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\有效_呼出.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\有效_呼出就绪.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\有效_咨询.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\有效_咨询会议.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\有效_咨询接回.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\有效_咨询转移.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\有效_技能切换.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\有效_拨打分机.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\有效_挂断.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\有效_接听.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\有效_接听就绪.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\有效_签入.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\有效_签出.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\有效_通话转移.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\鼠标经过_休息.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\鼠标经过_保持.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\鼠标经过_保持接回.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\鼠标经过_呼出.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\鼠标经过_呼出就绪.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\鼠标经过_咨询.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\鼠标经过_咨询会议.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\鼠标经过_咨询接回.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\鼠标经过_咨询转移.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\鼠标经过_技能切换.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\鼠标经过_拨打分机.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\鼠标经过_挂断.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\鼠标经过_接听.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\鼠标经过_接听就绪.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\鼠标经过_签入.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\鼠标经过_签出.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+    <Image Include="res\鼠标经过_通话转移.bmp">
+      <Filter>资源文件\picture</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

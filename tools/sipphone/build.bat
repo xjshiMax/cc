@@ -5,7 +5,7 @@ if not exist output\sdk\inc md output\sdk\inc
 if not exist output\sdk\lib md output\sdk\lib
 if not exist output\bin md output\bin
 
-set LIBINIT="C:\Program Files\Microsoft Visual Studio .NET 2003\Common7\Tools\vsvars32.bat"
+set LIBINIT="C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\vsvars32.bat"
 call %LIBINIT%
 
 @echo "ø™ º±‡“ÎPhoneLib°≠°≠"

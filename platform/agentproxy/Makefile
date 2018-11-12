@@ -1,5 +1,8 @@
 BINNAME = apserver
 
+WORKROOT=../../
+THIRD_PATH=$(WORKROOT)/dep/
+
 INC_PATH  = -I.
 INC_PATH += -Iinclude
 INC_PATH += -I../../interface/output/bgcc/include/
@@ -8,7 +11,11 @@ INC_PATH += -I../../interface/output/ap/include
 INC_PATH += -Iinclude/apserver
 INC_PATH += -Iinclude/apclient
 INC_PATH += -Iinclude/core
+INC_PATH += -I$(THIRD_PATH)/boost/output/include
 
+INC_PATH += -Iinclude/websocketpp
+
+LIB_PATH += -L$(THIRD_PATH)/boost/output/lib
 LIB_PATH += -L../../interface/output/bgcc/lib/
 LIB_PATH += -L../../interface/output/acd/lib/linux
 LIB_PATH += -L../../interface/output/ap/lib/linux
@@ -20,7 +27,7 @@ CXXFLAGS = -Wall -W -pipe -Wno-unused-parameter -Wreorder -Wwrite-strings -Wswit
 		   -fPIC -finline-functions -Winline -Wreturn-type -Wtrigraphs -Wformat -Wparentheses -Wpointer-arith \
 		         -DSCMPF_MODULE_VERSION=\"$(VERSION)\"  -DPROJECT_NAME=\"$(BINNAME)\"
 
-LDFLAGS = -lacd -lap -lpthread -lbgcc -lssl -lcrypto -lm -lrt
+LDFLAGS = -lacd -lap -lpthread -lbgcc -lssl -lcrypto -lm -lrt -lboost_thread -lboost_system -lboost_chrono
 
 SOURCES = $(wildcard src/core/*.cpp) $(wildcard src/apserver/*.cpp) $(wildcard src/apclient/*.cpp)
 OBJS = $(patsubst %.cpp,%.o,$(SOURCES))
