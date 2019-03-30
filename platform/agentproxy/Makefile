@@ -19,7 +19,7 @@ LIB_PATH += -L$(THIRD_PATH)/boost/output/lib
 LIB_PATH += -L../../interface/output/bgcc/lib/
 LIB_PATH += -L../../interface/output/acd/lib/linux
 LIB_PATH += -L../../interface/output/ap/lib/linux
-
+LIB_PATH += -L../../interface/output/third/json-cpp/lib/linux
 VERSION=${shell echo $$SCMPF_MODULE_VERSION}
 
 CXXFLAGS = -Wall -W -pipe -Wno-unused-parameter -Wreorder -Wwrite-strings -Wswitch -Wno-sign-compare\
@@ -27,7 +27,8 @@ CXXFLAGS = -Wall -W -pipe -Wno-unused-parameter -Wreorder -Wwrite-strings -Wswit
 		   -fPIC -finline-functions -Winline -Wreturn-type -Wtrigraphs -Wformat -Wparentheses -Wpointer-arith \
 		         -DSCMPF_MODULE_VERSION=\"$(VERSION)\"  -DPROJECT_NAME=\"$(BINNAME)\"
 
-LDFLAGS = -lacd -lap -lpthread -lbgcc -lssl -lcrypto -lm -lrt -lboost_thread -lboost_system -lboost_chrono
+LDFLAGS = -lacd -lap -lpthread -lbgcc -lssl -lcrypto -lm -lrt -lboost_thread -lboost_system -lboost_chrono \
+		-ljson-cpp
 
 SOURCES = $(wildcard src/core/*.cpp) $(wildcard src/apserver/*.cpp) $(wildcard src/apclient/*.cpp)
 OBJS = $(patsubst %.cpp,%.o,$(SOURCES))
