@@ -780,9 +780,10 @@ int32_t fs_opr_t::send_dtmf(const char* uuid, const char* keys) {
 int32_t fs_opr_t::record(const char* uuid, const char* file, uint32_t time_s) {
     FUNC_BEGIN();
 
-    std::string full_file = _recordbase;
-    full_file += "/";
-    full_file += file;
+//     std::string full_file = _recordbase;
+//     full_file += "/";
+//     full_file += file;
+	std::string full_file=file;
 
     TRACE_LOG("fs::record(%s) start.", full_file.c_str());
     //set_channel_attribute(uuid,"playback_terminators=none");

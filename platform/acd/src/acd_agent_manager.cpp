@@ -268,9 +268,15 @@ void acd_agent_manager::ProcessIMSEvent(const ims::RouteEventT& event) {
 }
 
 void acd_agent_manager::ProcessIMSEvent(const ims::OtherEventT& event) {
-    acd_agent_ptr p_agent;
-
-    if (m_agentDN_map.Find(event.device, p_agent)) {
+    //这里处理呼入。
+	acd_agent_ptr p_agent;
+	string strdevice=event.device;
+	if(strdevice.length()<4)
+		return;
+	strdevice=strdevice.erase(0,strdevice.find_first_of("/")+1);
+	//event.device=strdevice;
+	//memset(event.device,0,65);strcpy(event.device,strdevice.c_str());
+    if (getAvailAgent(strdevice, p_agent)) {
         p_agent->ProcessIMSEvent(event);
     } else {
         acd_tool::m_logger.WriteLog(LOG_LEVEL_CRITICAL, __FILE__, __LINE__, __FUNCTION__,
@@ -295,7 +301,33 @@ bool acd_agent_manager::GetAgent(const string& agentId, acd_agent_ptr& p_agent) 
 SafeMap<string, acd_agent_ptr>& acd_agent_manager::GetAgents() {
     return m_agentID_map;
 }
-
+void getaAgent(const string& agentDn, const acd_agent_ptr p_agent,string&avaiagent)
+{
+	if(avaiagent=="")
+	{
+		if(p_agent->GetAgentStatus()==acd::AgentStatusT::AsReadyState)
+		{
+			avaiagent = agentDn;
+		}
+	}
+}
+bool acd_agent_manager::getAvailAgent(const string& agentDn, acd_agent_ptr& p_agent)
+{
+	if(m_agentDN_map.Find(agentDn,p_agent))
+	{
+		if(p_agent->GetAgentStatus()==acd::AgentStatusT::AsReadyState)
+		{
+			return true;
+		}
+	}
+	string avaiagent="";
+	m_agentDN_map.DoSomething(getaAgent,avaiagent);
+	if(m_agentDN_map.Find(avaiagent,p_agent))
+	{
+		return true;
+	}
+	return false;
+}
 acd::AcdResultT acd_agent_manager::SignIn(const string& agentId, const string& agentDn,
         const string& agentPwd, const acd::StatusChangeT& statusChangetype,
         bool autoAnswer, bool fcSignin, const string& skill, int64_t& handle,

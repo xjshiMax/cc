@@ -44,7 +44,7 @@ using namespace __gnu_cxx;  //for hash_map
 #include "ApCallbackThread.h"
 #include "ApHeartBeatThread.h"
 #include "ApListenThread.h"
-
+#include "WS_ApServer.h"
 using namespace ap;
 using namespace acd;
 
@@ -517,138 +517,138 @@ public:
                       const StatusChangeT& statusChangetype, bool autoAnswer,
                       bool fcSignin, const std::string& skills,
                       int64_t& handle,
-                      const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                      string peerIP, uint64_t time_rcv);
     AcdResultT SignOut(int64_t handle, const std::string& agentId,
-                       const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                       string peerIP, uint64_t time_rcv);
     AcdResultT SetAgentStatus(int64_t handle, const std::string& agentId,
                               const AgentStatusT& agentStatus, const std::string& restReason,
-                              const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                              string peerIP, uint64_t time_rcv);
     AcdResultT GetAgentStatus(int64_t handle, const std::string& agentId, AgentStatusT& agentStatus,
-                              const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                              string peerIP, uint64_t time_rcv);
     AcdResultT ResetStatuschangetype(int64_t handle, const std::string& agentId,
-                                     const StatusChangeT& statusChangetype, const std::map<std::string, std::string> ctx,
+                                     const StatusChangeT& statusChangetype, string peerIP,
                                      uint64_t time_rcv);
     AcdResultT ResetAutoAnswer(int64_t handle, const std::string& agentId, bool autoAnswer,
-                               const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                               string peerIP, uint64_t time_rcv);
     AcdResultT ResetSkill(int64_t handle, const std::string& agentId, const std::string& skill,
-                          const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                          string peerIP, uint64_t time_rcv);
     AcdResultT Reset(int64_t handle, const std::string& agentId,
-                     const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                     string peerIP, uint64_t time_rcv);
     AcdResultT OutboundCall(int64_t handle, const std::string& agentId, const std::string& callerId,
                             const std::string& destId, const std::string& forCallerDispNum, const std::string& forCalleeDispNum,
                             int32_t timeout, const CallModeT& callMode, const CallTypeT& callType,
-                            const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                            string peerIP, uint64_t time_rcv);
     AcdResultT AnswerCall(int64_t handle, const std::string& agentId,
-                          const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                          string peerIP, uint64_t time_rcv);
     AcdResultT ReleaseCall(int64_t handle, const std::string& agentId,
-                           const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                           string peerIP, uint64_t time_rcv);
     AcdResultT Hold(int64_t handle, const std::string& agentId,
-                    const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                    string peerIP, uint64_t time_rcv);
     AcdResultT RetrieveHeld(int64_t handle, const std::string& agentId,
-                            const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                            string peerIP, uint64_t time_rcv);
     AcdResultT Consult(int64_t handle, const std::string& agentId, const std::string& callerId,
                        const std::string& destId, const std::string& forCallerDispNum, const std::string& forCalleeDispNum,
-                       const CallTypeT& callType, const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                       const CallTypeT& callType, string peerIP, uint64_t time_rcv);
     AcdResultT ConsultReconnect(int64_t handle, const std::string& agentId,
-                                const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                                string peerIP, uint64_t time_rcv);
     AcdResultT ConsultTransfer(int64_t handle, const std::string& agentId,
-                               const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                               string peerIP, uint64_t time_rcv);
     AcdResultT SingleStepTransfer(int64_t handle, const std::string& agentId,
                                   const std::string& callerId, const std::string& destId, const std::string& forCallerDispNum,
                                   const std::string& forCalleeDispNum, bool isPassthrough, const CallTypeT& transferType,
-                                  const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                                  string peerIP, uint64_t time_rcv);
     AcdResultT ConsultConference(int64_t handle, const std::string& agentId,
-                                 const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                                 string peerIP, uint64_t time_rcv);
     AcdResultT ConferenceJoin(int64_t handle, const std::string& agentId, const std::string& callerId,
                               const std::string& destAgentId, const std::string& forCallerDispNum,
                               const std::string& forCalleeDispNum, const ConferenceT& conferenceType,
-                              const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                              string peerIP, uint64_t time_rcv);
     AcdResultT SetAssociateData(int64_t handle, const std::string& agentId, const std::string& key,
-                                const std::string& value, const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                                const std::string& value, string peerIP, uint64_t time_rcv);
     AcdResultT GetAssociateData(int64_t handle, const std::string& agentId, const std::string& key,
-                                std::string& value, const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                                std::string& value, string peerIP, uint64_t time_rcv);
     AcdResultT ForceSignIn(int64_t handle,
                            const std::string& agentId, const std::string& destAgentId,
                            const std::string& agentDn, const std::string& agentPwd,
                            const StatusChangeT& statusChangetype, bool autoAnswer, bool fcSignin,
-                           const std::string& skills, const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                           const std::string& skills, string peerIP, uint64_t time_rcv);
     AcdResultT ForceSignOut(int64_t handle, const std::string& agentId, const std::string& destAgentId,
-                            const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                            string peerIP, uint64_t time_rcv);
     AcdResultT ForceSetAgentStatus(int64_t handle, const std::string& agentId,
                                    const std::string& destAgentId, const AgentStatusT& agentStatus,
-                                   const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                                   string peerIP, uint64_t time_rcv);
     AcdResultT Listen(int64_t handle, const std::string& agentId, const std::string& callerId,
                       const std::string& destAgentId, const std::string& forCallerDispNum,
-                      const std::string& forCalleeDispNum, const std::map<std::string, std::string> ctx,
+                      const std::string& forCalleeDispNum, string peerIP,
                       uint64_t time_rcv);
     AcdResultT StopListen(int64_t handle, const std::string& agentId, const std::string& destAgentId,
-                          const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                          string peerIP, uint64_t time_rcv);
     AcdResultT Insert(int64_t handle, const std::string& agentId, const std::string& callerId,
                       const std::string& destAgentId, const std::string& forCallerDispNum,
-                      const std::string& forCalleeDispNum, const std::map<std::string, std::string> ctx,
+                      const std::string& forCalleeDispNum, string peerIP,
                       uint64_t time_rcv);
     AcdResultT StopInsert(int64_t handle, const std::string& agentId, const std::string& destAgentId,
-                          const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                          string peerIP, uint64_t time_rcv);
     AcdResultT SwitchInsertorListen(int64_t handle, const std::string& agentId,
                                     const std::string& callerId, const std::string& destAgentId, const std::string& forCallerDispNum,
-                                    const std::string& forCalleeDispNum, const std::map<std::string, std::string> ctx,
+                                    const std::string& forCalleeDispNum, string peerIP,
                                     uint64_t time_rcv);
     AcdResultT Break(int64_t handle, const std::string& agentId, const std::string& destAgentId,
-                     const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                     string peerIP, uint64_t time_rcv);
     AcdResultT SendDTMF(int64_t handle, const std::string& agentId, const std::string& digitals,
-                        const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                        string peerIP, uint64_t time_rcv);
     AcdResultT StartPlay(int64_t handle, const std::string& agentId, const std::string& filename,
-                         const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                         string peerIP, uint64_t time_rcv);
     AcdResultT StopPlay(int64_t handle, const std::string& agentId,
-                        const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                        string peerIP, uint64_t time_rcv);
     AcdResultT MuteOn(int64_t handle, const std::string& agentId,
-                      const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                      string peerIP, uint64_t time_rcv);
     AcdResultT MuteOff(int64_t handle, const std::string& agentId,
-                       const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                       string peerIP, uint64_t time_rcv);
     AcdResultT GetAgentDetailByAgentID(int64_t handle, const std::string& agentId,
-                                       const std::string& destAgentId, AgentInfoT& agentInfo, const std::map<std::string, std::string> ctx,
+                                       const std::string& destAgentId, AgentInfoT& agentInfo, string peerIP,
                                        uint64_t time_rcv);
     AcdResultT GetAgentDetailByAgentDN(int64_t handle, const std::string& agentId,
-                                       const std::string& destAgentDn, AgentInfoT& agentInfo, const std::map<std::string, std::string> ctx,
+                                       const std::string& destAgentDn, AgentInfoT& agentInfo, string peerIP,
                                        uint64_t time_rcv);
     AcdResultT GetAgentDetailsByAgentIDs(int64_t handle, const std::string& agentId,
                                          const StringListT& destAgentIdList, AgentInfoListT& agentInfoList,
-                                         const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                                         string peerIP, uint64_t time_rcv);
     AcdResultT GetAgentDetailsByAgentDNs(int64_t handle, const std::string& agentId,
                                          const StringListT& destAgentDnList, AgentInfoListT& agentInfoList,
-                                         const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                                         string peerIP, uint64_t time_rcv);
     AcdResultT GetRecordFileName(int64_t handle, const std::string& agentId, std::string& filename,
-                                 const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                                 string peerIP, uint64_t time_rcv);
     AcdResultT GetRestReason(int64_t handle, const std::string& agentId, StringListT& restReason,
-                             const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                             string peerIP, uint64_t time_rcv);
     AcdResultT GetSkill(int64_t handle, const std::string& agentId, StringListT& skill,
-                        const std::map<std::string, std::string>& ctx, uint64_t time_rcv);
+                        string peerIP, uint64_t time_rcv);
     AcdResultT GetAgentNumberBySkill(int64_t handle, const std::string& agentId,
-                                     const std::string& skill, int32_t& agentNum, const std::map<std::string, std::string> ctx,
+                                     const std::string& skill, int32_t& agentNum, string peerIP,
                                      uint64_t time_rcv);
     AcdResultT GetAgentDetailsBySkill(int64_t handle, const std::string& agentId,
                                       const std::string& skill, int32_t& agentNum, AgentInfoListT& agentInfoList,
-                                      const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                                      string peerIP, uint64_t time_rcv);
     AcdResultT GetSkillWaitingNumber(int64_t handle, const std::string& agentId,
                                      const std::string& skill, int32_t& queueNum, int32_t& freeNum,
-                                     const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                                     string peerIP, uint64_t time_rcv);
     AcdResultT GetSkillWaitingCallInfo(int64_t handle, const std::string& agentId,
                                        const std::string& skill, int32_t& queueNum, QueueInfoListT& queueInfoList,
-                                       const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                                       string peerIP, uint64_t time_rcv);
     AcdResultT GetPrivateQueue(int64_t handle, const std::string& agentId,
                                const std::string& destAgentId, int32_t& queueNum, QueueInfoListT& queueInfoList,
-                               const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                               string peerIP, uint64_t time_rcv);
     AcdResultT GetSysInfo(int64_t handle, const std::string& agentId, SysInfoT& sysInfo,
-                          const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                          string peerIP, uint64_t time_rcv);
     AcdResultT SynchronizeCTITime(int64_t handle, const std::string& agentId, int64_t& timestamp,
-                                  const std::map<std::string, std::string> ctx, uint64_t time_rcv);
+                                  string peerIP, uint64_t time_rcv);
     AcdResultT Heartbeat(int64_t handle, const std::string& agentId,
-                         const std::map<std::string, std::string> ctx, uint64_t time_rcv);
-    AcdResultT ResetConfig(const std::string& password, const std::map<std::string, std::string>& ctx,
+                         string peerIP, uint64_t time_rcv);
+    AcdResultT ResetConfig(const std::string& password,  string peerIP,
                            uint64_t time_rcv);
 
     AcdResultT JumptheQueue(int64_t handle, const std::string& agentId, int64_t requestId,
-                            const std::map<std::string, std::string>& ctx, uint64_t time_rcv);
+                             string peerIP, uint64_t time_rcv);
     bool ReLoadConfig();
     bool GetAgents(ApAgentInfoListT& agentInfoList);
 
@@ -848,7 +848,7 @@ private:
     int32_t              _AcdBackupPort;
     int32_t              _AgentTimeOut;             /**超时的时间（用于删除未收到signout事件的坐席）**/
 
-    ApServer*            _pApServer;                /** ApServer对象指针*/
+    WSapserver*            _pApServer;                /** WSApServer对象指针*/
     ApService*           _pApService;               /** ApService对象指针*/
     ApClient*            _pApClient;                /** ApClient对象指针*/
     ApEventQ*            _ApEventQ;                 /** 事件队列指针，初始化时赋值*/

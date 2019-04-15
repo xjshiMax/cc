@@ -1,0 +1,100 @@
+login daisy 222
+login dasiy 222
+talk jack hello
+talk jack hello
+talk jack hello
+talk jack hello
+talk jack hello
+talk jack hello
+talk jack hello
+talk jack hello
+talk jack hello
+...
+login jack 111
+
+login jack 111
+
+login jack 111
+
+login jack 111
+message
+
+login jack 111
+list
+list
+list
+login jack 111
+list
+message
+message
+talk jack hi
+talk jack hi
+talk jack hi
+
+login jack 111
+
+login jack 111
+talk jack 111
+message
+
+login jack 111
+talk jack hello
+message
+list
+list
+login jack 111
+list
+talk jack hello
+list
+...
+login jack 111
+talk jack hi
+login jack 111
+talk jack hi
+
+login jack 111
+talk jack hi
+message
+talk jack hi
+login jack 111
+talk jack hi
+message
+message
+list
+login jack 111
+message
+
+login jack 111
+talk jack hello
+message
+talk jack hello
+talk jack hello
+talk jack hello
+talk jack hello
+talk jack hello
+talk jack hello
+message
+list
+login jack 111
+list
+talk jack hi
+message
+
+login jack 111
+login jack 111
+list
+message
+talk jack hello
+message
+...
+login dasiy 222
+login dasiy 222
+talk dasiy hello
+message
+logout
+list
+...
+login jack 111
+message
+talk dasiy 333
+quit

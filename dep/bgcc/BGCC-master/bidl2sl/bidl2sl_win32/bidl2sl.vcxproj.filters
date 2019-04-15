@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\bidl_parser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cpp_source_writer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\format_checker.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="getopt.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="getopt_long.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\global_parser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\grammar.tab.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\java_source_writer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scaner.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source_writer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\bidl_binary.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bidl_boolean.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bidl_class.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bidl_const.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bidl_const_boolean.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bidl_const_decimal.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bidl_const_integer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bidl_const_literal.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bidl_const_sequence.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bidl_const_set.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bidl_double.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bidl_enum.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bidl_field_direction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bidl_float.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bidl_function.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bidl_function_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bidl_identifier.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bidl_include.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bidl_int16.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bidl_int32.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bidl_int64.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bidl_int8.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bidl_map.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bidl_namespace.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bidl_parser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bidl_sequence.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bidl_set.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bidl_string.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bidl_struct.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bidl_type.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bidl_typedef.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bidl_void.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\coordination.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpp_source_writer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\format_checker.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="getopt.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\global_parser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\grammar.tab.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\java_source_writer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\parse_result.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source_writer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{3d84e4fa-380e-4dfa-a9cf-508d9d6dfbd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{c23eb6dd-4926-46a0-a9a5-04b0bcbc5819}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

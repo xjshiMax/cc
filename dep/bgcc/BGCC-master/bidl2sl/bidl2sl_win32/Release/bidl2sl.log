@@ -1,0 +1,53 @@
+﻿生成启动时间为 2019/3/14 星期四 13:25:22。
+     1>项目“E:\workstation\txcc\dep\bgcc\BGCC-master\bidl2sl\bidl2sl_win32\bidl2sl.vcxproj”在节点 2 上(build 个目标)。
+     1>PrepareForBuild:
+         正在创建目录“E:\workstation\txcc\dep\bgcc\BGCC-master\Release\”。
+       InitializeBuildStatus:
+         正在创建“Release\bidl2sl.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         e:\workstation\tool_az\vs2010\VC\bin\CL.exe /c /I. /I.. /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D "VERSION=\"2.2.4.0\"" /D _CRT_SECURE_NO_WARNINGS /D _BIDL_DEBUG=1 /D _UNICODE /D UNICODE /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\bidl_parser.cpp ..\cpp_source_writer.cpp ..\format_checker.cpp ..\global_parser.cpp ..\grammar.tab.cpp ..\java_source_writer.cpp ..\main.cpp ..\scaner.cpp ..\source_writer.cpp ..\util.cpp
+         bidl_parser.cpp
+         cpp_source_writer.cpp
+         format_checker.cpp
+         global_parser.cpp
+         grammar.tab.cpp
+         java_source_writer.cpp
+         main.cpp
+         scaner.cpp
+         source_writer.cpp
+         util.cpp
+         e:\workstation\tool_az\vs2010\VC\bin\CL.exe /c /I. /I.. /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D "VERSION=\"2.2.4.0\"" /D _CRT_SECURE_NO_WARNINGS /D _BIDL_DEBUG=1 /D _UNICODE /D UNICODE /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt getopt.c getopt_long.c
+         getopt.c
+         getopt_long.c
+       Link:
+         e:\workstation\tool_az\vs2010\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\workstation\txcc\dep\bgcc\BGCC-master\Release\bidl2sl.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\bidl2sl.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"E:\workstation\txcc\dep\bgcc\BGCC-master\Release\bidl2sl.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\workstation\txcc\dep\bgcc\BGCC-master\Release\bidl2sl.lib" /MACHINE:X86 Release\bidl_parser.obj
+         Release\cpp_source_writer.obj
+         Release\format_checker.obj
+         Release\global_parser.obj
+         Release\grammar.tab.obj
+         Release\java_source_writer.obj
+         Release\main.obj
+         Release\scaner.obj
+         Release\source_writer.obj
+         Release\util.obj
+         Release\getopt.obj
+         Release\getopt_long.obj
+         正在生成代码
+         已完成代码的生成
+         bidl2sl.vcxproj -> E:\workstation\txcc\dep\bgcc\BGCC-master\Release\bidl2sl.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"E:\workstation\txcc\dep\bgcc\BGCC-master\Release\bidl2sl.exe;#1" /manifest Release\bidl2sl.exe.intermediate.manifest
+       PostBuildEvent:
+         if not exist ..\..\output md ..\..\output
+         if not exist ..\..\output\bin md ..\..\output\bin
+         copy ..\..\Release\bidl2sl.exe ..\..\output\bin\
+         :VCEnd
+         已复制         1 个文件。
+       FinalizeBuildStatus:
+         正在删除文件“Release\bidl2sl.unsuccessfulbuild”。
+         正在对“Release\bidl2sl.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“E:\workstation\txcc\dep\bgcc\BGCC-master\bidl2sl\bidl2sl_win32\bidl2sl.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:11.57

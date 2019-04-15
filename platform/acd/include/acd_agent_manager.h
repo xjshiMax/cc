@@ -58,6 +58,7 @@ public:
     void IMSConnect();
     void IMSDisconnect();
     bool GetAgent(const string& agentId, acd_agent_ptr& p_agent);
+	bool getAvailAgent(const string& agentDn, acd_agent_ptr& p_agent);
     SafeMap<string, acd_agent_ptr>& GetAgents();
 
 public:

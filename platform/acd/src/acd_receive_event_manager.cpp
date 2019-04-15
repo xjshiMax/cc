@@ -135,12 +135,17 @@ void acd_otherevent_receiver::Method() {
 
         switch (p_event->eventType.get_value()) {
         case ims::OtherEventTypeT::OG_HeartBeat:
+			break;
         case ims::OtherEventTypeT::OG_SessionCreate:
+			{//这里处理呼入。
+				acd_tool::m_agent_manager.ProcessIMSEvent(*p_event);
+
+			}
             //acd_tool::m_logger.WriteLog(LOG_LEVEL_DEBUG, __FILE__, __LINE__, __FUNCTION__, "event type:%s", p_event->eventType.get_desc().c_str());
             break;
 
         case ims::OtherEventTypeT::OG_OperationFailed:
-            acd_tool::m_agent_manager.ProcessIMSEvent(*p_event);
+           // acd_tool::m_agent_manager.ProcessIMSEvent(*p_event);
             break;
 
         default:

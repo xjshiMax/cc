@@ -1166,12 +1166,12 @@ bool ims_session_manager_t::rt_del_req(ims::ReqIdT reqid) {
             }
         }
 
-        for (string_map::iterator it = reqinfo->agent_dn.begin(); it != reqinfo->agent_dn.end(); ++it) {
-            rt_del_dn(it->first, ims::DnTypeT::AgentDn);
+        for (string_map::iterator it = reqinfo->agent_dn.begin(); it != reqinfo->agent_dn.end(); ) {
+            rt_del_dn((it++)->first, ims::DnTypeT::AgentDn);
         }
 
-        for (string_map::iterator it = reqinfo->accessno.begin(); it != reqinfo->accessno.end(); ++it) {
-            rt_del_dn(it->first, ims::DnTypeT::IvrANI);
+        for (string_map::iterator it = reqinfo->accessno.begin(); it != reqinfo->accessno.end();) {
+            rt_del_dn((it++)->first, ims::DnTypeT::IvrANI);
         }
 
         //destroy hashmap to release memory
@@ -1333,7 +1333,7 @@ bool ims_session_manager_t::add_imsevent_other(ims::SessionIdT id, ims::OtherEve
     ims_request_t* req = NULL;
 
     if (event.eventType == ims::OtherEventTypeT::OG_SessionCreate) {
-        if (rt_query_dn(event.device.c_str(), ims::DnTypeT::IvrANI , &reqid)
+        if (rt_query_dn(event.device.c_str(), ims::DnTypeT::AgentDn , &reqid)
                 && NULL != (req = get_request(reqid))) {
             return req->add_otherevent(event);
         } else {

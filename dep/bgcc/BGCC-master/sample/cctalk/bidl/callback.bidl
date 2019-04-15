@@ -1,0 +1,7 @@
+include "common.bidl"
+
+namespace cctalk {
+    class Callback {
+        Result send(string from, string message);
+    }
+}

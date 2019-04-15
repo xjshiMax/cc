@@ -6,6 +6,7 @@ THIRD_PATH=$(WORKROOT)/dep/
 
 INC_PATH  = -I.
 INC_PATH += -I$(WORKROOT)/interface/output/bgcc/include/
+INC_PATH += -I$(WORKROOT)/interface/output/esl/include
 INC_PATH += -Iinc/fs
 INC_PATH += -Iinc/core
 INC_PATH += -Iinc/utl
@@ -19,7 +20,7 @@ INC_PATH += -I$(THIRD_PATH)/freeswitch/output/libs/esl/include
 LIB_PATH += -L$(THIRD_PATH)/boost/output/lib
 LIB_PATH += -L$(THIRD_PATH)/pcre/output/lib
 LIB_PATH += -L$(THIRD_PATH)/libxml2/output/lib
-LIB_PATH += -L$(THIRD_PATH)/freeswitch/output/libs/esl/
+LIB_PATH += -L$(WORKROOT)/interface/output/esl/lib
 LIB_PATH += -L$(WORKROOT)/interface/output/ims/lib/linux/
 LIB_PATH += -L$(WORKROOT)/interface/output/bgcc/lib/
 

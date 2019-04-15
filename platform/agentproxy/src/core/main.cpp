@@ -68,10 +68,7 @@ int main(int argc, char **argv)
 		BGCC_FATAL("ap", "AgentPrx Init Failed.");
 		//Exit();
 	}
-	ws_apserver.InitApServer("192.168.2.100",8071,10);
-	ws_apserver.startServer();
 
-	sleep(10000);
 	return 0;
 
 

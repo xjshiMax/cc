@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B0CA4057-FCE0-47EA-B96E-1AE64C27E6A0}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>ivrtest</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\..\include\parser.y" />
+    <None Include="..\..\src\fs\.fs_mgr.cpp.swp" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\arithmetic_operate.h" />
+    <ClInclude Include="..\..\include\autodial_chan_thread.h" />
+    <ClInclude Include="..\..\include\autorun_chan_thread.h" />
+    <ClInclude Include="..\..\include\autorun_manager.h" />
+    <ClInclude Include="..\..\include\calldata_manager.h" />
+    <ClInclude Include="..\..\include\common.h" />
+    <ClInclude Include="..\..\include\conf_manager.h" />
+    <ClInclude Include="..\..\include\cpu_manager.h" />
+    <ClInclude Include="..\..\include\db_pool.h" />
+    <ClInclude Include="..\..\include\flow_manager.h" />
+    <ClInclude Include="..\..\include\fs_operator.h" />
+    <ClInclude Include="..\..\include\http.h" />
+    <ClInclude Include="..\..\include\inbound_chan_thread.h" />
+    <ClInclude Include="..\..\include\ini_file.h" />
+    <ClInclude Include="..\..\include\ivrapi.h" />
+    <ClInclude Include="..\..\include\ivr_instance_manager.h" />
+    <ClInclude Include="..\..\include\ivr_timer.h" />
+    <ClInclude Include="..\..\include\ivr_type.h" />
+    <ClInclude Include="..\..\include\lock.h" />
+    <ClInclude Include="..\..\include\node_answer.h" />
+    <ClInclude Include="..\..\include\node_assign.h" />
+    <ClInclude Include="..\..\include\node_base.h" />
+    <ClInclude Include="..\..\include\node_bridge.h" />
+    <ClInclude Include="..\..\include\node_bridgeex.h" />
+    <ClInclude Include="..\..\include\node_cancelagent.h" />
+    <ClInclude Include="..\..\include\node_compare.h" />
+    <ClInclude Include="..\..\include\node_db.h" />
+    <ClInclude Include="..\..\include\node_dial.h" />
+    <ClInclude Include="..\..\include\node_factory.h" />
+    <ClInclude Include="..\..\include\node_getassociatedata.h" />
+    <ClInclude Include="..\..\include\node_getdigits.h" />
+    <ClInclude Include="..\..\include\node_hangup.h" />
+    <ClInclude Include="..\..\include\node_http.h" />
+    <ClInclude Include="..\..\include\node_imsresponsecmp.h" />
+    <ClInclude Include="..\..\include\node_jsonget.h" />
+    <ClInclude Include="..\..\include\node_jsonget_array.h" />
+    <ClInclude Include="..\..\include\node_jsonget_arraylen.h" />
+    <ClInclude Include="..\..\include\node_makecall.h" />
+    <ClInclude Include="..\..\include\node_play.h" />
+    <ClInclude Include="..\..\include\node_playnum.h" />
+    <ClInclude Include="..\..\include\node_readini.h" />
+    <ClInclude Include="..\..\include\node_record.h" />
+    <ClInclude Include="..\..\include\node_regtimer.h" />
+    <ClInclude Include="..\..\include\node_requestagent.h" />
+    <ClInclude Include="..\..\include\node_resource.h" />
+    <ClInclude Include="..\..\include\node_setassociatedata.h" />
+    <ClInclude Include="..\..\include\node_stopmedia.h" />
+    <ClInclude Include="..\..\include\node_stoprecord.h" />
+    <ClInclude Include="..\..\include\node_stoptimer.h" />
+    <ClInclude Include="..\..\include\node_transagent.h" />
+    <ClInclude Include="..\..\include\node_waitevent.h" />
+    <ClInclude Include="..\..\include\node_whatweekday.h" />
+    <ClInclude Include="..\..\include\node_writelog.h" />
+    <ClInclude Include="..\..\include\parser.h" />
+    <ClInclude Include="..\..\include\threadtools.h" />
+    <ClInclude Include="..\..\include\thread_pool.h" />
+    <ClInclude Include="..\..\include\tools.h" />
+    <ClInclude Include="..\..\include\worker_thread.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\include\parser.c" />
+    <ClCompile Include="..\..\include\utl.cpp" />
+    <ClCompile Include="..\..\src\arithmetic_operate.cpp" />
+    <ClCompile Include="..\..\src\autodial_chan_thread.cpp" />
+    <ClCompile Include="..\..\src\autorun_chan_thread.cpp" />
+    <ClCompile Include="..\..\src\autorun_manager.cpp" />
+    <ClCompile Include="..\..\src\calldata_manager.cpp" />
+    <ClCompile Include="..\..\src\common.cpp" />
+    <ClCompile Include="..\..\src\conf_manager.cpp" />
+    <ClCompile Include="..\..\src\cpu_manager.cpp" />
+    <ClCompile Include="..\..\src\db_pool.cpp" />
+    <ClCompile Include="..\..\src\flow_manager.cpp" />
+    <ClCompile Include="..\..\src\fs\event_receiver.cpp" />
+    <ClCompile Include="..\..\src\fs\fs_info.cpp" />
+    <ClCompile Include="..\..\src\fs\fs_mgr.cpp" />
+    <ClCompile Include="..\..\src\fs\fs_opr.cpp" />
+    <ClCompile Include="..\..\src\fs_operator.cpp" />
+    <ClCompile Include="..\..\src\http.cpp" />
+    <ClCompile Include="..\..\src\ims\eventimp.cpp" />
+    <ClCompile Include="..\..\src\ims\ims_info.cpp" />
+    <ClCompile Include="..\..\src\ims\ims_mgr.cpp" />
+    <ClCompile Include="..\..\src\inbound_chan_thread.cpp" />
+    <ClCompile Include="..\..\src\ini_file.cpp" />
+    <ClCompile Include="..\..\src\ivrapi.cpp" />
+    <ClCompile Include="..\..\src\ivr_instance_manager.cpp" />
+    <ClCompile Include="..\..\src\ivr_server.cpp" />
+    <ClCompile Include="..\..\src\ivr_timer.cpp" />
+    <ClCompile Include="..\..\src\node_answer.cpp" />
+    <ClCompile Include="..\..\src\node_assign.cpp" />
+    <ClCompile Include="..\..\src\node_base.cpp" />
+    <ClCompile Include="..\..\src\node_bridge.cpp" />
+    <ClCompile Include="..\..\src\node_bridgeex.cpp" />
+    <ClCompile Include="..\..\src\node_cancelagent.cpp" />
+    <ClCompile Include="..\..\src\node_compare.cpp" />
+    <ClCompile Include="..\..\src\node_db.cpp" />
+    <ClCompile Include="..\..\src\node_dial.cpp" />
+    <ClCompile Include="..\..\src\node_factory.cpp" />
+    <ClCompile Include="..\..\src\node_getassociatedata.cpp" />
+    <ClCompile Include="..\..\src\node_getdigits.cpp" />
+    <ClCompile Include="..\..\src\node_hangup.cpp" />
+    <ClCompile Include="..\..\src\node_http.cpp" />
+    <ClCompile Include="..\..\src\node_imsresponsecmp.cpp" />
+    <ClCompile Include="..\..\src\node_jsonget.cpp" />
+    <ClCompile Include="..\..\src\node_jsonget_array.cpp" />
+    <ClCompile Include="..\..\src\node_jsonget_arraylen.cpp" />
+    <ClCompile Include="..\..\src\node_makecall.cpp" />
+    <ClCompile Include="..\..\src\node_play.cpp" />
+    <ClCompile Include="..\..\src\node_playnum.cpp" />
+    <ClCompile Include="..\..\src\node_readini.cpp" />
+    <ClCompile Include="..\..\src\node_record.cpp" />
+    <ClCompile Include="..\..\src\node_regtimer.cpp" />
+    <ClCompile Include="..\..\src\node_requestagent.cpp" />
+    <ClCompile Include="..\..\src\node_resource.cpp" />
+    <ClCompile Include="..\..\src\node_setassociatedata.cpp" />
+    <ClCompile Include="..\..\src\node_stopmedia.cpp" />
+    <ClCompile Include="..\..\src\node_stoprecord.cpp" />
+    <ClCompile Include="..\..\src\node_stoptimer.cpp" />
+    <ClCompile Include="..\..\src\node_transagent.cpp" />
+    <ClCompile Include="..\..\src\node_waitevent.cpp" />
+    <ClCompile Include="..\..\src\node_whatweekday.cpp" />
+    <ClCompile Include="..\..\src\node_writelog.cpp" />
+    <ClCompile Include="..\..\src\thread_pool.cpp" />
+    <ClCompile Include="..\..\src\tools.cpp" />
+    <ClCompile Include="ivrtest.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

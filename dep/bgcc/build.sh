@@ -14,11 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-SRCTAR=v2.2.4.tar.gz
+SRCTAR=BGCC-master.tar.gz
 
-if [ ! -f ${SRCTAR} ]; then
-    curl --location-trusted -k -O https://github.com/BaiduCC/BGCC/archive/v2.2.4.tar.gz
-fi
 
 if [ ! -f ${SRCTAR} ]; then
     echo "can't find ${SRCTAR}, build failed";
@@ -26,7 +23,7 @@ if [ ! -f ${SRCTAR} ]; then
 fi
 
 tar xzf ${SRCTAR}
+cd BGCC-master
+make -C BGCC-master
 
-make -C BGCC-2.2.4
-
-cp -r BGCC-2.2.4/output ./
+cp -r BGCC-master/output ./

@@ -66,10 +66,12 @@ private:
     static void un_init_manager();
     static void init_connect();
     static void un_init_connect();
+	static void init_sqlInst();
 
 public:
     static void init();
     static void un_init();
+	static string Getrecordpath();
 
     static acd::AcdResultT validate_agent(const string& agentId, const string& skill);
     static acd::AcdResultT validate_agent(const string& agentId, const string& agentPwd,

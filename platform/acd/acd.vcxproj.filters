@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{52d86109-e193-4478-93df-2a54f9507f43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="acdcalllog">
+      <UniqueIdentifier>{499ac084-ce0f-47fb-ae5a-814e7f03cabb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="config">
+      <UniqueIdentifier>{6144ccbf-debd-4d4a-9301-63b1685c163b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="acdinterface">
+      <UniqueIdentifier>{531536c9-f21d-4b00-846c-fc8e9b61e57a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="acdinterfacerealize">
+      <UniqueIdentifier>{36a56c85-0265-4bb2-9e87-5fc251d3e524}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="acdheartbeat">
+      <UniqueIdentifier>{84c72938-cfe4-4ea4-a50b-c20c6f22bf9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="acdheartbeatrealize">
+      <UniqueIdentifier>{bb24c7d1-b340-41b0-92f7-39c0821bfd76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="imsinterface">
+      <UniqueIdentifier>{84b349ca-30ed-4061-abb6-bf6e1b9f8054}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="imsinterfacerealize">
+      <UniqueIdentifier>{143ae5bc-3c2a-4de5-8ff6-8280bef24e19}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\acd_agent.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\acd_agent_manager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\acd_info.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\acd_main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\acd_skill.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\acd_skill_manager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\acd_tool.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\logger.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thread.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\acd_log_timer.cpp">
+      <Filter>acdcalllog</Filter>
+    </ClCompile>
+    <ClCompile Include="src\acd_config.cpp">
+      <Filter>config</Filter>
+    </ClCompile>
+    <ClCompile Include="src\config_reader.cpp">
+      <Filter>config</Filter>
+    </ClCompile>
+    <ClCompile Include="..\interface\acd\bidl\acd.cpp">
+      <Filter>acdinterface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\interface\acd\bidl\acdcallback.cpp">
+      <Filter>acdinterface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\interface\acd\bidl\acdcommon.cpp">
+      <Filter>acdinterface</Filter>
+    </ClCompile>
+    <ClCompile Include="src\acd_send_event_manager.cpp">
+      <Filter>acdinterfacerealize</Filter>
+    </ClCompile>
+    <ClCompile Include="src\acd_server.cpp">
+      <Filter>acdinterfacerealize</Filter>
+    </ClCompile>
+    <ClCompile Include="..\interface\acd\bidl\acdheartbeat.cpp">
+      <Filter>acdheartbeat</Filter>
+    </ClCompile>
+    <ClCompile Include="src\acd_backup.cpp">
+      <Filter>acdheartbeatrealize</Filter>
+    </ClCompile>
+    <ClCompile Include="src\acd_heartbeat.cpp">
+      <Filter>acdheartbeatrealize</Filter>
+    </ClCompile>
+    <ClCompile Include="..\interface\ims\bidl\callback.cpp">
+      <Filter>imsinterface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\interface\ims\bidl\common.cpp">
+      <Filter>imsinterface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\interface\ims\bidl\ims.cpp">
+      <Filter>imsinterface</Filter>
+    </ClCompile>
+    <ClCompile Include="src\acd_ims.cpp">
+      <Filter>imsinterfacerealize</Filter>
+    </ClCompile>
+    <ClCompile Include="src\acd_ims_callback.cpp">
+      <Filter>imsinterfacerealize</Filter>
+    </ClCompile>
+    <ClCompile Include="src\acd_receive_event_manager.cpp">
+      <Filter>imsinterfacerealize</Filter>
+    </ClCompile>
+    <ClCompile Include="..\acdclient\acdclient.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\acd_agent.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\acd_agent_manager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\acd_info.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\acd_skill.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\acd_skill_manager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\acd_tool.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\const_define.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\logger.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\safe_list.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\safe_map.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\safe_multimap.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\safe_queue.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\safe_set.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\thread.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\acd_log_timer.h">
+      <Filter>acdcalllog</Filter>
+    </ClInclude>
+    <ClInclude Include="include\acd_config.h">
+      <Filter>config</Filter>
+    </ClInclude>
+    <ClInclude Include="include\config_reader.h">
+      <Filter>config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\interface\acd\bidl\acd.h">
+      <Filter>acdinterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\interface\acd\bidl\acdcallback.h">
+      <Filter>acdinterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\interface\acd\bidl\acdcommon.h">
+      <Filter>acdinterface</Filter>
+    </ClInclude>
+    <ClInclude Include="include\acd_send_event_manager.h">
+      <Filter>acdinterfacerealize</Filter>
+    </ClInclude>
+    <ClInclude Include="include\acd_server.h">
+      <Filter>acdinterfacerealize</Filter>
+    </ClInclude>
+    <ClInclude Include="..\interface\acd\bidl\acdheartbeat.h">
+      <Filter>acdheartbeat</Filter>
+    </ClInclude>
+    <ClInclude Include="include\acd_backup.h">
+      <Filter>acdheartbeatrealize</Filter>
+    </ClInclude>
+    <ClInclude Include="include\acd_heartbeat.h">
+      <Filter>acdheartbeatrealize</Filter>
+    </ClInclude>
+    <ClInclude Include="..\interface\ims\bidl\callback.h">
+      <Filter>imsinterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\interface\ims\bidl\common.h">
+      <Filter>imsinterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\interface\ims\bidl\ims.h">
+      <Filter>imsinterface</Filter>
+    </ClInclude>
+    <ClInclude Include="include\acd_ims.h">
+      <Filter>imsinterfacerealize</Filter>
+    </ClInclude>
+    <ClInclude Include="include\acd_ims_callback.h">
+      <Filter>imsinterfacerealize</Filter>
+    </ClInclude>
+    <ClInclude Include="include\acd_receive_event_manager.h">
+      <Filter>imsinterfacerealize</Filter>
+    </ClInclude>
+    <ClInclude Include="..\acdclient\acdclientCallback.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\interface\acd\bidl\acd.bidl">
+      <Filter>acdinterface</Filter>
+    </None>
+    <None Include="..\interface\acd\bidl\acdcallback.bidl">
+      <Filter>acdinterface</Filter>
+    </None>
+    <None Include="..\interface\acd\bidl\acdcommon.bidl">
+      <Filter>acdinterface</Filter>
+    </None>
+    <None Include="..\interface\acd\bidl\acdheartbeat.bidl">
+      <Filter>acdheartbeat</Filter>
+    </None>
+    <None Include="..\interface\ims\bidl\callback.bidl">
+      <Filter>imsinterface</Filter>
+    </None>
+    <None Include="..\interface\ims\bidl\common.bidl">
+      <Filter>imsinterface</Filter>
+    </None>
+    <None Include="..\interface\ims\bidl\ims.bidl">
+      <Filter>imsinterface</Filter>
+    </None>
+    <None Include="conf\acd.conf" />
+    <None Include="conf\bgcc.conf" />
+  </ItemGroup>
+</Project>

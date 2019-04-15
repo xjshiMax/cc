@@ -17,6 +17,8 @@
 
 #include "acd_info.h"
 #include "acd_tool.h"
+#include "time_util.h"
+#include "db_pool.h"
 
 CallDirectT::CallDirectT(int32_t value) : m_value(value) {
 }
@@ -157,24 +159,38 @@ void callinfo::reset() {
 }
 
 void callinfo::WriteCallLog() {
-    ostringstream strbuf;
-    strbuf << '1'
-           << ',' << m_sessionId
-           << ',' << m_callId
-           << ',' << m_agentId
-           << ',' << m_agentDn
-           << ',' << m_skill
-           << ',' << m_caller
-           << ',' << m_callee
-           << ',' << static_cast<int64_t>(m_waitbegin)
-           << ',' << static_cast<int64_t>(m_waitend)
-           << ',' << static_cast<int64_t>(m_ackbegin)
-           << ',' << static_cast<int64_t>(m_ackend)
-           << ',' << static_cast<int64_t>(m_callbegin)
-           << ',' << static_cast<int64_t>(m_callend)
-           << ',' << m_callType.get_value()
-           << ',' << m_callDirect.get_value()
-           << ',' << m_releaseCause.get_value()
-           << ',' << m_recordFilename;
-    acd_tool::m_calllogger.WriteLog(strbuf.str().c_str());
+//     ostringstream strbuf;
+//     strbuf << '1'
+//            << ',' << m_sessionId
+//            << ',' << m_callId
+//            << ',' << m_agentId
+//            << ',' << m_agentDn
+//            << ',' << m_skill
+//            << ',' << m_caller
+//            << ',' << m_callee
+//            << ',' << static_cast<int64_t>(m_waitbegin)
+//            << ',' << static_cast<int64_t>(m_waitend)
+//            << ',' << static_cast<int64_t>(m_ackbegin)
+//            << ',' << static_cast<int64_t>(m_ackend)
+//            << ',' << static_cast<int64_t>(m_callbegin)
+//            << ',' << static_cast<int64_t>(m_callend)
+//            << ',' << m_callType.get_value()
+//            << ',' << m_callDirect.get_value()
+//            << ',' << m_releaseCause.get_value()
+//            << ',' << m_recordFilename;
+  //  acd_tool::m_calllogger.WriteLog(strbuf.str().c_str());
+	if(m_callbegin==0)
+		m_callbegin+=1;
+	string starttime = bgcc::TimeUtil::format_time(m_callbegin,"%Y-%m-%d %H:%M:%S");
+	if(m_callend==0)
+		m_callend+=1;
+	string stoptime = bgcc::TimeUtil::format_time(m_callend,"%Y-%m-%d %H:%M:%S");
+	string createtime = bgcc::TimeUtil::format_time("%Y-%m-%d %H:%M:%S");
+	string strsql="Insert into master_outdial.t_call_info_tbl (user_id, customer_number,call_id,call_start_time,call_end_time,call_state,user_number,call_type,record_file,create_at,skill_id) values ";
+	char charsql[512]={0};
+	string Numbercalled=m_callee;
+	Numbercalled=Numbercalled.erase(0,Numbercalled.find_last_of('/')+1);
+	sprintf(charsql,"%s ( %d,'%s','%s','%s','%s', %d,'%s',%d,'%s','%s','%s')",strsql.c_str(),atoi(m_agentId.c_str()),Numbercalled.c_str(),m_callId.c_str(),starttime.c_str(),stoptime.c_str()
+		, m_callType.get_value(),m_agentDn.c_str(),m_callDirect.get_value(),m_recordFilename.c_str(),createtime.c_str(),m_skill.c_str());
+	SqlInstan::InsertCall(charsql);
 }

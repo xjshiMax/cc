@@ -1,0 +1,43 @@
+﻿生成启动时间为 2019/3/14 星期四 12:05:01。
+     1>项目“E:\workstation\txcc\dep\bgcc\BGCC-master\bidl2sl\bidl2sl_win32\bidl2sl.vcxproj”在节点 4 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“Debug\bidl2sl.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         e:\workstation\tool_az\vs2010\VC\bin\CL.exe /c /I./ /I../ /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D "VERSION=\"2.2.4.0\"" /D _CRT_SECURE_NO_WARNINGS /D _BIDL_DEBUG=1 /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\bidl_parser.cpp ..\cpp_source_writer.cpp ..\format_checker.cpp ..\global_parser.cpp ..\grammar.tab.cpp ..\java_source_writer.cpp ..\main.cpp ..\scaner.cpp ..\source_writer.cpp ..\util.cpp
+         util.cpp
+         source_writer.cpp
+         scaner.cpp
+         main.cpp
+         java_source_writer.cpp
+         grammar.tab.cpp
+         global_parser.cpp
+         format_checker.cpp
+         cpp_source_writer.cpp
+         bidl_parser.cpp
+         正在生成代码...
+         e:\workstation\tool_az\vs2010\VC\bin\CL.exe /c /I./ /I../ /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D "VERSION=\"2.2.4.0\"" /D _CRT_SECURE_NO_WARNINGS /D _BIDL_DEBUG=1 /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt getopt.c getopt_long.c
+         getopt_long.c
+         getopt.c
+         正在生成代码...
+       ManifestResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\bidl2sl.exe.embed.manifest.res" Debug\bidl2sl_manifest.rc 
+       Link:
+         e:\workstation\tool_az\vs2010\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\workstation\txcc\dep\bgcc\BGCC-master\Debug\bidl2sl.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\bidl2sl.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"E:\workstation\txcc\dep\bgcc\BGCC-master\Debug\bidl2sl.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\workstation\txcc\dep\bgcc\BGCC-master\Debug\bidl2sl.lib" /MACHINE:X86 Debug\bidl2sl.exe.embed.manifest.res
+         Debug\bidl_parser.obj
+         Debug\cpp_source_writer.obj
+         Debug\format_checker.obj
+         Debug\global_parser.obj
+         Debug\grammar.tab.obj
+         Debug\java_source_writer.obj
+         Debug\main.obj
+         Debug\scaner.obj
+         Debug\source_writer.obj
+         Debug\util.obj
+         Debug\getopt.obj
+         Debug\getopt_long.obj
+     1>LINK : fatal error LNK1123: 转换到 COFF 期间失败: 文件无效或损坏
+     1>已完成生成项目“E:\workstation\txcc\dep\bgcc\BGCC-master\bidl2sl\bidl2sl_win32\bidl2sl.vcxproj”(build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:09.97

@@ -21,7 +21,7 @@
 #include "common.h"
 #include "threadpool.h"
 #include "ims_core_session_mgr.h"
-
+#include "ims_tool.h"
 namespace ims {
 
 
@@ -95,7 +95,20 @@ int32_t callevent_recv_t::operator()(const bool* isstoped, void* param) {
 
             if (ret == IMS_SUCCESS) {
                 event_data_normal_t& edata = evt.event_data.normal;
-
+				std::string tem_channelname=ims_tool_t::get_assigned_caller(edata.channel_name, edata.channel_name);
+				std::string tem_otherchannelname=ims_tool_t::get_assigned_caller(edata.other_channel_name, edata.other_channel_name);
+				if(tem_channelname!="")
+				{
+					memset(edata.channel_name,0,LEN_64 + 1);
+					strcpy(edata.channel_name,tem_channelname.c_str());
+					TRACE_LOG("channel_name=%s",edata.channel_name);
+				}
+				if(tem_otherchannelname!="")
+				{
+					memset(edata.other_channel_name,0,LEN_64 + 1);
+					strcpy(edata.other_channel_name,tem_otherchannelname.c_str());
+					TRACE_LOG("channel_name=%s",edata.other_channel_name);
+				}
                 if (strcmp(evt.name , "CHANNEL_ORIGINATE") == 0) {
                     TRACE_LOG("===== uuid:[%s] otheruuid:[%s] sid:%lu",
                               edata.uuid, edata.other_uuid, evt.sessionid);
@@ -184,6 +197,7 @@ int32_t callevent_recv_t::operator()(const bool* isstoped, void* param) {
                         session_mgr->add_event(evt.sessionid, evt);
                     } else {
                         WARNING_LOG("[%ld] locate session failed,ignore event:%s", evt.sessionid, evt.name);
+						//evt.event_data.normal.call_dire
                     }
                 }
             } else if (IMS_FAIL_CONNECT == ret) {
@@ -200,16 +214,24 @@ void callevent_recv_t::fs_inboud_handler(fs_event_t& evt) {
     ims_session_manager_t* session_mgr = ims_session_manager_t::instance();
     ReqIdT reqid = 0;
 
-    if (strcasecmp(evt.name, "CHANNEL_EXECUTE") == 0
-            && strcasecmp(edata.application, "set") == 0
-            && strcasecmp(edata.application_data, "outside_call=true") == 0) {
+	if (0 == strcmp(evt.name, "CHANNEL_EXECUTE_COMPLETE") ||
+		0 == strcmp(evt.name, "CHANNEL_EXECUTE"))
+		{
         TRACE_LOG("New inbound call(%s->%s)", edata.deviceno, edata.called_no);
-
-        if (!session_mgr->rt_query_dn(edata.called_no, DnTypeT::IvrANI, &reqid)) {
-            WARNING_LOG("inbound call(%s(%s)->%s)(unknown accessno),omiting",
-                        edata.deviceno, edata.channel_name, edata.called_no);
-            return;
-        }
+		std::string strdevice = ims_tool_t::get_assigned_called(edata.deviceno,edata.deviceno);
+		std::string strcaller=ims_tool_t::get_assigned_caller(edata.caller_no,edata.caller_no);
+		std::string strcalled=ims_tool_t::get_assigned_caller(edata.called_no,edata.called_no);
+// 		if(strcmp(strcalled.c_str(),"user/1006")!=0)
+// 			return ;
+		//std::string acd_device=edata.called_no;
+		memset(edata.deviceno,0,65);strcpy(edata.deviceno,strdevice.c_str());
+		memset(edata.caller_no,0,65);strcpy(edata.caller_no,strcaller.c_str());
+		memset(edata.called_no,0,65);strcpy(edata.called_no,strcalled.c_str());
+		if (!session_mgr->rt_query_dn(edata.called_no, DnTypeT::AgentDn, &reqid)) {
+			WARNING_LOG("inbound call(%s(%s)->%s)(unknown accessno),omiting",
+				edata.deviceno, edata.channel_name, edata.called_no);
+			return;
+		}
 
         session_thread_ptr thrd = session_thrd_mgr::instance()->get_prefer_thread();
 
@@ -244,7 +266,7 @@ void callevent_recv_t::fs_inboud_handler(fs_event_t& evt) {
         NOTICE_LOG("New inbound call(%s->%s),create session(%lu) success",
                    edata.deviceno, edata.called_no, evt.sessionid);
 
-        session_mgr->update_call_ani(evt.sessionid, evt.callid, edata.deviceno);
+        session_mgr->update_call_ani(evt.sessionid, evt.callid, edata.caller_no);
         session_mgr->update_call_dnis(evt.sessionid, evt.callid, edata.called_no);
 
         OtherEventT ims_event;

@@ -79,9 +79,10 @@ void acd_agent::SetStatus(const acd::AgentStatusT& agentStatus, const acd::CallE
 }
 
 void acd_agent::Record() {
-    m_recordFilename = bgcc::TimeUtil::format_time(m_currStatusTime,
-                       "%Y%m%d") + "/" + m_agentId + "/" + m_callId + "_" + bgcc::TimeUtil::get_time() + ".wav";
-    acd_tool::p_m_acd_ims->Record(m_sessionId, m_agentId, m_agentDn, m_recordFilename, 0, "");
+//     m_recordFilename = bgcc::TimeUtil::format_time(m_currStatusTime,
+//                        "%Y%m%d") + "/" + m_agentId + "/" + m_callId + "_" + bgcc::TimeUtil::get_time() + ".wav";
+	m_recordFilename = m_callId + "_" + bgcc::TimeUtil::get_time() + ".wav";
+    acd_tool::p_m_acd_ims->Record(m_sessionId, m_agentId, m_agentDn, acd_tool::Getrecordpath()+m_recordFilename, 0, "");
 }
 
 void acd_agent::Reset() {
@@ -572,6 +573,19 @@ void acd_agent::ProcessIMSEvent(const ims::OtherEventT& event) {
     p_agentEvent->m_other_event.timestamp    = bgcc::TimeUtil::get_timestamp_us();
 
     acd_tool::m_send_event_manager.send_event(p_agentEvent, m_handle);
+	if(event.eventType==ims::OtherEventTypeT::OG_SessionCreate)
+	{
+		m_sessionId=event.sessionid;
+		string strdevice=event.device;
+		strdevice=strdevice.erase(0,strdevice.find_first_of("/")+1);
+		ims::OtherEventDataT myotherdata=event.data;
+		string strcallerid=myotherdata["IMS_CUST_NO"];
+		strcallerid=strcallerid.erase(0,strcallerid.find_first_of("/")+1);
+		acd_tool::p_m_acd_ims->Answer(m_sessionId, m_agentId,strcallerid );
+		Consult(strcallerid,m_agentDn,strcallerid,m_agentDn);
+		//SingleStepTransfer(strcallerid,m_agentDn,strcallerid,m_agentDn,false);
+	}
+	
 }
 
 void acd_agent::ProcessIMSEvent(const acd::OtherEventTypeT& type) {

@@ -22,13 +22,14 @@
 #include "safe_map.h"
 
 class acd_config {
-private:
+public:
     // mysql configuration para
     string m_dbhost;
     uint32_t m_dbport;
     string m_dbusername;
     string m_dbpasswd;
     string m_dbname;
+	int m_dbconnum;
 
     bgcc::Mutex m_Locker;
 
@@ -58,6 +59,7 @@ public:
     uint32_t m_request_timespan;
     uint32_t m_queue_timespan;
     uint32_t m_skill_count;
+	string m_recordrootpath;
 
     // acd heartbeat
     string m_other_acdhost;

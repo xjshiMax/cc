@@ -359,29 +359,29 @@ printf("start ivr server FAILURE........\n");
     pthread_t thread_h = 0;
 
     //启动event socket监听线程
-    if (pthread_create(&thread_h, NULL, esl_listen_thread_func, NULL) != 0) {
-        IVR_FATAL("create esl listen thread failure");
-        return FAILURE;
-    }
+//     if (pthread_create(&thread_h, NULL, esl_listen_thread_func, NULL) != 0) {
+//         IVR_FATAL("create esl listen thread failure");
+//         return FAILURE;
+//     }
 
 
     //启动话单文件生成线程
-    if (pthread_create(&thread_h, NULL, calldata_to_file_thread_func, NULL) != 0) {
-        IVR_FATAL("create generate calldata thread failure");
-        return FAILURE;
-    }
+//     if (pthread_create(&thread_h, NULL, calldata_to_file_thread_func, NULL) != 0) {
+//         IVR_FATAL("create generate calldata thread failure");
+//         return FAILURE;
+//     }
 
     //启动计算CPU占用率线程
-    if (pthread_create(&thread_h, NULL, calc_cpu_occupy_thread_func, NULL) != 0) {
-        IVR_FATAL("create calculate cpu occupy thread failure");
-        return FAILURE;
-    }
+//     if (pthread_create(&thread_h, NULL, calc_cpu_occupy_thread_func, NULL) != 0) {
+//         IVR_FATAL("create calculate cpu occupy thread failure");
+//         return FAILURE;
+//     }
 
     //启动运行时信息输出线程
-    if (pthread_create(&thread_h, NULL, disp_runinfo_thread_func, NULL) != 0) {
-        IVR_FATAL("create display runinfo thread failure");
-        return FAILURE;
-    }
+//     if (pthread_create(&thread_h, NULL, disp_runinfo_thread_func, NULL) != 0) {
+//         IVR_FATAL("create display runinfo thread failure");
+//         return FAILURE;
+//     }
 
     //外呼通道的控制策略
     uint32_t num = g_autorun_conf.autorun_script_vec.size();

@@ -1,0 +1,30 @@
+﻿生成启动时间为 2019/3/14 星期四 12:05:06。
+     1>项目“E:\workstation\txcc\dep\bgcc\BGCC-master\adapter\java\bgcc4j\bgcc4j\bgcc4j.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“Debug\bgcc4j.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         e:\workstation\tool_az\vs2010\VC\bin\CL.exe /c /IC:\jdk1.6.0_22\include /IC:\jdk1.6.0_22\include\win32 /IE:\dev\java\jdk1.6.0_30\include\win32 /IE:\dev\java\jdk1.6.0_30\include /I..\..\..\..\output\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D BGCC4J_EXPORTS /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\bgcc_BaseProxy.cpp ..\bgcc_Logger.cpp ..\bgcc_Processor.cpp ..\bgcc_Protocol.cpp ..\bgcc_Server.cpp ..\bgcc_ServerInfo.cpp ..\bgcc_ServiceManager.cpp ..\bgcc_ThreadPool.cpp ..\bgcc_Transaction.cpp
+         bgcc_Transaction.cpp
+     1>e:\workstation\txcc\dep\bgcc\bgcc-master\adapter\java\bgcc4j\bgcc_transaction.cpp(20): fatal error C1083: 无法打开包括文件:“bgcc.h”: No such file or directory
+         bgcc_ThreadPool.cpp
+     1>e:\workstation\txcc\dep\bgcc\bgcc-master\adapter\java\bgcc4j\bgcc_threadpool.cpp(20): fatal error C1083: 无法打开包括文件:“bgcc.h”: No such file or directory
+         bgcc_ServiceManager.cpp
+     1>e:\workstation\txcc\dep\bgcc\bgcc-master\adapter\java\bgcc4j\bgcc_servicemanager.cpp(20): fatal error C1083: 无法打开包括文件:“bgcc.h”: No such file or directory
+         bgcc_ServerInfo.cpp
+     1>e:\workstation\txcc\dep\bgcc\bgcc-master\adapter\java\bgcc4j\bgcc_serverinfo.cpp(20): fatal error C1083: 无法打开包括文件:“bgcc.h”: No such file or directory
+         bgcc_Server.cpp
+     1>e:\workstation\txcc\dep\bgcc\bgcc-master\adapter\java\bgcc4j\bgcc_server.cpp(20): fatal error C1083: 无法打开包括文件:“bgcc.h”: No such file or directory
+         bgcc_Protocol.cpp
+     1>e:\workstation\txcc\dep\bgcc\bgcc-master\adapter\java\bgcc4j\bgcc_protocol.cpp(20): fatal error C1083: 无法打开包括文件:“bgcc.h”: No such file or directory
+         bgcc_Processor.cpp
+     1>e:\workstation\txcc\dep\bgcc\bgcc-master\adapter\java\bgcc4j\bgcc_processor.cpp(20): fatal error C1083: 无法打开包括文件:“bgcc.h”: No such file or directory
+         bgcc_Logger.cpp
+     1>e:\workstation\txcc\dep\bgcc\bgcc-master\adapter\java\bgcc4j\bgcc_logger.cpp(20): fatal error C1083: 无法打开包括文件:“bgcc.h”: No such file or directory
+         bgcc_BaseProxy.cpp
+     1>e:\workstation\txcc\dep\bgcc\bgcc-master\adapter\java\bgcc4j\bgcc_baseproxy.cpp(20): fatal error C1083: 无法打开包括文件:“bgcc.h”: No such file or directory
+         正在生成代码...
+     1>已完成生成项目“E:\workstation\txcc\dep\bgcc\BGCC-master\adapter\java\bgcc4j\bgcc4j\bgcc4j.vcxproj”(build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.61

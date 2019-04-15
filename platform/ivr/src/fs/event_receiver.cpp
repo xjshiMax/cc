@@ -96,8 +96,8 @@ int32_t callevent_recv_t::operator()(const bool*, void* param) {
 
             if (ret == IVR_SUCCESS) {
                 if (0 == evt.sessionid) {
-                    if (0 == strcasecmp(evt.name, "CHANNEL_PROGRESS_MEDIA") ||
-                            0 == strcasecmp(evt.name, "CHANNEL_PROGRESS")) {
+                    if (0 == strcasecmp(evt.name, "CHANNEL_EXECUTE_COMPLETE") ||
+                            0 == strcasecmp(evt.name, "CHANNEL_EXECUTE")) {
                         IVR_DEBUG("Incall Work");
                         IVR_TRACE("inbound call, , fid(%d), ani(%s), dnis(%s), callid(%s)",
                                   _info->get_no(), evt.event_data.normal.caller_no,

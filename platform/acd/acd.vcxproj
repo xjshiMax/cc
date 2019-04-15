@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B9263EF9-CB01-4680-9551-14632595457A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\include;..\interface\acd\bidl;..\interface\ims\bidl;..\interface\output\bgcc\include;D:\Program Files (x86)\MySQL\MySQL Connector C 6.0.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>libmysql.lib;bgccd.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)acd.exe</OutputFile>
+      <AdditionalLibraryDirectories>..\interface\output\bgcc\lib;D:\Program Files (x86)\MySQL\MySQL Connector C 6.0.2\lib\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)acd.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\include;..\interface\acd\bidl;..\interface\ims\bidl;..\interface\output\bgcc\include;D:\Program Files (x86)\MySQL\MySQL Connector C 6.0.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>libmysql.lib;bgcc.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)acd.exe</OutputFile>
+      <AdditionalLibraryDirectories>..\interface\output\bgcc\lib;D:\Program Files (x86)\MySQL\MySQL Connector C 6.0.2\lib\opt;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\acdclient\acdclient.cpp" />
+    <ClCompile Include="src\acd_agent.cpp" />
+    <ClCompile Include="src\acd_agent_manager.cpp" />
+    <ClCompile Include="src\acd_info.cpp" />
+    <ClCompile Include="src\acd_main.cpp" />
+    <ClCompile Include="src\acd_skill.cpp" />
+    <ClCompile Include="src\acd_skill_manager.cpp" />
+    <ClCompile Include="src\acd_tool.cpp" />
+    <ClCompile Include="src\logger.cpp" />
+    <ClCompile Include="src\thread.cpp" />
+    <ClCompile Include="src\acd_log_timer.cpp" />
+    <ClCompile Include="src\acd_config.cpp" />
+    <ClCompile Include="src\config_reader.cpp" />
+    <ClCompile Include="..\interface\acd\bidl\acd.cpp" />
+    <ClCompile Include="..\interface\acd\bidl\acdcallback.cpp" />
+    <ClCompile Include="..\interface\acd\bidl\acdcommon.cpp" />
+    <ClCompile Include="src\acd_send_event_manager.cpp" />
+    <ClCompile Include="src\acd_server.cpp" />
+    <ClCompile Include="..\interface\acd\bidl\acdheartbeat.cpp" />
+    <ClCompile Include="src\acd_backup.cpp" />
+    <ClCompile Include="src\acd_heartbeat.cpp" />
+    <ClCompile Include="..\interface\ims\bidl\callback.cpp" />
+    <ClCompile Include="..\interface\ims\bidl\common.cpp" />
+    <ClCompile Include="..\interface\ims\bidl\ims.cpp" />
+    <ClCompile Include="src\acd_ims.cpp" />
+    <ClCompile Include="src\acd_ims_callback.cpp" />
+    <ClCompile Include="src\acd_receive_event_manager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\acdclient\acdclientCallback.h" />
+    <ClInclude Include="include\acd_agent.h" />
+    <ClInclude Include="include\acd_agent_manager.h" />
+    <ClInclude Include="include\acd_info.h" />
+    <ClInclude Include="include\acd_skill.h" />
+    <ClInclude Include="include\acd_skill_manager.h" />
+    <ClInclude Include="include\acd_tool.h" />
+    <ClInclude Include="include\const_define.h" />
+    <ClInclude Include="include\logger.h" />
+    <ClInclude Include="include\safe_list.h" />
+    <ClInclude Include="include\safe_map.h" />
+    <ClInclude Include="include\safe_multimap.h" />
+    <ClInclude Include="include\safe_queue.h" />
+    <ClInclude Include="include\safe_set.h" />
+    <ClInclude Include="include\thread.h" />
+    <ClInclude Include="include\acd_log_timer.h" />
+    <ClInclude Include="include\acd_config.h" />
+    <ClInclude Include="include\config_reader.h" />
+    <ClInclude Include="..\interface\acd\bidl\acd.h" />
+    <ClInclude Include="..\interface\acd\bidl\acdcallback.h" />
+    <ClInclude Include="..\interface\acd\bidl\acdcommon.h" />
+    <ClInclude Include="include\acd_send_event_manager.h" />
+    <ClInclude Include="include\acd_server.h" />
+    <ClInclude Include="..\interface\acd\bidl\acdheartbeat.h" />
+    <ClInclude Include="include\acd_backup.h" />
+    <ClInclude Include="include\acd_heartbeat.h" />
+    <ClInclude Include="..\interface\ims\bidl\callback.h" />
+    <ClInclude Include="..\interface\ims\bidl\common.h" />
+    <ClInclude Include="..\interface\ims\bidl\ims.h" />
+    <ClInclude Include="include\acd_ims.h" />
+    <ClInclude Include="include\acd_ims_callback.h" />
+    <ClInclude Include="include\acd_receive_event_manager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\interface\acd\bidl\acd.bidl" />
+    <None Include="..\interface\acd\bidl\acdcallback.bidl" />
+    <None Include="..\interface\acd\bidl\acdcommon.bidl" />
+    <None Include="..\interface\acd\bidl\acdheartbeat.bidl" />
+    <None Include="..\interface\ims\bidl\callback.bidl" />
+    <None Include="..\interface\ims\bidl\common.bidl" />
+    <None Include="..\interface\ims\bidl\ims.bidl" />
+    <None Include="conf\acd.conf" />
+    <None Include="conf\bgcc.conf" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

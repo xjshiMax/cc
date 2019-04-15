@@ -32,6 +32,7 @@ int32_t fs_opr_t::connect(uint32_t address, int32_t port, const char* pswd, bool
         ivr_tools_t::inet_ntop(address, ip, sizeof "255.255.255.255");
 
         if (esl_connect(&_handle, ip, _port, NULL, _pswd) == ESL_SUCCESS) {
+		//if (esl_connect(&_handle, "210.21.48.69", 8021, NULL, "ClueCon") == ESL_SUCCESS) {
             eval(RECORD_BASEDIR, _recordbase, LEN_256);
             ret = IVR_SUCCESS;
         } else {
@@ -50,6 +51,7 @@ int32_t fs_opr_t::connect(uint32_t address, int32_t port, const char* pswd, bool
         ivr_tools_t::inet_ntop(address, ip, sizeof "255.255.255.255");
 
         if (esl_connect(&_handle, ip, _port, NULL, _pswd) == ESL_SUCCESS) {
+		//if (esl_connect(&_handle, "210.21.48.69", 8021, NULL, "ClueCon") == ESL_SUCCESS) {
             eval(RECORD_BASEDIR, _recordbase, LEN_256);
             ret = IVR_SUCCESS;
         } else {
@@ -351,9 +353,9 @@ int32_t fs_opr_t::get_event(fs_event_t& event, uint32_t timeout) {
                     IvrInstanceManager::get_instance()->add_uuid(event.sessionid, tmp_uuid);
                     IVR_DEBUG("ADD UUID SUCC: UUID= %s", tmp_uuid);
                 } else {
-                    if (!check_ivr_ip(getIP.c_str())) {
-                        continue;
-                    }
+//                     if (!check_ivr_ip(getIP.c_str())) {  
+//                         continue;
+ //                   }
                 }
             } else if (!IvrInstanceManager::get_instance()->check_uuid(tmp_uuid, event.sessionid)) {
                 IVR_DEBUG("CHECK UUID FAIL: UUID= %s", tmp_uuid);

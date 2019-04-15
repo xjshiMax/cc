@@ -1,6 +1,6 @@
 //2019/3/18
 //使用websock接口实现客户端对接服务端。
-
+#pragma  once
 #include <websocketpp/config/asio_no_tls.hpp>
 #include <websocketpp/server.hpp>
 #include "acdcommon.h"
@@ -14,32 +14,40 @@ using namespace websocketpp;
 typedef websocketpp::server<websocketpp::config::asio> wsServer;
 typedef wsServer::message_ptr message_ptr;
 
-typedef struct ApAgentInfo
-{
-	string agentId;          /*坐席工号，并唯一标示一个agentbar连接*/
-	string agentDn;         /*座席使用的电话号码*/
-	string agentPwd;        /*座席签入的密码*/
-	acd::StatusChangeT statusChangetype; /*挂断后状态（自动示闲、自动示忙）*/
-	bool autoAnswer; /*挂断后，从示闲或示忙状态到后处理的时间间隔，默认5秒*/
-	bool fcSignin; /*坐席已签入，是否强制签出后迁入 */
-	string skills; /*技能和技能级别描述*/
-	string proxyname; /*保存的proxyname*/
-	string proxyname_old;
-	int64_t handle;
-	int32_t flag;
+// typedef struct ApAgentInfo
+// {
+// 	string agentId;          /*坐席工号，并唯一标示一个agentbar连接*/
+// 	string agentDn;         /*座席使用的电话号码*/
+// 	string agentPwd;        /*座席签入的密码*/
+// 	acd::StatusChangeT statusChangetype; /*挂断后状态（自动示闲、自动示忙）*/
+// 	bool autoAnswer; /*挂断后，从示闲或示忙状态到后处理的时间间隔，默认5秒*/
+// 	bool fcSignin; /*坐席已签入，是否强制签出后迁入 */
+// 	string skills; /*技能和技能级别描述*/
+// 	string proxyname; /*保存的proxyname*/
+// 	string proxyname_old;
+// 	int64_t handle;
+// 	int32_t flag;
+// 
+// }t_ApAgentInfo;
 
-}t_ApAgentInfo;
-
-enum{
-	WSAP_SignIn,WSAP_SignOut,WSAP_SetAgentStatus,WSAP_GetAgentStatus,WSAP_ResetStatuschangetype,WSAP_ResetAutoAnswer,
-	WSAP_ResetSkill,
-	WSAP_OutboundCall,WSAP_AnswerCall,WSAP_ReleaseCall,WSAP_Hold,WSAP_Retrieve,WSAP_Consult,WSAP_ConsultReconnect,WSAP_ConsultTransfer,WSAP_SingleStepTransfer,WSAP_ConsultConference
-	,WSAP_ConferenceJoin,WSAP_SetAssociateData,WSAP_GetAssociateData,WSAP_JumptheQueue,WSAP_ForceSignIn,
-	WSAP_ERRORTYPE
-};
+// enum{
+// 	WSAP_SignIn,WSAP_SignOut,WSAP_SetAgentStatus,WSAP_GetAgentStatus,WSAP_ResetStatuschangetype,WSAP_ResetAutoAnswer,
+// 	WSAP_ResetSkill,
+// 	WSAP_OutboundCall,WSAP_AnswerCall,WSAP_ReleaseCall,WSAP_Hold,WSAP_Retrieve,WSAP_Consult,WSAP_ConsultReconnect,WSAP_ConsultTransfer,WSAP_SingleStepTransfer,WSAP_ConsultConference
+// 	,WSAP_ConferenceJoin,WSAP_SetAssociateData,WSAP_GetAssociateData,WSAP_JumptheQueue,WSAP_ForceSignIn,
+// 	WSAP_ERRORTYPE
+// };
 class WSapserver
 {
 public:
+	enum{
+		WSAP_SignIn,WSAP_SignOut,WSAP_SetAgentStatus,WSAP_GetAgentStatus,WSAP_ResetStatuschangetype,WSAP_ResetAutoAnswer,
+		WSAP_ResetSkill,WSAP_Reset,
+		WSAP_OutboundCall,WSAP_AnswerCall,WSAP_ReleaseCall,WSAP_Hold,WSAP_Retrieve,WSAP_Consult,WSAP_ConsultReconnect,WSAP_ConsultTransfer,WSAP_SingleStepTransfer,WSAP_ConsultConference
+		,WSAP_ConferenceJoin,WSAP_SetAssociateData,WSAP_GetAssociateData,WSAP_JumptheQueue,WSAP_ForceSignIn,
+		WSAP_ResetConfig,
+		WSAP_ERRORTYPE
+	};
 	WSapserver();
 	~WSapserver();
 	bool InitApServer(std::string ApListenIp, int32_t ApListenPort, int32_t threadPoolNum);
@@ -51,7 +59,12 @@ public:
 	void on_callapclient(wsServer *s, websocketpp::connection_hdl hdl,string applicationcmd);
 	int Getcmdvalue(string strcmd);
 	int GetcmdType(string cmdfield);
-	string Onresponse(int code,string desc);
+	string Onresponse(int code,string desc,string agentId);
+ 	string Onresponse(int code,string desc,string agentId,string strkey2,string param2);
+	string Onresponse(int code,string desc,string agentId,string strkey2,int param2);
+	string OnSignIn(int code,string desc,string agentId,int64_t handle);
+	string OngetAgentStatus(int code,string desc,string agentId,int status);
+	string OnparamError(int code,string desc,string agentId);
 private:
 	std::string m_ApListenIp;
 	int32_t m_ApListenPort;

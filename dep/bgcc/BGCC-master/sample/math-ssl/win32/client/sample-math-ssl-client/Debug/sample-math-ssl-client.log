@@ -1,0 +1,18 @@
+﻿生成启动时间为 2019/3/14 星期四 12:05:01。
+     1>项目“E:\workstation\txcc\dep\bgcc\BGCC-master\sample\math-ssl\win32\client\sample-math-ssl-client\sample-math-ssl-client.vcxproj”在节点 5 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“Debug\sample-math-ssl-client.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         e:\workstation\tool_az\vs2010\VC\bin\CL.exe /c /I"..\..\..\output-cpp" /I..\..\..\..\..\output\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\cpp\client.cpp "..\..\..\output-cpp\address.cpp" "..\..\..\output-cpp\math_demo.cpp"
+         math_demo.cpp
+     1>e:\workstation\txcc\dep\bgcc\bgcc-master\sample\math-ssl\output-cpp\math_demo.h(8): fatal error C1083: 无法打开包括文件:“bgcc.h”: No such file or directory
+         address.cpp
+     1>e:\workstation\txcc\dep\bgcc\bgcc-master\sample\math-ssl\output-cpp\address.h(8): fatal error C1083: 无法打开包括文件:“bgcc.h”: No such file or directory
+         client.cpp
+     1>e:\workstation\txcc\dep\bgcc\bgcc-master\sample\math-ssl\cpp\client.cpp(23): fatal error C1083: 无法打开包括文件:“bgcc.h”: No such file or directory
+         正在生成代码...
+     1>已完成生成项目“E:\workstation\txcc\dep\bgcc\BGCC-master\sample\math-ssl\win32\client\sample-math-ssl-client\sample-math-ssl-client.vcxproj”(build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:03.09

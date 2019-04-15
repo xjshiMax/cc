@@ -10,16 +10,20 @@ INC_PATH += -I../../interface/output/bgcc/include/
 INC_PATH += -I../../interface/output/bgcc/include/libs/
 INC_PATH += -I../../interface/output/ims/include/
 INC_PATH += -I../../interface/output/ivr/include
+INC_PATH += -I../../interface/output/esl/include
 INC_PATH += -I$(DEP_ROOT)/mysql/output/include
 INC_PATH += -I$(DEP_ROOT)/libcurl/output/include
 INC_PATH += -I$(DEP_ROOT)/freeswitch/output/libs/esl/include
 INC_PATH += -I$(DEP_ROOT)/json-c/output/include
 INC_PATH += -I$(DEP_ROOT)/boost/output/include
+INC_PATH += -I/usr/local/include/mysql
 
 LIB_PATH = -Llib
 LIB_PATH += -L../../interface/output/ims/lib/linux/
 LIB_PATH += -L../../interface/output/ivr/lib/linux/
 LIB_PATH += -L../../interface/output/bgcc/lib/
+LIB_PATH += -L../../interface/output/esl/lib/
+LIB_PATH += -L/usr/local/lib/mysql/
 LIB_PATH += -L$(DEP_ROOT)/mysql/output/lib
 LIB_PATH += -L$(DEP_ROOT)/boost/output/lib
 LIB_PATH += -L$(DEP_ROOT)/libcurl/output/lib
@@ -31,7 +35,7 @@ OUTPUT_PATH = ./output
 
 VERSION=${shell echo $$SCMPF_MODULE_VERSION}
 
-LDFLAGS = -lesl -lpthread -luuid  -lmysqlclient -lmysqlclient_r -lmystrings -lmysys -lcrypto -lidn -lssl -lcurl -lrt -lz -ljson -lims -livr -lbgcc  -lboost_system 
+LDFLAGS = -lesl -lpthread -luuid  -lmysqlclient -lmysqlclient -lmystrings -lmysys -lcrypto -lidn -lssl -lcurl -lrt -lz -ljson -lims -livr -lbgcc  -lboost_system 
 CXX_FLAGS = -DSCMPF_MODULE_VERSION=\"$(VERSION)\" -Wall -pipe -Wno-unused-parameter -Wno-reorder -Wwrite-strings -Wswitch -Wconversion -g \
                    -fPIC -Winline -Wreturn-type -Wtrigraphs -Wformat -Wparentheses -Wpointer-arith \
 				   -fthreadsafe-statics \

@@ -417,13 +417,13 @@ bool AgentProxy::Init() {
         BGCC_WARN("ap", "Fail to Create ApListen Thread!");
         return false;
     }
-
-    //创建处理回调事件的线程
-    if (!CreateAcdCBThread()) {
-
-        BGCC_WARN("ap", "Fail to Create ACD Callback Thread!");
-        return false;
-    }
+	//xjshi 这里为给坐席代理发送回调数据，暂时关闭，2019/3/30
+//     //创建处理回调事件的线程
+//     if (!CreateAcdCBThread()) {
+// 
+//         BGCC_WARN("ap", "Fail to Create ACD Callback Thread!");
+//         return false;
+//     }
 
     //创建发送心跳给acd的线程
     if (!CreateCheckHBThread()) {
@@ -433,12 +433,14 @@ bool AgentProxy::Init() {
     }
 
     //创建监听客户端的Server
-    _pApServer = new ApServer();
+    _pApServer = new WSapserver();
 
     // if (!_pApServer->InitApServer(_apHost, _apListenPort, _apServerThreadPoolNum)) {
     //     BGCC_WARN("ap", "Fail to Init ApServer!");
     //     return false;
     // }
+	_pApServer->InitApServer("192.168.2.100",8071,10);
+	_pApServer->startServer();
 
     return true;
 }
@@ -1214,58 +1216,90 @@ int32_t AgentProxy::GetHeartBeatCount() {
 }
 
 void AgentProxy::HeartBeat() {
-    int64_t handle = 0;
-    std::string agentId = "0000";
-    uint64_t time_rcv = TimeUtil::get_timestamp_ms();
-    AcdResultT ret ;
+//     int64_t handle = 0;
+//     std::string agentId = "0000";
+//     uint64_t time_rcv = TimeUtil::get_timestamp_ms();
+//    AcdResultT ret ;
+// 
+//     if (AP_CONNACD_BACKING == GetCtiService()) {
+//         BGCC_WARN("ap", "Backuping And Cancel Heartbeat.");
+//         return;
+//     }
+// 
+//     {
+//         ScopeGuard guard(&_ApClientMutex);
+// 
+//         if (!guard.is_locked()) {
+//             BGCC_WARN("ap", "Guard fail.");
+//             return ;
+//         }
+// 
+//         if (!_pApClient) {
+//             BGCC_WARN("ap", "Client is NULL.");
+//             return;
+//         }
+// 
+//         ret = _pApClient->Heartbeat(handle, agentId, time_rcv);
+//     }
+// 
+// 
+//     if (ret == AcdResultT::ArNoSignin) {
+//         ClearHeartBeatCount();
+//         BGCC_NOTICE("ap", "Success to GetHeartbeat to ACD[%d],CheckHeartBeatCount = %d.", GetCtiService(),
+//                     GetHeartBeatCount());
+//     } else if (ret == AcdResultT::ArNotMaster) {
+//         ClearHeartBeatCount();
+//         BGCC_WARN("ap", "ACD[%d] Tell me NotMaster And to Backup.", GetCtiService());
+//         BGCC_WARN("bgcc", "ACD[%d] Tell me NotMaster And to Backup.", GetCtiService());
+//         // 倒换
+//         Backup();
+//         return;
+//     } else {
+//         AddHeartBeatCount();
+//         BGCC_WARN("ap", "ACD[%d] is AbNormal,CheckHeartbeatCount++ = %d,ret = %s.", GetCtiService(),
+//                   GetHeartBeatCount(), ret.get_desc().c_str());
+//     }
+// 
+//     if (GetHeartBeatCount() == _apHeartBeatMaxTrytimes) {
+//         ClearHeartBeatCount();
+//         BGCC_WARN("ap", "Check Connect to ACD[%d] Fail, CheckCount = %d And to Backup", GetCtiService(),
+//                   _apHeartBeatMaxTrytimes);
+//         // 倒换
+//         Backup();
+//     }
+ 	//ScopeGuard guard(&_mapMutex);
+ 
+ 	//if (!guard.is_locked()) {
+ 	//	BGCC_WARN("ap", "Guard fail.");
+ 	//	return ;
+ 	//}
+	AcdResultT ret ;
+	uint64_t time_rcv = TimeUtil::get_timestamp_ms();
+	MapAgentIdDataType::iterator it1 = _mapAgentIdData.begin();
+	while(it1!=_mapAgentIdData.end())
+	{
+		if(it1->second)
+		{
+			ret = _pApClient->Heartbeat(it1->second->handle, it1->first, time_rcv);
 
-    if (AP_CONNACD_BACKING == GetCtiService()) {
-        BGCC_WARN("ap", "Backuping And Cancel Heartbeat.");
-        return;
-    }
+			if (ret == AcdResultT::ArNoSignin) {
+				BGCC_NOTICE("ap",
+					"Transfer Heartbeat ACD return AcdResultT::ArNoSign and to Delete AgentData,AgentId = %s.",
+					 it1->first.c_str());
+				cout<<" heabeat it1->first:"<<it1->first<<endl;
+				AgentData* p = it1->second;
+				if (p) {
+					delete p;
+					p = NULL;
+				}
 
-    {
-        ScopeGuard guard(&_ApClientMutex);
-
-        if (!guard.is_locked()) {
-            BGCC_WARN("ap", "Guard fail.");
-            return ;
-        }
-
-        if (!_pApClient) {
-            BGCC_WARN("ap", "Client is NULL.");
-            return;
-        }
-
-        ret = _pApClient->Heartbeat(handle, agentId, time_rcv);
-    }
-
-
-    if (ret == AcdResultT::ArNoSignin) {
-        ClearHeartBeatCount();
-        BGCC_NOTICE("ap", "Success to GetHeartbeat to ACD[%d],CheckHeartBeatCount = %d.", GetCtiService(),
-                    GetHeartBeatCount());
-    } else if (ret == AcdResultT::ArNotMaster) {
-        ClearHeartBeatCount();
-        BGCC_WARN("ap", "ACD[%d] Tell me NotMaster And to Backup.", GetCtiService());
-        BGCC_WARN("bgcc", "ACD[%d] Tell me NotMaster And to Backup.", GetCtiService());
-        // 倒换
-        Backup();
-        return;
-    } else {
-        AddHeartBeatCount();
-        BGCC_WARN("ap", "ACD[%d] is AbNormal,CheckHeartbeatCount++ = %d,ret = %s.", GetCtiService(),
-                  GetHeartBeatCount(), ret.get_desc().c_str());
-    }
-
-    if (GetHeartBeatCount() == _apHeartBeatMaxTrytimes) {
-        ClearHeartBeatCount();
-        BGCC_WARN("ap", "Check Connect to ACD[%d] Fail, CheckCount = %d And to Backup", GetCtiService(),
-                  _apHeartBeatMaxTrytimes);
-        // 倒换
-        Backup();
-    }
-
+				_mapAgentIdData.erase(it1++);
+				continue;
+		}
+		}
+		it1++;
+	}
+	cout<<"AgentProxy::HeartBeat"<<endl;
     return ;
 }
 
@@ -1645,9 +1679,9 @@ AcdResultT AgentProxy::SignIn(const std::string& agentId,
                               const std::string& agentDn, const std::string& agentPwd,
                               const StatusChangeT& statusChangetype, bool autoAnswer,
                               bool fcSignin, const std::string& skills, int64_t& handle,
-                              const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                             string peerIP, uint64_t time_rcv) {
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+   // //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap",
                 "Transfer SignIn PeerIP[%s]:AgentId = %s,AgentDn = %s,AgentPwd = %s,statusChangetype = %d,autoAnswer = %d,fcSignin = %d,skill = %s,handle = %"int64ld".",
                 peerIP.c_str(), agentId.c_str(), agentDn.c_str(), agentPwd.c_str(), statusChangetype.get_value(),
@@ -1665,7 +1699,7 @@ AcdResultT AgentProxy::SignIn(const std::string& agentId,
     }
 
     //清空超时的agentinfo
-    ClearTimeOutAgentInfo(agentId);
+  //  ClearTimeOutAgentInfo(agentId);
 
     AgentData agentinfo_old;
 
@@ -1689,7 +1723,7 @@ AcdResultT AgentProxy::SignIn(const std::string& agentId,
         agentinfo_tmp.skill = skills;
         agentinfo_tmp.handle = handle;
         agentinfo_tmp.agentIP = peerIP;
-        agentinfo_tmp.proxyname = getProxyName(ctx);
+        agentinfo_tmp.proxyname =/* getProxyName(ctx)*/"";
 
         BGCC_NOTICE("ap", "Transfer:SignIn getProxyName = %s.", agentinfo_tmp.proxyname.c_str());
 
@@ -1736,7 +1770,7 @@ AcdResultT AgentProxy::SignIn(const std::string& agentId,
         agentinfo->handle = handle;
         agentinfo->agentIP = peerIP;
         agentinfo->flag = 0;
-        std::string proxyname = getProxyName(ctx);
+        std::string proxyname =/* getProxyName(ctx)*/"";
         BGCC_NOTICE("ap", "AgentProxy Transfer:SignIn Get ProxyName = %s.", proxyname.c_str());
         agentinfo->proxyname = proxyname;
         agentinfo->proxyname_old = "";
@@ -1811,12 +1845,12 @@ AcdResultT AgentProxy::SignIn(const std::string& agentId,
 
 
 AcdResultT AgentProxy::SignOut(int64_t handle, const std::string& agentId,
-                               const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                               string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+   // //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap", "Transfer SignOut PeerIP[%s]:AgentId = %s,handle = %"int64ld".",
                 peerIP.c_str(), agentId.c_str(), handle);
 
@@ -1861,12 +1895,12 @@ AcdResultT AgentProxy::SetAgentStatus(int64_t handle,
                                       const std::string& agentId,
                                       const AgentStatusT& agentStatus,
                                       const std::string& restReason,
-                                      const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                                      string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap",
                 "Transfer SetAgentStatus PeerIP[%s]:AgentId = %s,handle = %"int64ld",agentStatus = %s,restReason = %s.",
                 peerIP.c_str(), agentId.c_str(), handle, agentStatus.get_desc().c_str(), restReason.c_str());
@@ -1908,12 +1942,12 @@ AcdResultT AgentProxy::SetAgentStatus(int64_t handle,
 AcdResultT AgentProxy::GetAgentStatus(int64_t handle,
                                       const std::string& agentId,
                                       AgentStatusT& agentStatus,
-                                      const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                                      string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap", "Transfer GetAgentStatus PeerIP[%s]:AgentId = %s,handle = %"int64ld".",
                 peerIP.c_str(), agentId.c_str(), handle);
 
@@ -1952,12 +1986,12 @@ AcdResultT AgentProxy::GetAgentStatus(int64_t handle,
 AcdResultT AgentProxy::ResetStatuschangetype(int64_t handle,
         const std::string& agentId,
         const StatusChangeT& statusChangetype,
-        const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+        string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
 
     int64_t handle_tmp;
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap",
                 "Transfer ResetStatuschangetype PeerIP[%s]:AgentId = %s,handle = %"int64ld",statusChangetype = %s.",
                 peerIP.c_str(), agentId.c_str(), handle, statusChangetype.get_desc().c_str());
@@ -1996,11 +2030,11 @@ AcdResultT AgentProxy::ResetStatuschangetype(int64_t handle,
 AcdResultT AgentProxy::ResetAutoAnswer(int64_t handle,
                                        const std::string& agentId,
                                        bool autoAnswer,
-                                       const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                                       string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap",
                 "Transfer ResetAutoAnswer PeerIP[%s]:AgentId = %s,handle = %"int64ld",autoAnswer= %d.",
                 peerIP.c_str(), agentId.c_str(), handle, autoAnswer);
@@ -2039,12 +2073,12 @@ AcdResultT AgentProxy::ResetAutoAnswer(int64_t handle,
 AcdResultT AgentProxy::ResetSkill(int64_t handle,
                                   const std::string& agentId,
                                   const std::string& skill,
-                                  const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                                  string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap", "Transfer ResetSkill PeerIP[%s]:AgentId = %s,handle = %"int64ld",skill= %s.",
                 peerIP.c_str(), agentId.c_str(), handle, skill.c_str());
 
@@ -2082,13 +2116,13 @@ AcdResultT AgentProxy::ResetSkill(int64_t handle,
 
 
 AcdResultT AgentProxy::Reset(int64_t handle, const std::string& agentId,
-                             const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                             string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
 
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap", "Transfer Reset PeerIP[%s]:AgentId = %s,handle = %"int64ld".",
                 peerIP.c_str(), agentId.c_str(), handle);
 
@@ -2136,12 +2170,12 @@ AcdResultT AgentProxy::OutboundCall(int64_t handle,
                                     int32_t timeout,
                                     const CallModeT& callMode,
                                     const CallTypeT& callType,
-                                    const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                                    string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap",
                 "Transfer OutboundCall PeerIP[%s]:AgentId = %s,handle = %"int64ld",callerId = %s,destId = %s,forCallerDispNum = %s,forCalleeDispNum = %s.",
                 peerIP.c_str(), agentId.c_str(), handle, callerId.c_str(), destId.c_str(), forCallerDispNum.c_str(),
@@ -2184,11 +2218,11 @@ AcdResultT AgentProxy::OutboundCall(int64_t handle,
 
 AcdResultT AgentProxy::AnswerCall(int64_t handle,
                                   const std::string& agentId,
-                                  const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                                  string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap", "Transfer AnswerCall PeerIP[%s]:AgentId = %s,handle = %"int64ld".",
                 peerIP.c_str(), agentId.c_str(), handle);
 
@@ -2225,12 +2259,12 @@ AcdResultT AgentProxy::AnswerCall(int64_t handle,
 
 AcdResultT AgentProxy::ReleaseCall(int64_t handle,
                                    const std::string& agentId,
-                                   const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                                   string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap", "Transfer ReleaseCall PeerIP[%s]:AgentId = %s,handle = %"int64ld".",
                 peerIP.c_str(), agentId.c_str(), handle);
 
@@ -2266,12 +2300,12 @@ AcdResultT AgentProxy::ReleaseCall(int64_t handle,
 
 AcdResultT AgentProxy::Hold(int64_t handle,
                             const std::string& agentId,
-                            const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                            string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap", "Transfer Hold PeerIP[%s]:AgentId = %s,handle = %"int64ld".",
                 peerIP.c_str(), agentId.c_str(), handle);
 
@@ -2306,12 +2340,12 @@ AcdResultT AgentProxy::Hold(int64_t handle,
 }
 AcdResultT AgentProxy::RetrieveHeld(int64_t handle,
                                     const std::string& agentId,
-                                    const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                                    string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap", "Transfer RetrieveHeld PeerIP[%s]:AgentId = %s,handle = %"int64ld".",
                 peerIP.c_str(), agentId.c_str(), handle);
 
@@ -2354,13 +2388,13 @@ AcdResultT AgentProxy::Consult(int64_t handle,
                                const std::string& forCallerDispNum,
                                const std::string& forCalleeDispNum,
                                const CallTypeT& callType,
-                               const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                               string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     AgentData agentinfo;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap",
                 "Transfer Consult PeerIP[%s]:AgentId = %s,handle = %"int64ld",callerId = %s,destId = %s,forCallerDispNum = %s,forCalleeDispNum = %s.",
                 peerIP.c_str(), agentId.c_str(), handle, callerId.c_str(), destId.c_str(), forCallerDispNum.c_str(),
@@ -2400,12 +2434,12 @@ AcdResultT AgentProxy::Consult(int64_t handle,
 }
 AcdResultT AgentProxy::ConsultReconnect(int64_t handle,
                                         const std::string& agentId,
-                                        const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                                        string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap", "Transfer ConsultReconnect PeerIP[%s]:AgentId = %s,handle = %"int64ld".",
                 peerIP.c_str(), agentId.c_str(), handle);
 
@@ -2442,12 +2476,12 @@ AcdResultT AgentProxy::ConsultReconnect(int64_t handle,
     return ret;
 }
 AcdResultT AgentProxy::ConsultTransfer(int64_t handle, const std::string& agentId,
-                                       const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                                       string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap", "Transfer ConsultTransfer PeerIP[%s]:AgentId = %s,handle = %"int64ld".",
                 peerIP.c_str(), agentId.c_str(), handle);
 
@@ -2491,12 +2525,12 @@ AcdResultT AgentProxy::SingleStepTransfer(int64_t handle,
         const std::string& forCalleeDispNum,
         bool isPassthrough,
         const CallTypeT& transferType,
-        const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+        string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap",
                 "Transfer SingleStepTransfer PeerIP[%s]:AgentId = %s,handle = %"int64ld",callerId = %s,destId = %s,forCallerDispNum = %s,forCalleeDispNum = %s.",
                 peerIP.c_str(), agentId.c_str(), handle, callerId.c_str(), destId.c_str(), forCallerDispNum.c_str(),
@@ -2538,12 +2572,12 @@ AcdResultT AgentProxy::SingleStepTransfer(int64_t handle,
 }
 AcdResultT AgentProxy::ConsultConference(int64_t handle,
         const std::string& agentId,
-        const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+        string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap", "Transfer ConsultConference PeerIP[%s]:AgentId = %s,handle = %"int64ld".",
                 peerIP.c_str(), agentId.c_str(), handle);
 
@@ -2587,12 +2621,12 @@ AcdResultT AgentProxy::ConferenceJoin(int64_t handle,
                                       const std::string& forCallerDispNum,
                                       const std::string& forCalleeDispNum,
                                       const ConferenceT& conferenceType,
-                                      const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                                      string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap",
                 "Transfer ConferenceJoin PeerIP[%s]:AgentId = %s,handle = %"int64ld",callerId = %s,destAgentId = %s,forCallerDispNum = %s,forCalleeDispNum = %s.",
                 peerIP.c_str(), agentId.c_str(), handle, callerId.c_str(), destAgentId.c_str(),
@@ -2636,12 +2670,12 @@ AcdResultT AgentProxy::SetAssociateData(int64_t handle,
                                         const std::string& agentId,
                                         const std::string& key,
                                         const std::string& value,
-                                        const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                                        string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap",
                 "Transfer SetAssociateData PeerIP[%s]:AgentId = %s,handle = %"int64ld",key = %s,value = %s.",
                 peerIP.c_str(), agentId.c_str(), handle, key.c_str(), value.c_str());
@@ -2682,12 +2716,12 @@ AcdResultT AgentProxy::GetAssociateData(int64_t handle,
                                         const std::string& agentId,
                                         const std::string& key,
                                         std::string& value,
-                                        const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                                        string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap", "Transfer GetAssociateData PeerIP[%s]:AgentId = %s,handle = %"int64ld",key = %s.",
                 peerIP.c_str(), agentId.c_str(), handle, key.c_str());
 
@@ -2728,12 +2762,12 @@ AcdResultT AgentProxy::ForceSignIn(int64_t handle,
                                    const std::string& agentId, const std::string& destAgentId,
                                    const std::string& agentDn, const std::string& agentPwd,
                                    const StatusChangeT& statusChangetype, bool autoAnswer, bool fcSignin,
-                                   const std::string& skills, const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                                   const std::string& skills, string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap",
                 "Transfer ForceSignIn PeerIP[%s]:AgentId = %s,destAgentId = %s,AgentDn = %s,AgentPwd = %s,statusChangetype = %d,autoAnswer = %d,fcSignin = %d,skill = %s,handle = %"int64ld".",
                 peerIP.c_str(), agentId.c_str(), destAgentId.c_str(), agentDn.c_str(), agentPwd.c_str(),
@@ -2781,7 +2815,7 @@ AcdResultT AgentProxy::ForceSignIn(int64_t handle,
 
         (void)DelMapAgentIdData(destAgentId);
 
-        std::string proxyname = getProxyName(ctx);
+        std::string proxyname ="" /*getProxyName(ctx)*/;
 
         if (!proxyname.empty()) {
             agentinfo->agentId = destAgentId;
@@ -2822,12 +2856,12 @@ AcdResultT AgentProxy::ForceSignIn(int64_t handle,
 AcdResultT AgentProxy::ForceSignOut(int64_t handle,
                                     const std::string& agentId,
                                     const std::string& destAgentId,
-                                    const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                                    string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap",
                 "Transfer ForceSignOut PeerIP[%s]:AgentId = %s,destAgentId = %s,handle = %"int64ld".",
                 peerIP.c_str(), agentId.c_str(), destAgentId.c_str(), handle);
@@ -2878,12 +2912,12 @@ AcdResultT AgentProxy::ForceSetAgentStatus(int64_t handle,
         const std::string& agentId,
         const std::string& destAgentId,
         const AgentStatusT& agentStatus,
-        const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+        string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap",
                 "Transfer ForceSetAgentStatus PeerIP[%s]:AgentId = %s,destAgentId = %s,handle = %"int64ld",agentStatus = %s.",
                 peerIP.c_str(), agentId.c_str(), destAgentId.c_str(), handle, agentStatus.get_desc().c_str());
@@ -2927,12 +2961,12 @@ AcdResultT AgentProxy::Listen(int64_t handle,
                               const std::string& destAgentId,
                               const std::string& forCallerDispNum,
                               const std::string& forCalleeDispNum,
-                              const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                              string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap",
                 "Transfer Listen PeerIP[%s]:AgentId = %s,callerId = %s,destAgentId = %s,handle = %"int64ld",forCallerDispNum = %s,forCalleeDispNum = %s.",
                 peerIP.c_str(), agentId.c_str(), callerId.c_str(), destAgentId.c_str(), handle,
@@ -2973,12 +3007,12 @@ AcdResultT AgentProxy::Listen(int64_t handle,
 AcdResultT AgentProxy::StopListen(int64_t handle,
                                   const std::string& agentId,
                                   const std::string& destAgentId,
-                                  const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                                  string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap",
                 "Transfer StopListen PeerIP[%s]:AgentId = %s,destAgentId = %s,handle = %"int64ld".",
                 peerIP.c_str(), agentId.c_str(), destAgentId.c_str(), handle);
@@ -3023,12 +3057,12 @@ AcdResultT AgentProxy::Insert(int64_t handle,
                               const std::string& destAgentId,
                               const std::string& forCallerDispNum,
                               const std::string& forCalleeDispNum,
-                              const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                              string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap",
                 "Transfer Insert PeerIP[%s]:AgentId = %s,callerId = %s,destAgentId = %s,handle = %"int64ld",forCallerDispNum = %s,forCalleeDispNum = %s.",
                 peerIP.c_str(), agentId.c_str(), callerId.c_str(), destAgentId.c_str(), handle,
@@ -3070,12 +3104,12 @@ AcdResultT AgentProxy::Insert(int64_t handle,
 AcdResultT AgentProxy::StopInsert(int64_t handle,
                                   const std::string& agentId,
                                   const std::string& destAgentId,
-                                  const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                                  string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap",
                 "Transfer StopInsert PeerIP[%s]:AgentId = %s,destAgentId = %s,handle = %"int64ld".",
                 peerIP.c_str(), agentId.c_str(), destAgentId.c_str(), handle);
@@ -3119,13 +3153,13 @@ AcdResultT AgentProxy::SwitchInsertorListen(int64_t handle,
         const std::string& destAgentId,
         const std::string& forCallerDispNum,
         const std::string& forCalleeDispNum,
-        const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+        string peerIP, uint64_t time_rcv) {
 
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap",
                 "Transfer SwitchInsertorListen PeerIP[%s]:AgentId = %s,callerId = %s,destAgentId = %s,handle = %"int64ld",forCallerDispNum = %s,forCalleeDispNum = %s.",
                 peerIP.c_str(), agentId.c_str(), callerId.c_str(), destAgentId.c_str(), handle,
@@ -3169,12 +3203,12 @@ AcdResultT AgentProxy::SwitchInsertorListen(int64_t handle,
 AcdResultT AgentProxy::Break(int64_t handle,
                              const std::string& agentId,
                              const std::string& destAgentId,
-                             const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                             string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap", "Transfer Break PeerIP[%s]:AgentId = %s,destAgentId = %s,handle = %"int64ld".",
                 peerIP.c_str(), agentId.c_str(), destAgentId.c_str(), handle);
 
@@ -3212,12 +3246,12 @@ AcdResultT AgentProxy::Break(int64_t handle,
 AcdResultT AgentProxy::SendDTMF(int64_t handle,
                                 const std::string& agentId,
                                 const std::string& digitals,
-                                const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                                string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap", "Transfer Break PeerIP[%s]:AgentId = %s,handle = %"int64ld",digitals = %s.",
                 peerIP.c_str(), agentId.c_str(), handle, digitals.c_str());
 
@@ -3253,12 +3287,12 @@ AcdResultT AgentProxy::SendDTMF(int64_t handle,
 AcdResultT AgentProxy::StartPlay(int64_t handle,
                                  const std::string& agentId,
                                  const std::string& filename,
-                                 const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                                 string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap", "Transfer StartPlay PeerIP[%s]:AgentId = %s,handle = %"int64ld",filename= %s.",
                 peerIP.c_str(), agentId.c_str(), handle, filename.c_str());
 
@@ -3294,12 +3328,12 @@ AcdResultT AgentProxy::StartPlay(int64_t handle,
 }
 
 AcdResultT AgentProxy::StopPlay(int64_t handle, const std::string& agentId,
-                                const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                                string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap", "Transfer StopPlay PeerIP[%s]:AgentId = %s,handle = %"int64ld".",
                 peerIP.c_str(), agentId.c_str(), handle);
 
@@ -3334,12 +3368,12 @@ AcdResultT AgentProxy::StopPlay(int64_t handle, const std::string& agentId,
 
 
 AcdResultT AgentProxy::MuteOn(int64_t handle, const std::string& agentId,
-                              const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                              string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap", "Transfer MuteOn PeerIP[%s]:AgentId = %s,handle = %"int64ld".",
                 peerIP.c_str(), agentId.c_str(), handle);
 
@@ -3373,12 +3407,12 @@ AcdResultT AgentProxy::MuteOn(int64_t handle, const std::string& agentId,
     return ret;
 }
 AcdResultT AgentProxy::MuteOff(int64_t handle, const std::string& agentId,
-                               const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                               string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap", "Transfer MuteOff PeerIP[%s]:AgentId = %s,handle = %"int64ld".",
                 peerIP.c_str(), agentId.c_str(), handle);
 
@@ -3416,12 +3450,12 @@ AcdResultT AgentProxy::GetAgentDetailByAgentID(int64_t handle,
         const std::string& agentId,
         const std::string& destAgentId,
         AgentInfoT& agentInfo,
-        const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+        string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_TRACE("ap",
                "Transfer GetAgentDetailByAgentID PeerIP[%s]:AgentId = %s,handle = %"int64ld",destAgentId = %s.",
                peerIP.c_str(), agentId.c_str(), handle, destAgentId.c_str());
@@ -3468,12 +3502,12 @@ AcdResultT AgentProxy::GetAgentDetailByAgentDN(int64_t handle,
         const std::string& agentId,
         const std::string& destAgentDn,
         AgentInfoT& agentInfo,
-        const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+        string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_TRACE("ap",
                "Transfer GetAgentDetailByAgentDN PeerIP[%s]:AgentId = %s,handle = %"int64ld",destAgentDn = %s.",
                peerIP.c_str(), agentId.c_str(), handle, destAgentDn.c_str());
@@ -3522,12 +3556,12 @@ AcdResultT AgentProxy::GetAgentDetailsByAgentIDs(int64_t handle,
         const std::string& agentId,
         const StringListT& destAgentIdList,
         AgentInfoListT& agentInfoList,
-        const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+        string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_TRACE("ap", "Transfer GetAgentDetailsByAgentIDs PeerIP[%s]:AgentId = %s,handle = %"int64ld".",
                peerIP.c_str(), agentId.c_str(), handle);
 
@@ -3575,12 +3609,12 @@ AcdResultT AgentProxy::GetAgentDetailsByAgentDNs(int64_t handle,
         const std::string& agentId,
         const StringListT& destAgentDnList,
         AgentInfoListT& agentInfoList,
-        const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+        string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_TRACE("ap", "Transfer GetAgentDetailsByAgentDNs PeerIP[%s]:AgentId = %s,handle = %"int64ld".",
                peerIP.c_str(), agentId.c_str(), handle);
 
@@ -3627,12 +3661,12 @@ AcdResultT AgentProxy::GetAgentDetailsByAgentDNs(int64_t handle,
 AcdResultT AgentProxy::GetRecordFileName(int64_t handle,
         const std::string& agentId,
         std::string& filename,
-        const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+        string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap",
                 "Transfer GetRecordFileName PeerIP[%s]:AgentId = %s,handle = %"int64ld",filename = %s.",
                 peerIP.c_str(), agentId.c_str(), handle, filename.c_str());
@@ -3676,11 +3710,11 @@ AcdResultT AgentProxy::GetSkill(
     int64_t handle,
     const std::string& agentId,
     StringListT& skill,
-    const std::map<std::string, std::string>& ctx, uint64_t time_rcv) {
+   /* const std::map<std::string, std::string>& ctx*/string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap", "Transfer GetSkill PeerIP[%s]:AgentId = %s,handle = %"int64ld".",
                 peerIP.c_str(), agentId.c_str(), handle);
 
@@ -3718,12 +3752,12 @@ AcdResultT AgentProxy::GetSkill(
 AcdResultT AgentProxy::GetRestReason(int64_t handle,
                                      const std::string& agentId,
                                      StringListT& restReason,
-                                     const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                                     string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap", "Transfer GetRestReason PeerIP[%s]:AgentId = %s,handle = %"int64ld".",
                 peerIP.c_str(), agentId.c_str(), handle);
 
@@ -3763,12 +3797,12 @@ AcdResultT AgentProxy::GetAgentNumberBySkill(int64_t handle,
         const std::string& agentId,
         const std::string& skill,
         int32_t& agentNum,
-        const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+        string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
 
     BGCC_TRACE("ap",
                "Transfer GetAgentNumberBySkill PeerIP[%s]:AgentId = %s,handle = %"int64ld",skill = %s.",
@@ -3811,12 +3845,12 @@ AcdResultT AgentProxy::GetAgentDetailsBySkill(int64_t handle,
         const std::string& skill,
         int32_t& agentNum,
         AgentInfoListT& agentInfoList,
-        const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+        string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_TRACE("ap",
                "Transfer GetAgentDetailsBySkill PeerIP[%s]:AgentId = %s,handle = %"int64ld",skill = %s.",
                peerIP.c_str(), agentId.c_str(), handle, skill.c_str());
@@ -3867,12 +3901,12 @@ AcdResultT AgentProxy::GetSkillWaitingNumber(int64_t handle,
         const std::string& skill,
         int32_t& queueNum,
         int32_t& freeNum,
-        const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+        string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_TRACE("ap",
                "Transfer GetSkillWaitingNumber PeerIP[%s]:AgentId = %s,handle = %"int64ld",skill = %s.",
                peerIP.c_str(), agentId.c_str(), handle, skill.c_str());
@@ -3915,12 +3949,12 @@ AcdResultT AgentProxy::GetSkillWaitingCallInfo(int64_t handle,
         const std::string& skill,
         int32_t& queueNum,
         QueueInfoListT& queueInfoList,
-        const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+        string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_TRACE("ap",
                "Transfer GetSkillWaitingCallInfo PeerIP[%s]:AgentId = %s,handle = %"int64ld",skill = %s.",
                peerIP.c_str(), agentId.c_str(), handle, skill.c_str());
@@ -3964,12 +3998,12 @@ AcdResultT AgentProxy::GetPrivateQueue(int64_t handle,
                                        const std::string& destAgentId,
                                        int32_t& queueNum,
                                        QueueInfoListT& queueInfoList,
-                                       const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                                       string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_TRACE("ap",
                "Transfer GetPrivateQueue PeerIP[%s]:AgentId = %s,handle = %"int64ld",destAgentId= %s.",
                peerIP.c_str(), agentId.c_str(), handle, destAgentId.c_str());
@@ -4012,12 +4046,12 @@ AcdResultT AgentProxy::GetPrivateQueue(int64_t handle,
 AcdResultT AgentProxy::GetSysInfo(int64_t handle,
                                   const std::string& agentId,
                                   SysInfoT& sysInfo,
-                                  const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                                  string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_TRACE("ap", "Transfer GetSysInfo PeerIP[%s]:AgentId = %s,handle = %"int64ld".",
                peerIP.c_str(), agentId.c_str(), handle);
 
@@ -4055,12 +4089,12 @@ AcdResultT AgentProxy::GetSysInfo(int64_t handle,
 AcdResultT AgentProxy::SynchronizeCTITime(int64_t handle,
         const std::string& agentId,
         int64_t& timestamp,
-        const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+        string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_TRACE("ap", "Transfer SynchronizeCTITime PeerIP[%s]:AgentId = %s,handle = %"int64ld".",
                peerIP.c_str(), agentId.c_str(), handle);
 
@@ -4099,12 +4133,12 @@ AcdResultT AgentProxy::SynchronizeCTITime(int64_t handle,
 
 
 AcdResultT AgentProxy::Heartbeat(int64_t handle, const std::string& agentId,
-                                 const std::map<std::string, std::string> ctx, uint64_t time_rcv) {
+                                 string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap", "Transfer Heartbeat PeerIP[%s]:AgentId = %s,handle = %"int64ld".",
                 peerIP.c_str(), agentId.c_str(), handle);
 
@@ -4148,11 +4182,11 @@ AcdResultT AgentProxy::Heartbeat(int64_t handle, const std::string& agentId,
 
 
 AcdResultT AgentProxy::ResetConfig(const std::string& password,
-                                   const std::map<std::string, std::string>& ctx, uint64_t time_rcv) {
+                                   string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap", "Transfer ResetConfig PeerIP[%s]:password= %s.", peerIP.c_str(),
                 password.c_str());
 
@@ -4176,12 +4210,12 @@ AcdResultT AgentProxy::ResetConfig(const std::string& password,
 }
 
 AcdResultT AgentProxy::JumptheQueue(int64_t handle, const std::string& agentId, int64_t requestId,
-                                    const std::map<std::string, std::string>& ctx, uint64_t time_rcv) {
+                                    string peerIP, uint64_t time_rcv) {
     AcdResultT ret;
     int64_t handle_tmp;
 
     //获取客户端IP地址
-    std::string peerIP = getProxyIP(ctx);
+    //std::string peerIP = getProxyIP(ctx);
     BGCC_NOTICE("ap",
                 "Transfer JumptheQueue PeerIP[%s]:agentId= %s,handle = %"int64ld",requestId = %"int64ld".",
                 peerIP.c_str(), agentId.c_str(), handle, requestId);

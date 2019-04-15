@@ -16,7 +16,7 @@
 
 
 #include "acd_tool.h"
-
+#include "db_pool.h"
 IDCreater::IDCreater() : m_ID(0) {
 }
 
@@ -110,7 +110,10 @@ void acd_tool::un_init_connect() {
     delete p_m_acd_backup;
     p_m_acd_backup = NULL;
 }
-
+void acd_tool::init_sqlInst()
+{
+	SqlInstan::Initsqlconn(m_config.m_dbhost,m_config.m_dbusername,m_config.m_dbpasswd,m_config.m_dbconnum,m_config.m_dbname);
+}
 void acd_tool::init() {
     if (m_config.read_config()) {
         cout << "acd init, read config success!" << endl;
@@ -118,7 +121,7 @@ void acd_tool::init() {
         cout << "acd init, read config error! acd exit!" << endl;
         exit(0);
     }
-
+	init_sqlInst();
     init_log();
     init_manager();
     init_connect();
@@ -129,7 +132,12 @@ void acd_tool::un_init() {
     un_init_manager();
     un_init_log();
 }
-
+string acd_tool::Getrecordpath()
+{
+	if(m_config.m_recordrootpath.find_last_of("/")+1!=m_config.m_recordrootpath.length())
+		return m_config.m_recordrootpath+"/";
+	return m_config.m_recordrootpath;
+}
 acd::AcdResultT acd_tool::validate_agent(const string& agentId, const string& skill) {
     return m_config.validate_agent(agentId, skill);
 }

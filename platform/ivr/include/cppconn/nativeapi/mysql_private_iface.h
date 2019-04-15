@@ -57,7 +57,7 @@ extern "C"
 #if A0_IF_WE_NEED_GET_CHARSET_FROM_LIBMYSQL
 #include <my_sys.h>
 #endif
-#include <errmsg.h>
+#include "errmsg.h"
 #include <mysql.h>
 
 #if !defined(_WIN32) && !defined(_WIN64)

@@ -1,0 +1,17 @@
+namespace demo {
+
+enum CallbackResult {
+    R_SUCC,
+    R_FAIL
+}
+
+class CallbackRecver {
+    CallbackResult Callback(int32 val);
+}
+
+class CallbackSender {
+    CallbackResult AddClient();
+    CallbackResult DelClient();
+}
+
+}

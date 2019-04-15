@@ -45,6 +45,7 @@ bool acd_config::LoadConf() {
         m_dbusername = conf["mysql"]["dbusername"].to_cstr();
         m_dbpasswd = conf["mysql"]["dbpasswd"].to_cstr();
         m_dbname = conf["mysql"]["dbname"].to_cstr();
+		m_dbconnum = conf["mysql"]["dbconnum"].to_int32();
 printf("%s,%d,%s\n",m_dbhost.c_str(),m_dbport,m_dbusername.c_str());
         // log para
         m_log_count = conf["log"]["log_count"].to_int32();
@@ -71,7 +72,7 @@ printf("%s,%d,%s\n",m_dbhost.c_str(),m_dbport,m_dbusername.c_str());
         m_request_timespan = conf["acd"]["request_timespan"].to_int32();
         m_queue_timespan = conf["acd"]["queue_timespan"].to_int32();
         m_skill_count = conf["acd"]["skill_count"].to_int32();
-
+		m_recordrootpath =  conf["acd"]["recordpath"].to_cstr();
         // acd heartbeat
         m_other_acdhost = conf["acd_backup"]["other_host"].to_cstr();
         m_other_acdport = conf["acd_backup"]["other_port"].to_int32();
@@ -114,7 +115,7 @@ bool acd_config::LoadSkills() {
                            m_dbname.c_str(), m_dbport, NULL, 0)) {
         mysql_query(conn, "set names gbk");
 
-        if (!mysql_query(conn, "SELECT * FROM SkillIdTbl")) {
+        if (!mysql_query(conn, "SELECT * FROM skillidtbl")) {
             result = mysql_store_result(conn);
 
             while ((row = (mysql_fetch_row(result)))) {
@@ -151,7 +152,7 @@ bool acd_config::LoadRestReason() {
                            m_dbname.c_str(), m_dbport, NULL, 0)) {
         mysql_query(conn, "set names gbk");
 
-        if (!mysql_query(conn, "SELECT * FROM RestReasonTbl")) {
+        if (!mysql_query(conn, "SELECT * FROM restreasontbl")) {
             result = mysql_store_result(conn);
 
             while ((row = mysql_fetch_row(result))){
@@ -186,7 +187,7 @@ bool acd_config::LoadAgent() {
                            m_dbname.c_str(), m_dbport, NULL, 0)) {
         mysql_query(conn, "set names gbk");
 
-        if (!mysql_query(conn, "SELECT * FROM AgentTbl")) {
+        if (!mysql_query(conn, "SELECT * FROM agenttbl")) {
             result = mysql_store_result(conn);
 
             while ((row = mysql_fetch_row(result))) {
@@ -238,6 +239,7 @@ acd_config::acd_config(void) :
     m_back_server_port(9527), m_imsheartbeat_timesmax(3), m_imsheartbeat_timespan(3),
     m_ims_proxy_num(10),
     m_this_agentport(10000), m_thread_num(10) {
+	m_dbconnum=10;
 }
 
 acd_config::~acd_config(void) {

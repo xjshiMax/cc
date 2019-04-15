@@ -46,18 +46,24 @@
         	</route>
 
         	<route name="route4" type="outbound">
-                        <condition field="callerno " expression="^agt(.*)">
+                        <condition field="callerno " expression="^1[0-9]{10}$">
                                 <set disp_callerno="$1"/>
-                                <set call_callerno="sofia/internal/$1@127.0.0.1:5060"/>
-                                <set call_calledno="sofia/internal/${CALLED}@127.0.0.1:5060"/>
+                                <set call_callerno="sofia/ingw/$1@127.0.0.1:5060"/>
+                                <set call_calledno="sofia/ingw/${CALLED}@127.0.0.1:5060"/>
                         </condition>
         	</route>
-
-        	<route name="route3" type="outbound">
+			<route name="sipchannel_name" type="outbound">
+                        <condition field="callerno " expression="/[0-9]{4}@">
+                                <set disp_callerno="$1"/>
+                                <set call_callerno="user/${DN}"/>
+                                <set call_calledno="user/${CALLED}"/>
+                        </condition>
+        	</route>
+        	<route name="route4" type="outbound">
                         <condition field="callerno " expression="^(.*)$">
                                 <set disp_callerno="$1"/>
-                                <set call_callerno="sofia/internal/${DN}@127.0.0.1:5060"/>
-                                <set call_calledno="sofia/internal/${CALLED}@127.0.0.1:5060"/>
+                                <set call_callerno="user/${DN}"/>
+                                <set call_calledno="user/${CALLED}"/>
                         </condition>
         	</route>
 

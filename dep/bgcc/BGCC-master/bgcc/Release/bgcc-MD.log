@@ -1,0 +1,64 @@
+﻿生成启动时间为 2019/3/14 星期四 13:25:16。
+     1>项目“E:\workstation\txcc\dep\bgcc\BGCC-master\bgcc\bgcc-MD.vcxproj”在节点 2 上(rebuild 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“Release\bgcc-MD.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       PreBuildEvent:
+         call "%VS100COMNTOOLS%/../../vc/vcvarsall.bat"
+         
+         rem cd ..\deps\openssl
+         rem if not exist output md output
+         rem perl Configure VC-WIN32 no-asm --prefix=./output
+         rem call ms\do_ms.bat
+         rem set cl=-wd4244
+         rem nmake -f ms\ntdll.mak
+         rem nmake -f ms\ntdll.mak install
+         rem if not exist ..\..\output md ..\..\output
+         rem if not exist ..\..\output\lib md ..\..\output\lib
+         rem copy .\output\lib\libeay32.lib ..\..\output\lib\libeay32MD.lib
+         rem copy .\output\lib\ssleay32.lib ..\..\output\lib\ssleay32MD.lib
+         rem if not exist ..\..\output\include md ..\..\output\include
+         rem cd ..\..\output\include
+         rem xcopy ..\..\deps\openssl\output\include /e /y
+         
+         cd ..\deps\openssl-output
+         if not exist ..\..\output md ..\..\output
+         if not exist ..\..\output\lib md ..\..\output\lib
+         xcopy lib ..\..\output\lib /e /y
+         if not exist ..\..\output\include md ..\..\output\include
+         xcopy include ..\..\output\include /e /y
+         :VCEnd
+         Setting environment for using Microsoft Visual Studio 2010 x86 tools.
+         系统找不到指定的路径。
+         找不到文件 - lib
+         复制了 0 个文件
+         找不到文件 - include
+         复制了 0 个文件
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppCommon.targets(103,5): error MSB3073: 命令“call "%VS100COMNTOOLS%/../../vc/vcvarsall.bat"
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppCommon.targets(103,5): error MSB3073: 
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppCommon.targets(103,5): error MSB3073: rem cd ..\deps\openssl
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppCommon.targets(103,5): error MSB3073: rem if not exist output md output
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppCommon.targets(103,5): error MSB3073: rem perl Configure VC-WIN32 no-asm --prefix=./output
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppCommon.targets(103,5): error MSB3073: rem call ms\do_ms.bat
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppCommon.targets(103,5): error MSB3073: rem set cl=-wd4244
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppCommon.targets(103,5): error MSB3073: rem nmake -f ms\ntdll.mak
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppCommon.targets(103,5): error MSB3073: rem nmake -f ms\ntdll.mak install
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppCommon.targets(103,5): error MSB3073: rem if not exist ..\..\output md ..\..\output
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppCommon.targets(103,5): error MSB3073: rem if not exist ..\..\output\lib md ..\..\output\lib
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppCommon.targets(103,5): error MSB3073: rem copy .\output\lib\libeay32.lib ..\..\output\lib\libeay32MD.lib
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppCommon.targets(103,5): error MSB3073: rem copy .\output\lib\ssleay32.lib ..\..\output\lib\ssleay32MD.lib
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppCommon.targets(103,5): error MSB3073: rem if not exist ..\..\output\include md ..\..\output\include
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppCommon.targets(103,5): error MSB3073: rem cd ..\..\output\include
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppCommon.targets(103,5): error MSB3073: rem xcopy ..\..\deps\openssl\output\include /e /y
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppCommon.targets(103,5): error MSB3073: 
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppCommon.targets(103,5): error MSB3073: cd ..\deps\openssl-output
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppCommon.targets(103,5): error MSB3073: if not exist ..\..\output md ..\..\output
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppCommon.targets(103,5): error MSB3073: if not exist ..\..\output\lib md ..\..\output\lib
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppCommon.targets(103,5): error MSB3073: xcopy lib ..\..\output\lib /e /y
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppCommon.targets(103,5): error MSB3073: if not exist ..\..\output\include md ..\..\output\include
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppCommon.targets(103,5): error MSB3073: xcopy include ..\..\output\include /e /y
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppCommon.targets(103,5): error MSB3073: :VCEnd”已退出，代码为 4。
+     1>已完成生成项目“E:\workstation\txcc\dep\bgcc\BGCC-master\bgcc\bgcc-MD.vcxproj”(rebuild 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:01.28

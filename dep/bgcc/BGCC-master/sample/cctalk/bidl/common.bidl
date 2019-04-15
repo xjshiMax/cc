@@ -1,0 +1,13 @@
+namespace cctalk {
+    enum Result {
+        S_OK,
+        E_WRONGNAMEORPASSWORD,
+        E_NEEDLOGIN,
+        E_MISS_PROXYNAME,
+        E_NETWORK,
+        E_ALREADYLOGIN,
+        E_NOT_LOGIN,
+        E_ALREADY_LOGIN,
+        E_USERNOTEXIST
+    }
+}

@@ -1,0 +1,10 @@
+include "common.bidl"
+
+namespace cctalk {
+    class Talker {
+        Result login(string name, string password);
+        Result talk(string peer, string message);
+        Result getOnlineUsers([out] sequence<string> onlineUsers);
+        Result logout();
+    }
+}

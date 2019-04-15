@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{42374EC8-933C-4BE0-A0BB-86097F59A9C8}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>bidl2sl</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;VERSION="2.2.4.0";_CRT_SECURE_NO_WARNINGS;_BIDL_DEBUG=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>./;../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PostBuildEvent>
+      <Command>if not exist ..\..\output md ..\..\output
+if not exist ..\..\output\bin md ..\..\output\bin
+copy ..\..\Debug\bidl2sl.exe ..\..\output\bin\</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;VERSION="2.2.4.0";_CRT_SECURE_NO_WARNINGS;_BIDL_DEBUG=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;..</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <PostBuildEvent>
+      <Command>if not exist ..\..\output md ..\..\output
+if not exist ..\..\output\bin md ..\..\output\bin
+copy ..\..\Release\bidl2sl.exe ..\..\output\bin\</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\bidl_binary.h" />
+    <ClInclude Include="..\bidl_boolean.h" />
+    <ClInclude Include="..\bidl_class.h" />
+    <ClInclude Include="..\bidl_const.h" />
+    <ClInclude Include="..\bidl_const_boolean.h" />
+    <ClInclude Include="..\bidl_const_decimal.h" />
+    <ClInclude Include="..\bidl_const_integer.h" />
+    <ClInclude Include="..\bidl_const_literal.h" />
+    <ClInclude Include="..\bidl_const_sequence.h" />
+    <ClInclude Include="..\bidl_const_set.h" />
+    <ClInclude Include="..\bidl_double.h" />
+    <ClInclude Include="..\bidl_enum.h" />
+    <ClInclude Include="..\bidl_field_direction.h" />
+    <ClInclude Include="..\bidl_float.h" />
+    <ClInclude Include="..\bidl_function.h" />
+    <ClInclude Include="..\bidl_function_field.h" />
+    <ClInclude Include="..\bidl_identifier.h" />
+    <ClInclude Include="..\bidl_include.h" />
+    <ClInclude Include="..\bidl_int16.h" />
+    <ClInclude Include="..\bidl_int32.h" />
+    <ClInclude Include="..\bidl_int64.h" />
+    <ClInclude Include="..\bidl_int8.h" />
+    <ClInclude Include="..\bidl_map.h" />
+    <ClInclude Include="..\bidl_namespace.h" />
+    <ClInclude Include="..\bidl_parser.h" />
+    <ClInclude Include="..\bidl_sequence.h" />
+    <ClInclude Include="..\bidl_set.h" />
+    <ClInclude Include="..\bidl_string.h" />
+    <ClInclude Include="..\bidl_struct.h" />
+    <ClInclude Include="..\bidl_type.h" />
+    <ClInclude Include="..\bidl_typedef.h" />
+    <ClInclude Include="..\bidl_void.h" />
+    <ClInclude Include="..\common.h" />
+    <ClInclude Include="..\coordination.h" />
+    <ClInclude Include="..\cpp_source_writer.h" />
+    <ClInclude Include="..\format_checker.h" />
+    <ClInclude Include="..\global_parser.h" />
+    <ClInclude Include="..\grammar.tab.h" />
+    <ClInclude Include="..\java_source_writer.h" />
+    <ClInclude Include="..\parse_result.h" />
+    <ClInclude Include="..\source_writer.h" />
+    <ClInclude Include="..\util.h" />
+    <ClInclude Include="getopt.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\bidl_parser.cpp" />
+    <ClCompile Include="..\cpp_source_writer.cpp" />
+    <ClCompile Include="..\format_checker.cpp" />
+    <ClCompile Include="..\global_parser.cpp" />
+    <ClCompile Include="..\grammar.tab.cpp" />
+    <ClCompile Include="..\java_source_writer.cpp" />
+    <ClCompile Include="..\main.cpp" />
+    <ClCompile Include="..\scaner.cpp" />
+    <ClCompile Include="..\source_writer.cpp" />
+    <ClCompile Include="..\util.cpp" />
+    <ClCompile Include="getopt.c" />
+    <ClCompile Include="getopt_long.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

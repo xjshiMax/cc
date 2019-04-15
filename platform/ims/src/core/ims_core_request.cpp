@@ -37,25 +37,28 @@ int32_t ims_request_t::operator()(const bool* isstoped, void* param) {
         heartbeat.callid = "";
         heartbeat.device = "";
         heartbeat.eventType = ims::OtherEventTypeT::OG_HeartBeat;
-        proxy.SendOtherEvent(heartbeat);
-
-        if (proxy.get_errno() != 0) {
-            if (0 == disconn_time) {
-                disconn_time = ims_tool_t::get_timestamp_s();
-            } else if ((ims_tool_t::get_timestamp_s() - disconn_time) >= 6) { //fail for 6 seconds
-                WARNING_LOG("event push to client(%s) max reconn failed,reqid=%lu,remove request"
-                            , _conn_info.c_str(), _reqid);
-                ims_session_manager_t::instance()->rt_del_req(_reqid);
-                break;
-            }
-
-            WARNING_LOG("event push to client(%s) failed,reqid=%lu", _conn_info.c_str(), _reqid);
-            ims_tool_t::safe_sleepms(500);
-            continue;
-        } else {
-            disconn_time = 0;
-        }
-
+#if 0 //È¥³ýacdµÄÐÄÌø
+         proxy.SendOtherEvent(heartbeat);
+ 
+         if (proxy.get_errno() != 0) {
+             if (0 == disconn_time) {
+                 disconn_time = ims_tool_t::get_timestamp_s();
+             } else if ((ims_tool_t::get_timestamp_s() - disconn_time) >= 6) { //fail for 6 seconds
+                 WARNING_LOG("event push to client(%s) max reconn failed,reqid=%lu,remove request"
+                             , _conn_info.c_str(), _reqid);
+                 ims_session_manager_t::instance()->rt_del_req(_reqid);
+                 break;
+             }
+ 
+             WARNING_LOG("event push to client(%s) failed,reqid=%lu", _conn_info.c_str(), _reqid);
+             ims_tool_t::safe_sleepms(500);
+             continue;
+         } else {
+             disconn_time = 0;
+         }
+#else
+		 disconn_time = 0;
+#endif
         TRACE_LOG("ims event pusher(%lu/%s) start", _reqid, _conn_info.c_str());
         ims::CallEventT callevent;
         ims::MediaEventT mediaevent;

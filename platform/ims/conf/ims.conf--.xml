@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<document type="ims/xml">
+	<section type="service" description="ims basic run config">
+		<service type="main"    ip="127.0.0.1" port="9527"/>
+		<service type="monitor" ip="192.168.111.9" port="9011"/>
+		<service type="config"  ip="192.168.111.9" port="9012"/>
+    	</section>
+
+    	<section type="param" description="run core param">
+		<param name="max-session" value="1000"/>
+		<param name="bgcc-poolsize" value="500"/>
+		<param name="database-host" value="192.168.2.190"/>
+		<param name="database-user" value="root"/>
+		<param name="database-pwd" value="asdfgh"/>
+		<param name="database-connum" value="10"/>
+	</section>
+	
+	<section type="client" description="allow/deny connect to ims">
+		<client type="ivr">
+			<allow data="192.168.111.0/24" />
+			<allow data="192.168.119.0/24" />
+			<allow data="127.0.0.0/24" />
+		</client>
+		
+		<client type="config">
+			<allow data="192.168.111.0/24" />
+		</client>
+
+		<client type="acd">
+			<allow data="127.0.0.1/24" />
+		</client>
+
+		<client type="monitor">
+			<allow data="192.168.111.0/24" />
+		</client>
+	</section>
+	
+	<section type="gateway" description="gateway info" log="true">
+		<gateway type="freeswitch" id="0" ip="127.0.0.1" port="8021" pswd="ClueCon" user="" max_conn="10" dtmf="inband"/>
+	</section>
+
+   	 <section type="route" description="outbound route info">
+        
+		<route name="route5" type="outbound">
+                        <condition field="callerno " expression="^(9999)$">
+                                <set disp_callerno="$1"/>
+                                <set call_callerno="user/$1"/>
+                                <set call_calledno="sofia/internal/${CALLED}@127.0.0.1:5060"/>
+                        </condition>
+        	</route>
+
+        	<route name="route4" type="outbound">
+                        <condition field="callerno " expression="^1[0-9]{10}$">
+                                <set disp_callerno="$1"/>
+                                <set call_callerno="sofia/ingw/$1@127.0.0.1:5060"/>
+                                <set call_calledno="sofia/ingw/${CALLED}@127.0.0.1:5060"/>
+                        </condition>
+        	</route>
+			<route name="sipchannel_name" type="outbound">
+                        <condition field="callerno " expression="/[0-9]{4}@">
+                                <set disp_callerno="$1"/>
+                                <set call_callerno="user/${DN}"/>
+                                <set call_calledno="user/${CALLED}"/>
+                        </condition>
+        	</route>
+        	<route name="route4" type="outbound">
+                        <condition field="callerno " expression="^(.*)$">
+                                <set disp_callerno="$1"/>
+                                <set call_callerno="user/${DN}"/>
+                                <set call_calledno="user/${CALLED}"/>
+                        </condition>
+        	</route>
+
+	</section>
+</document>

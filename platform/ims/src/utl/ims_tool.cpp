@@ -433,19 +433,45 @@ bool ims_tool_t::set_callno(const std::string& caller_no, const std::string& cal
             if (rc == 0) {
                 WARNING_LOG("find the conf, but the size of the vector is too small! Please change OVERCOUNT in ims_tool.cpp");
             }
+			std::vector <std::string> res;
+			if(strcmp(cur_route->name,"sipchannel_name")==0)
+			{
+				const char* substring_start = subject + ovector[0];
+				int substring_length = ovector[1] - ovector[0];
+				char* tmp = (char*)malloc((substring_length + 5) * sizeof(char));
+				snprintf(tmp, substring_length + 4, "%.*s", substring_length, substring_start);
+				std::string s = tmp;
+				s=s.erase(0,1);
+				s=s.erase(s.length()-1,1);
+				res.push_back(s);
+				free(tmp);
 
-            std::vector <std::string> res;
+				disp_caller = cur_route->rule_disp_caller;
+				caller = cur_route->rule_call_caller;
+				called = cur_route->rule_call_called;
+				ims_tool_t::replace_substring(caller, "${DN}", s);
+				ims_tool_t::replace_substring(called, "${CALLED}", s);
+			//	ims_tool_t::replace_callno(caller, res);
+			//	ims_tool_t::replace_callno(called, res);
+			//	ims_tool_t::replace_callno(disp_caller, res);
 
-            for (int i = 0; i < rc; i++) {
-                const char* substring_start = subject + ovector[2 * i];
-                int substring_length = ovector[2 * i + 1] - ovector[2 * i];
-                char* tmp = (char*)malloc((substring_length + 5) * sizeof(char));
-                snprintf(tmp, substring_length + 4, "%.*s", substring_length, substring_start);
-                std::string s = tmp;
-                res.push_back(s);
-                free(tmp);
-            }
+				free(re);
+				re = NULL;
 
+				return true;
+			}
+			else
+			{
+				for (int i = 0; i < rc; i++) {
+					const char* substring_start = subject + ovector[2 * i];
+					int substring_length = ovector[2 * i + 1] - ovector[2 * i];
+					char* tmp = (char*)malloc((substring_length + 5) * sizeof(char));
+					snprintf(tmp, substring_length + 4, "%.*s", substring_length, substring_start);
+					std::string s = tmp;
+					res.push_back(s);
+					free(tmp);
+				}
+			}
             disp_caller = cur_route->rule_disp_caller;
             caller = cur_route->rule_call_caller;
             called = cur_route->rule_call_called;
